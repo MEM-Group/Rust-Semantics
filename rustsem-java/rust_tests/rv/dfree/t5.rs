@@ -6,7 +6,6 @@ fn main() {
 
    {
       v = 1;
-
    }
 
    unsafe{ #intrinsicDeallocate(v) }

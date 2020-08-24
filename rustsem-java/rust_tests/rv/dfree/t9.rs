@@ -1,12 +1,12 @@
 
-struct A{i:i32}
+struct A{a:i32}
 
-struct B{a:A}
+struct B{b:A}
 
 fn main(){
 
    let a = A{a:1};
-   let b = B{a:a};
+   let b = B{b:a};
    unsafe{ #intrinsicDeallocate(b) };
    unsafe{ #intrinsicDeallocate(b) };
 }

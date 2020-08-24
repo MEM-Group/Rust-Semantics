@@ -6,6 +6,7 @@ syntax Id
        ::= "x"
          | "y"
 	 | "name"
+	 | "#noName"
 	 | "sum"
          | "as_bytes"
 	 | "as_ptr"
@@ -63,6 +64,8 @@ syntax Id
 	 | "thread"
 	 | "JoinHandle"
 	 | "join"
+	 | "ProdA"
+	 | "ProdB"
 
 
 
@@ -95,6 +98,7 @@ syntax Id
 	 | "distance"
 	 | "first"
 	 | "Cap"
+
 
 syntax Ident
        ::= "buf"

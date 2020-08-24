@@ -10,7 +10,7 @@ srust-kompiled: rust-src/*.k rust-src/clang_op/*.k rust-src/lib/*.k
 
 
 clean:
-	rm -f -r *~ cl-src/*~ rust-src/*~
+	rm -f -r *~ cl-src/*~ rust-src/*~ rust_tests/rv/*/*~
 
 cleanall: clean
 	rm -f -r cl-src/clang-kompiled rust-src/srust-kompiled
