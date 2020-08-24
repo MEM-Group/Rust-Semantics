@@ -1,0 +1,6 @@
+*~
+rustsem-java/rust-src/srust-kompiled
+rustsem-java/cl-src/clang-kompiled
+rustsem-ocaml/rust-src/srust-kompiled
+rustsem-ocaml/cl-src/clang-kompiled
+.DS_Store

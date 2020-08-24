@@ -1,0 +1,6 @@
+
+#!/bin/bash
+
+../k/bin/kprove -d cl-src/ "$@" --smt-prelude ./z3/list.smt2
+
+

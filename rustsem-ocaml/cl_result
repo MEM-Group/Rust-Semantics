@@ -1,0 +1,215 @@
+
+        Testing cl_tests/arith/t1.cl
+	The test cl_tests/arith/t1.cl-succeed
+
+        Testing cl_tests/arith/t2.cl
+	The test cl_tests/arith/t2.cl-succeed
+
+        Testing cl_tests/assignment/t1.cl
+	The test cl_tests/assignment/t1.cl-succeed
+
+        Testing cl_tests/assignment/t2.cl
+	The test cl_tests/assignment/t2.cl-succeed
+
+        Testing cl_tests/borrow/t1.cl
+	The test cl_tests/borrow/t1.cl-fail
+
+        Testing cl_tests/borrow/t2.cl
+	The test cl_tests/borrow/t2.cl-fail
+
+        Testing cl_tests/borrow/t3.cl
+	The test cl_tests/borrow/t3.cl-fail
+
+        Testing cl_tests/borrow/t4.cl
+	The test cl_tests/borrow/t4.cl-succeed
+
+        Testing cl_tests/borrow/t5.cl
+	The test cl_tests/borrow/t5.cl-succeed
+
+        Testing cl_tests/borrow/t6.cl
+	The test cl_tests/borrow/t6.cl-succeed
+
+        Testing cl_tests/callcl/t1.cl
+	The test cl_tests/callcl/t1.cl-fail
+
+        Testing cl_tests/callcl/t2.cl
+	The test cl_tests/callcl/t2.cl-fail
+
+        Testing cl_tests/case/t1.cl
+	The test cl_tests/case/t1.cl-fail
+
+        Testing cl_tests/case/t2.cl
+	The test cl_tests/case/t2.cl-fail
+
+        Testing cl_tests/case/t3.cl
+	The test cl_tests/case/t3.cl-fail
+
+        Testing cl_tests/case/t4.cl
+	The test cl_tests/case/t4.cl-succeed
+
+        Testing cl_tests/case/t5.cl
+	The test cl_tests/case/t5.cl-fail
+
+        Testing cl_tests/case/t6.cl
+	The test cl_tests/case/t6.cl-fail
+
+        Testing cl_tests/concur/t1.cl
+	The test cl_tests/concur/t1.cl-succeed
+
+        Testing cl_tests/concur/t2.cl
+	The test cl_tests/concur/t2.cl-succeed
+
+        Testing cl_tests/deallocate/t1.cl
+	The test cl_tests/deallocate/t1.cl-succeed
+
+        Testing cl_tests/deallocate/t2.cl
+	The test cl_tests/deallocate/t2.cl-fail
+
+        Testing cl_tests/dereference/t1.cl
+	The test cl_tests/dereference/t1.cl-succeed
+
+        Testing cl_tests/dereference/t2.cl
+	The test cl_tests/dereference/t2.cl-fail
+
+        Testing cl_tests/dereference/t3.cl
+	The test cl_tests/dereference/t3.cl-fail
+
+        Testing cl_tests/field/t1.cl
+	The test cl_tests/field/t1.cl-succeed
+
+        Testing cl_tests/field/t2.cl
+	The test cl_tests/field/t2.cl-succeed
+
+        Testing cl_tests/field/t3.cl
+	The test cl_tests/field/t3.cl-succeed
+
+        Testing cl_tests/field/t4.cl
+	The test cl_tests/field/t4.cl-succeed
+
+        Testing cl_tests/fork/t1.cl
+	The test cl_tests/fork/t1.cl-fail
+
+        Testing cl_tests/fork/t2.cl
+	The test cl_tests/fork/t2.cl-fail
+
+        Testing cl_tests/function/t1.cl
+	The test cl_tests/function/t1.cl-fail
+
+        Testing cl_tests/function/t2.cl
+	The test cl_tests/function/t2.cl-fail
+
+        Testing cl_tests/function/t3.cl
+	The test cl_tests/function/t3.cl-fail
+
+        Testing cl_tests/function/t4.cl
+	The test cl_tests/function/t4.cl-succeed
+
+        Testing cl_tests/function/t5.cl
+	The test cl_tests/function/t5.cl-succeed
+
+        Testing cl_tests/function/t6.cl
+
+        Testing cl_tests/loop/t1.cl
+	The test cl_tests/loop/t1.cl-fail
+
+        Testing cl_tests/loop/t2.cl
+
+        Testing cl_tests/loop/t3.cl
+	The test cl_tests/loop/t3.cl-succeed
+
+        Testing cl_tests/loop/t4.cl
+	The test cl_tests/loop/t4.cl-fail
+
+        Testing cl_tests/loop/t5.cl
+	The test cl_tests/loop/t5.cl-succeed
+
+        Testing cl_tests/loop/t6.cl
+	The test cl_tests/loop/t6.cl-succeed
+
+        Testing cl_tests/loop/t7.cl
+	The test cl_tests/loop/t7.cl-succeed
+
+        Testing cl_tests/loop/t8.cl
+	The test cl_tests/loop/t8.cl-succeed
+
+        Testing cl_tests/mem_allocate/t1.cl
+
+        Testing cl_tests/mem_allocate/t2.cl
+
+        Testing cl_tests/mem_allocate/t3.cl
+
+        Testing cl_tests/mem_allocate/t4.cl
+
+        Testing cl_tests/mem_allocate/t5.cl
+
+        Testing cl_tests/mem_append/t1.cl
+
+        Testing cl_tests/mem_append/t2.cl
+
+        Testing cl_tests/mem_cas/t1.cl
+
+        Testing cl_tests/mem_cas/t2.cl
+
+        Testing cl_tests/mem_cas/t3.cl
+
+        Testing cl_tests/mem_free/t1.cl
+
+        Testing cl_tests/mem_offset/t1.cl
+
+        Testing cl_tests/mem_offset/t2.cl
+
+        Testing cl_tests/mem_read/t1.cl
+
+        Testing cl_tests/mem_read/t2.cl
+
+        Testing cl_tests/mem_read/t3.cl
+
+        Testing cl_tests/mem_read/t4.cl
+
+        Testing cl_tests/mem_read/t5.cl
+
+        Testing cl_tests/mem_write/t1.cl
+
+        Testing cl_tests/mem_write/t2.cl
+
+        Testing cl_tests/mem_write/t3.cl
+
+        Testing cl_tests/memcopy/t1.cl
+	The test cl_tests/memcopy/t1.cl-fail
+
+        Testing cl_tests/memcopy/t2.cl
+
+        Testing cl_tests/memcopy/t3.cl
+
+        Testing cl_tests/memcopy/t4.cl
+
+        Testing cl_tests/move/t1.cl
+	The test cl_tests/move/t1.cl-fail
+
+        Testing cl_tests/move/t2.cl
+	The test cl_tests/move/t2.cl-fail
+
+        Testing cl_tests/move/t3.cl
+	The test cl_tests/move/t3.cl-fail
+
+        Testing cl_tests/pcall/t1.cl
+	The test cl_tests/pcall/t1.cl-fail
+
+        Testing cl_tests/pcall/t2.cl
+	The test cl_tests/pcall/t2.cl-fail
+
+        Testing cl_tests/print/t1.cl
+	The test cl_tests/print/t1.cl-succeed
+
+        Testing cl_tests/rawpointer/t1.cl
+
+        Testing cl_tests/rawpointer/t2.cl
+	The test cl_tests/rawpointer/t2.cl-succeed
+
+        Testing cl_tests/rawpointer/t3.cl
+	The test cl_tests/rawpointer/t3.cl-succeed
+
+        Testing cl_tests/ref/t1.cl
+	The test cl_tests/ref/t1.cl-succeed
+
+        Testing cl_tests/ref/t2.cl
