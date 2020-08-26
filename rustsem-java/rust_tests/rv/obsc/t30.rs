@@ -1,4 +1,5 @@
 
+
 struct A{
     a:i32,
     b:bool

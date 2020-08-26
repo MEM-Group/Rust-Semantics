@@ -5,6 +5,7 @@ module CLVERI
 syntax Id
        ::= "x"
          | "y"
+	 | "r1"
 	 | "name"
 	 | "#noName"
 	 | "sum"

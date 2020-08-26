@@ -7,6 +7,6 @@ fn main(){
 
    let z = x ;
 
-   let t = * y; //copable value, no dangling pointers
+   let t = * y; 
 
 }

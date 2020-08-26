@@ -1,0 +1,27 @@
+
+#!/bin/bash
+
+
+#    for f in rust_tests/rv/rduninit/*.re; do
+#      echo "$f:"
+#      ../veridriver/testdriver $f > "${f:0:${#f}-6}-spec.k"
+#    done
+
+    for f in rust_tests/rv/obsc/*.re; do
+          echo "$f:"
+      ../veridriver/testdriver $f > "${f:0:${#f}-6}-spec.k"
+    done
+
+    for f in rust_tests/rv/overflow/*.re; do
+          echo "$f:"
+            ../veridriver/testdriver $f > "${f:0:${#f}-6}-spec.k"
+	    
+    done
+
+    for f in rust_tests/rv/race/*.re; do
+          echo "$f:"
+	        ../veridriver/testdriver $f > "${f:0:${#f}-6}-spec.k"
+    done
+
+
+
