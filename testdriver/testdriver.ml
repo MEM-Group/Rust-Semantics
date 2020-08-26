@@ -12,7 +12,7 @@ open String;;
 let search_index r s = try search_forward r s 0 with Not_found -> -1 ;;
 
 let main s = let ic = stdin in
-let ic1 = open_in (s^".result") in 
+           let ic1 = open_in (s^".result") in 
            try 
                 while true; do
 let line = input_line ic in
