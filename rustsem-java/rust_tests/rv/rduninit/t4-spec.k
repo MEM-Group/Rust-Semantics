@@ -11,7 +11,22 @@ rule
         <Thread>
          <threadId> 0 </threadId>
          <tname> "main" </tname>
-         <k> fun main ( .Idents ) { (| letcl var ( 0 ) =cl #AllocateInit ( valcl ( 1 ) , #IdTy ( A , #prod ( #fd ( a , i32 ) , .Fields ) ) , valcl ( N0:Int ) , .ExpCLs ) incl letcl var ( 1 ) =cl #AllocateInit ( valcl ( 1 ) , #IdTy ( A , #prod ( #fd ( a , i32 ) , .Fields ) ) , valcl ( N1:Int ) , .ExpCLs ) incl letcl var ( 2 ) =cl #AllocateInit ( valcl ( 1 ) , #IdTy ( A , #prod ( #fd ( a , i32 ) , .Fields ) ) , valcl ( N2:Int ) , .ExpCLs ) incl letcl var ( 3 ) =cl #AllocateInit ( valcl ( 1 ) , #IdTy ( A , #prod ( #fd ( a , i32 ) , .Fields ) ) , valcl ( N3:Int ) , .ExpCLs ) incl letcl var ( 4 ) =cl #AllocateInit ( valcl ( 1 ) , #IdTy ( A , #prod ( #fd ( a , i32 ) , .Fields ) ) , valcl ( N4:Int ) , .ExpCLs ) incl letcl var ( 5 ) =cl #AllocateInit ( valcl ( 5 ) , #owner ( #array ( #owner ( #IdTy ( A , #prod ( #fd ( a , i32 ) , .Fields ) ) ) , 5 ) ) , #move ( var ( 0 ) ) , #move ( var ( 1 ) ) , #move ( var ( 2 ) ) , #move ( var ( 3 ) ) , #move ( var ( 4 ) ) , .ExpCLs ) incl letcl var ( 6 ) =cl #move ( #Index ( var ( 5 ) , valcl ( 2 ) ) ) incl #print ( "{}" , #Index ( var ( 5 ) , valcl ( 2 ) ) .cl valcl ( 0 ) , .ExpCLs ) |) }  ;cl
+         <k> fun main ( .Idents ) { (|
+
+letcl var ( 0 ) =cl #AllocateInit ( valcl ( 1 ) ,
+            #IdTy ( A , #prod ( #fd ( a , i32 ) , .Fields ) ) , valcl ( N0:Int ) , .ExpCLs ) incl
+letcl var ( 1 ) =cl #AllocateInit ( valcl ( 1 ) ,
+            #IdTy ( A , #prod ( #fd ( a , i32 ) , .Fields ) ) , valcl ( N1:Int ) , .ExpCLs ) incl
+letcl var ( 2 ) =cl #AllocateInit ( valcl ( 1 ) ,
+            #IdTy ( A , #prod ( #fd ( a , i32 ) , .Fields ) ) , valcl ( N2:Int ) , .ExpCLs ) incl
+letcl var ( 5 ) =cl #AllocateInit ( valcl ( 4 ) ,
+            #owner ( #array ( #owner ( #IdTy ( A , #prod ( #fd ( a , i32 ) , .Fields ) ) ) , 5 ) ) ,
+	    #move ( var ( 0 ) ) ,
+	    #move ( var ( 1 ) ) ,
+	    #move ( var ( 2 ) ) ,
+	     .ExpCLs ) incl
+
+letcl var ( 6 ) =cl #move ( #Index ( var ( 5 ) , valcl ( 2 ) ) ) incl #print ( "{}" , #Index ( var ( 5 ) , valcl ( 2 ) ) .cl valcl ( 0 ) , .ExpCLs ) |) }  ;cl
          callcl(main, .ExpCLs)
           => #unit     </k>
       <env>
@@ -42,5 +57,7 @@ rule
         <memStatus> .Map => MEMS:Map </memStatus>
 	<clk> 0:Int => CLKN:Int </clk>
     </memory>
-    <output> .List </output>
+    <output> .List => OUTPUT:List </output>
   </T> 
+
+endmodule

@@ -13,6 +13,7 @@ syntax Id
 	 | "as_ptr"
 	 | "from_str"
 	 | "slice"
+	 | "moveV"
 	 | "InternedString"
 	 | "len"
 	 | "StringPool"

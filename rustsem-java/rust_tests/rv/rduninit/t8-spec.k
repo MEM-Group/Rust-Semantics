@@ -11,7 +11,7 @@ rule
         <Thread>
          <threadId> 0 </threadId>
          <tname> "main" </tname>
-         <k> fun main ( .Idents ) { (| letcl var ( 0 ) =cl #AllocateInit ( valcl ( 1 ) , #IdTy ( A , #prod ( #fd ( a , i32 ) , .Fields ) ) , valcl ( N2:Int ) , .ExpCLs ) incl letcl var ( 1 ) =cl #AllocateInit ( valcl ( 2 ) , #IdTy ( Tt , #sum ( #fd ( ea , #IdTy ( ea , #prod ( #fd ( #noName , #owner ( #IdTy ( A , #prod ( #fd ( a , i32 ) , .Fields ) ) ) ) , .Fields ) ) ) , #fd ( b , #IdTy ( b , #prod ( #fd ( #noName , i32 ) , .Fields ) ) ) , .Fields ) ) , valcl ( 0 ) , #AllocateInit ( valcl ( 1 ) , #IdTy ( ea , #prod ( #fd ( #noName , #owner ( #IdTy ( A , #prod ( #fd ( a , i32 ) , .Fields ) ) ) ) , .Fields ) ) , #move ( var ( 0 ) ) , .ExpCLs ) , .ExpCLs ) incl letcl var ( 2 ) =cl #move ( var ( 1 ) ) incl #print ( "{}" , var ( 1 ) , .ExpCLs ) |) }  ;cl
+         <k> fun main ( .Idents ) { (| letcl var ( 0 ) =cl #AllocateInit ( valcl ( 1 ) , #IdTy ( A , #prod ( #fd ( a , i32 ) , .Fields ) ) , valcl ( N2:Int ) , .ExpCLs ) incl letcl var ( 1 ) =cl #AllocateInit ( valcl ( 2 ) , #IdTy ( Tt , #sum ( #fd ( a , #IdTy ( a , #prod ( #fd ( #noName , #owner ( #IdTy ( A , #prod ( #fd ( a , i32 ) , .Fields ) ) ) ) , .Fields ) ) ) , #fd ( b , #IdTy ( b , #prod ( #fd ( #noName , i32 ) , .Fields ) ) ) , .Fields ) ) , valcl ( 0 ) , #AllocateInit ( valcl ( 1 ) , #IdTy ( a , #prod ( #fd ( #noName , #owner ( #IdTy ( A , #prod ( #fd ( a , i32 ) , .Fields ) ) ) ) , .Fields ) ) , #move ( var ( 0 ) ) , .ExpCLs ) , .ExpCLs ) incl letcl var ( 2 ) =cl #move ( var ( 1 ) ) incl #print ( "{}" , var ( 1 ) , .ExpCLs ) |) }  ;cl
          callcl(main, .ExpCLs)
           => #unit     </k>
       <env>
@@ -43,4 +43,6 @@ rule
 	<clk> 0:Int => CLKN:Int </clk>
     </memory>
     <output> .List </output>
-  </T> 
+</T>
+
+endmodule
