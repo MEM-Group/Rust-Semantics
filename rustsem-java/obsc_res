@@ -1,0 +1,4966 @@
+verifying rust_tests/rv/obsc/t10-spec.k:
+          
+<T>
+  <threads>
+    <Thread>
+      <threadId>
+        0
+      </threadId>
+      <tname>
+        "main"
+      </tname>
+      <k>
+        #ckAct ( SetItem ( #lread ( #sl ( 2 ) , 4 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 6 ) ) , #mut ( 3 , 6 , #sl ( 2 ) ) ) ~> #readna ( #sl ( 3 ) ) ~> clskip ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( )
+      </k>
+      <env>
+        var ( 0 ) |-> #sl ( 2 )
+        var ( 1 ) |-> #sl ( 3 )
+        var ( 2 ) |-> #sl ( 4 )
+      </env>
+      <clstack>
+        ListItem ( var ( 2 ) )
+        ListItem ( var ( 0 ) |-> #sl ( 2 )
+        var ( 1 ) |-> #sl ( 3 ) )
+        ListItem ( var ( 1 ) )
+        ListItem ( var ( 0 ) |-> #sl ( 2 ) )
+        ListItem ( var ( 0 ) )
+        ListItem ( .Map )
+        ListItem ( #state ( . , .Map ) )
+      </clstack>
+    </Thread>
+    <activeThreads>
+      SetItem ( 0 )
+    </activeThreads>
+    <cntThreads>
+      1
+    </cntThreads>
+    <cthread>
+      0
+    </cthread>
+  </threads>
+  <closures>
+    <closureCnt>
+      1
+    </closureCnt>
+    <funclosure>
+      main |-> 0
+    </funclosure>
+    <closure>
+      <crId>
+        0
+      </crId>
+      <crContext>
+        .
+      </crContext>
+      <crParams>
+        .Idents
+      </crParams>
+      <crBody>
+        (| letcl var ( 0 ) =cl #AllocateInit ( valcl ( 2 ) , #owner ( #array ( i32 , 2 ) ) , valcl ( V0 ) , valcl ( V1 ) , .ExpCLs ) incl letcl var ( 1 ) =cl refcl ( 1 , var ( 0 ) ) incl letcl var ( 2 ) =cl #Index ( var ( 0 ) , valcl ( 1 ) ) incl ( var ( 1 ) ;cl clskip ) |)
+      </crBody>
+    </closure>
+  </closures>
+  <memory>
+    <slocAddr>
+      5
+    </slocAddr>
+    <sloc>
+      2 |-> #own ( #blk ( 1 ) )
+      3 |-> #mut ( 3 , 6 , #sl ( 2 ) )
+      4 |-> valcl ( V1 )
+    </sloc>
+    <blkAddr>
+      2
+    </blkAddr>
+    <blocks>
+      #heap ( 1 , 0 ) |-> valcl ( V0 )
+      #heap ( 1 , 1 ) |-> valcl ( V1 )
+      1 |-> #blkInfo ( 2 , #owner ( #array ( i32 , 2 ) ) )
+    </blocks>
+    <locRW>
+      SetItem ( #lread ( #sl ( 2 ) , 4 ) )
+      SetItem ( #lread ( #sl ( 3 ) , 6 ) )
+    </locRW>
+    <memStatus>
+      #heap ( 1 , 0 ) |-> #ms ( 0 , 0 )
+      #heap ( 1 , 1 ) |-> #ms ( 0 , 0 )
+      #sl ( 2 ) |-> #ms ( 0 , 0 )
+      #sl ( 3 ) |-> #ms ( 0 , 0 )
+      #sl ( 4 ) |-> #ms ( 0 , 0 )
+    </memStatus>
+    <clk>
+      7
+    </clk>
+  </memory>
+  <output>
+    .List
+  </output>
+</T>
+Command exited with non-zero status 1
+	Command being timed: "./clkprove rust_tests/rv/obsc/t10-spec.k"
+	User time (seconds): 31.45
+	System time (seconds): 0.53
+	Percent of CPU this job got: 193%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:16.53
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 640928
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 328902
+	Voluntary context switches: 11098
+	Involuntary context switches: 1873
+	Swaps: 0
+	File system inputs: 24
+	File system outputs: 100944
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1
+verifying rust_tests/rv/obsc/t11-spec.k:
+          
+<T>
+  <threads>
+    <Thread>
+      <threadId>
+        0
+      </threadId>
+      <tname>
+        "main"
+      </tname>
+      <k>
+        #stuck ( #mut ( 4 , 4 , #sl ( 2 ) ) , #shr ( 3 , 5 , #sl ( 2 ) ) ) ~> #ckRefLT ( 2 |-> #own ( #blk ( 1 ) )
+        3 |-> #shr ( 3 , 5 , #sl ( 2 ) ) , 3 , #shr ( 3 , 5 , #sl ( 2 ) ) ) ~> #ckRefLT ( #heap ( 1 , 0 ) |-> valcl ( V0 )
+        #heap ( 1 , 1 ) |-> valcl ( V1 )
+        1 |-> #blkInfo ( 2 , #owner ( #array ( i32 , 2 ) ) ) , 3 , #shr ( 3 , 5 , #sl ( 2 ) ) ) ~> #wellFormAct ( #shr ( 3 , 5 , #sl ( 2 ) ) ) ~> #readna ( #sl ( 3 ) ) ~> #freezer#letcl1_ ( var ( 3 ) , clskip ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( )
+      </k>
+      <env>
+        var ( 0 ) |-> #sl ( 2 )
+        var ( 1 ) |-> #sl ( 3 )
+        var ( 2 ) |-> #sl ( 4 )
+      </env>
+      <clstack>
+        ListItem ( var ( 2 ) )
+        ListItem ( var ( 0 ) |-> #sl ( 2 )
+        var ( 1 ) |-> #sl ( 3 ) )
+        ListItem ( var ( 1 ) )
+        ListItem ( var ( 0 ) |-> #sl ( 2 ) )
+        ListItem ( var ( 0 ) )
+        ListItem ( .Map )
+        ListItem ( #state ( . , .Map ) )
+      </clstack>
+    </Thread>
+    <activeThreads>
+      SetItem ( 0 )
+    </activeThreads>
+    <cntThreads>
+      1
+    </cntThreads>
+    <cthread>
+      0
+    </cthread>
+  </threads>
+  <closures>
+    <closureCnt>
+      1
+    </closureCnt>
+    <funclosure>
+      main |-> 0
+    </funclosure>
+    <closure>
+      <crId>
+        0
+      </crId>
+      <crContext>
+        .
+      </crContext>
+      <crParams>
+        .Idents
+      </crParams>
+      <crBody>
+        (| letcl var ( 0 ) =cl #AllocateInit ( valcl ( 2 ) , #owner ( #array ( i32 , 2 ) ) , valcl ( V0 ) , valcl ( V1 ) , .ExpCLs ) incl letcl var ( 1 ) =cl refcl ( 0 , var ( 0 ) ) incl letcl var ( 2 ) =cl refcl ( 1 , var ( 0 ) ) incl letcl var ( 3 ) =cl var ( 1 ) incl clskip |)
+      </crBody>
+    </closure>
+  </closures>
+  <memory>
+    <slocAddr>
+      5
+    </slocAddr>
+    <sloc>
+      2 |-> #own ( #blk ( 1 ) )
+      3 |-> #shr ( 3 , 5 , #sl ( 2 ) )
+      4 |-> #mut ( 4 , 4 , #sl ( 2 ) )
+    </sloc>
+    <blkAddr>
+      2
+    </blkAddr>
+    <blocks>
+      #heap ( 1 , 0 ) |-> valcl ( V0 )
+      #heap ( 1 , 1 ) |-> valcl ( V1 )
+      1 |-> #blkInfo ( 2 , #owner ( #array ( i32 , 2 ) ) )
+    </blocks>
+    <locRW>
+      SetItem ( #lread ( #sl ( 3 ) , 5 ) )
+    </locRW>
+    <memStatus>
+      #heap ( 1 , 0 ) |-> #ms ( 0 , 0 )
+      #heap ( 1 , 1 ) |-> #ms ( 0 , 0 )
+      #sl ( 2 ) |-> #ms ( 0 , 0 )
+      #sl ( 3 ) |-> #ms ( 0 , 0 )
+      #sl ( 4 ) |-> #ms ( 0 , 0 )
+    </memStatus>
+    <clk>
+      6
+    </clk>
+  </memory>
+  <output>
+    .List
+  </output>
+</T>
+Command exited with non-zero status 1
+	Command being timed: "./clkprove rust_tests/rv/obsc/t11-spec.k"
+	User time (seconds): 34.59
+	System time (seconds): 0.60
+	Percent of CPU this job got: 211%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:16.61
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 819272
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 393370
+	Voluntary context switches: 11042
+	Involuntary context switches: 1757
+	Swaps: 0
+	File system inputs: 8
+	File system outputs: 101016
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1
+verifying rust_tests/rv/obsc/t12-spec.k:
+          
+<T>
+  <threads>
+    <Thread>
+      <threadId>
+        0
+      </threadId>
+      <tname>
+        "main"
+      </tname>
+      <k>
+        #stuck ( #mut ( 4 , 4 , #sl ( 2 ) ) , #shr ( 3 , 5 , #sl ( 2 ) ) ) ~> #ckRefLT ( 2 |-> #own ( #blk ( 1 ) )
+        3 |-> #shr ( 3 , 5 , #sl ( 2 ) ) , 3 , #shr ( 3 , 5 , #sl ( 2 ) ) ) ~> #ckRefLT ( #heap ( 1 , 0 ) |-> valcl ( V0 )
+        #heap ( 1 , 1 ) |-> valcl ( V1 )
+        1 |-> #blkInfo ( 2 , #owner ( #array ( i32 , 2 ) ) ) , 3 , #shr ( 3 , 5 , #sl ( 2 ) ) ) ~> #wellFormAct ( #shr ( 3 , 5 , #sl ( 2 ) ) ) ~> #rdLVDref ( #readna ( #sl ( 3 ) ) , valcl ( true ) ) ~> #freezer#LVField1_ ( valcl ( 0 ) ) ~> #freezer#Read0_ ( ) ~> #freezer#letcl1_ ( var ( 3 ) , clskip ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( )
+      </k>
+      <env>
+        var ( 0 ) |-> #sl ( 2 )
+        var ( 1 ) |-> #sl ( 3 )
+        var ( 2 ) |-> #sl ( 4 )
+      </env>
+      <clstack>
+        ListItem ( var ( 2 ) )
+        ListItem ( var ( 0 ) |-> #sl ( 2 )
+        var ( 1 ) |-> #sl ( 3 ) )
+        ListItem ( var ( 1 ) )
+        ListItem ( var ( 0 ) |-> #sl ( 2 ) )
+        ListItem ( var ( 0 ) )
+        ListItem ( .Map )
+        ListItem ( #state ( . , .Map ) )
+      </clstack>
+    </Thread>
+    <activeThreads>
+      SetItem ( 0 )
+    </activeThreads>
+    <cntThreads>
+      1
+    </cntThreads>
+    <cthread>
+      0
+    </cthread>
+  </threads>
+  <closures>
+    <closureCnt>
+      1
+    </closureCnt>
+    <funclosure>
+      main |-> 0
+    </funclosure>
+    <closure>
+      <crId>
+        0
+      </crId>
+      <crContext>
+        .
+      </crContext>
+      <crParams>
+        .Idents
+      </crParams>
+      <crBody>
+        (| letcl var ( 0 ) =cl #AllocateInit ( valcl ( 2 ) , #owner ( #array ( i32 , 2 ) ) , valcl ( V0 ) , valcl ( V1 ) , .ExpCLs ) incl letcl var ( 1 ) =cl refcl ( 0 , var ( 0 ) ) incl letcl var ( 2 ) =cl refcl ( 1 , var ( 0 ) ) incl letcl var ( 3 ) =cl #Index ( *cl na var ( 1 ) , valcl ( 0 ) ) incl clskip |)
+      </crBody>
+    </closure>
+  </closures>
+  <memory>
+    <slocAddr>
+      5
+    </slocAddr>
+    <sloc>
+      2 |-> #own ( #blk ( 1 ) )
+      3 |-> #shr ( 3 , 5 , #sl ( 2 ) )
+      4 |-> #mut ( 4 , 4 , #sl ( 2 ) )
+    </sloc>
+    <blkAddr>
+      2
+    </blkAddr>
+    <blocks>
+      #heap ( 1 , 0 ) |-> valcl ( V0 )
+      #heap ( 1 , 1 ) |-> valcl ( V1 )
+      1 |-> #blkInfo ( 2 , #owner ( #array ( i32 , 2 ) ) )
+    </blocks>
+    <locRW>
+      SetItem ( #lread ( #sl ( 3 ) , 5 ) )
+    </locRW>
+    <memStatus>
+      #heap ( 1 , 0 ) |-> #ms ( 0 , 0 )
+      #heap ( 1 , 1 ) |-> #ms ( 0 , 0 )
+      #sl ( 2 ) |-> #ms ( 0 , 0 )
+      #sl ( 3 ) |-> #ms ( 0 , 0 )
+      #sl ( 4 ) |-> #ms ( 0 , 0 )
+    </memStatus>
+    <clk>
+      5
+    </clk>
+  </memory>
+  <output>
+    .List
+  </output>
+</T>
+Command exited with non-zero status 1
+	Command being timed: "./clkprove rust_tests/rv/obsc/t12-spec.k"
+	User time (seconds): 31.68
+	System time (seconds): 0.55
+	Percent of CPU this job got: 193%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:16.62
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 651172
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 326384
+	Voluntary context switches: 11083
+	Involuntary context switches: 1668
+	Swaps: 0
+	File system inputs: 32
+	File system outputs: 106712
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1
+verifying rust_tests/rv/obsc/t13-spec.k:
+          
+<T>
+  <threads>
+    <Thread>
+      <threadId>
+        0
+      </threadId>
+      <tname>
+        "main"
+      </tname>
+      <k>
+        #stuck ( #mut ( 4 , 4 , #sl ( 2 ) ) , #mut ( 3 , 5 , #sl ( 2 ) ) ) ~> #ckRefLT ( 2 |-> #own ( #blk ( 1 ) )
+        3 |-> #mut ( 3 , 5 , #sl ( 2 ) ) , 3 , #mut ( 3 , 5 , #sl ( 2 ) ) ) ~> #ckRefLT ( #heap ( 1 , 0 ) |-> valcl ( V0 )
+        #heap ( 1 , 1 ) |-> valcl ( V1 )
+        1 |-> #blkInfo ( 2 , #owner ( #array ( i32 , 2 ) ) ) , 3 , #mut ( 3 , 5 , #sl ( 2 ) ) ) ~> #wellFormAct ( #mut ( 3 , 5 , #sl ( 2 ) ) ) ~> #rdLVDref ( #readna ( #sl ( 3 ) ) , valcl ( true ) ) ~> #freezer#LVField1_ ( valcl ( 0 ) ) ~> #freezer#Read0_ ( ) ~> #freezer#letcl1_ ( var ( 3 ) , clskip ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( )
+      </k>
+      <env>
+        var ( 0 ) |-> #sl ( 2 )
+        var ( 1 ) |-> #sl ( 3 )
+        var ( 2 ) |-> #sl ( 4 )
+      </env>
+      <clstack>
+        ListItem ( var ( 2 ) )
+        ListItem ( var ( 0 ) |-> #sl ( 2 )
+        var ( 1 ) |-> #sl ( 3 ) )
+        ListItem ( var ( 1 ) )
+        ListItem ( var ( 0 ) |-> #sl ( 2 ) )
+        ListItem ( var ( 0 ) )
+        ListItem ( .Map )
+        ListItem ( #state ( . , .Map ) )
+      </clstack>
+    </Thread>
+    <activeThreads>
+      SetItem ( 0 )
+    </activeThreads>
+    <cntThreads>
+      1
+    </cntThreads>
+    <cthread>
+      0
+    </cthread>
+  </threads>
+  <closures>
+    <closureCnt>
+      1
+    </closureCnt>
+    <funclosure>
+      main |-> 0
+    </funclosure>
+    <closure>
+      <crId>
+        0
+      </crId>
+      <crContext>
+        .
+      </crContext>
+      <crParams>
+        .Idents
+      </crParams>
+      <crBody>
+        (| letcl var ( 0 ) =cl #AllocateInit ( valcl ( 2 ) , #owner ( #array ( i32 , 2 ) ) , valcl ( V0 ) , valcl ( V1 ) , .ExpCLs ) incl letcl var ( 1 ) =cl refcl ( 1 , var ( 0 ) ) incl letcl var ( 2 ) =cl refcl ( 1 , var ( 0 ) ) incl letcl var ( 3 ) =cl #Index ( *cl na var ( 1 ) , valcl ( 0 ) ) incl clskip |)
+      </crBody>
+    </closure>
+  </closures>
+  <memory>
+    <slocAddr>
+      5
+    </slocAddr>
+    <sloc>
+      2 |-> #own ( #blk ( 1 ) )
+      3 |-> #mut ( 3 , 5 , #sl ( 2 ) )
+      4 |-> #mut ( 4 , 4 , #sl ( 2 ) )
+    </sloc>
+    <blkAddr>
+      2
+    </blkAddr>
+    <blocks>
+      #heap ( 1 , 0 ) |-> valcl ( V0 )
+      #heap ( 1 , 1 ) |-> valcl ( V1 )
+      1 |-> #blkInfo ( 2 , #owner ( #array ( i32 , 2 ) ) )
+    </blocks>
+    <locRW>
+      SetItem ( #lread ( #sl ( 3 ) , 5 ) )
+    </locRW>
+    <memStatus>
+      #heap ( 1 , 0 ) |-> #ms ( 0 , 0 )
+      #heap ( 1 , 1 ) |-> #ms ( 0 , 0 )
+      #sl ( 2 ) |-> #ms ( 0 , 0 )
+      #sl ( 3 ) |-> #ms ( 0 , 0 )
+      #sl ( 4 ) |-> #ms ( 0 , 0 )
+    </memStatus>
+    <clk>
+      5
+    </clk>
+  </memory>
+  <output>
+    .List
+  </output>
+</T>
+Command exited with non-zero status 1
+	Command being timed: "./clkprove rust_tests/rv/obsc/t13-spec.k"
+	User time (seconds): 34.19
+	System time (seconds): 0.59
+	Percent of CPU this job got: 207%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:16.76
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 662852
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 353134
+	Voluntary context switches: 10892
+	Involuntary context switches: 1592
+	Swaps: 0
+	File system inputs: 24
+	File system outputs: 112408
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1
+verifying rust_tests/rv/obsc/t14-spec.k:
+          
+<T>
+  <threads>
+    <Thread>
+      <threadId>
+        0
+      </threadId>
+      <tname>
+        "main"
+      </tname>
+      <k>
+        #stuck ( #mut ( 2 , 2 , #sl ( 2 ) ) , #shr ( 1 , 3 , #sl ( 2 ) ) ) ~> #ckRefLT ( 2 |-> valcl ( V0 )
+        3 |-> #shr ( 1 , 3 , #sl ( 2 ) ) , 3 , #shr ( 1 , 3 , #sl ( 2 ) ) ) ~> #ckRefLT ( .Map , 3 , #shr ( 1 , 3 , #sl ( 2 ) ) ) ~> #wellFormAct ( #shr ( 1 , 3 , #sl ( 2 ) ) ) ~> #readna ( #sl ( 3 ) ) ~> #freezer#letcl1_ ( var ( 3 ) , clskip ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( )
+      </k>
+      <env>
+        var ( 0 ) |-> #sl ( 2 )
+        var ( 1 ) |-> #sl ( 3 )
+        var ( 2 ) |-> #sl ( 4 )
+      </env>
+      <clstack>
+        ListItem ( var ( 2 ) )
+        ListItem ( var ( 0 ) |-> #sl ( 2 )
+        var ( 1 ) |-> #sl ( 3 ) )
+        ListItem ( var ( 1 ) )
+        ListItem ( var ( 0 ) |-> #sl ( 2 ) )
+        ListItem ( var ( 0 ) )
+        ListItem ( .Map )
+        ListItem ( #state ( . , .Map ) )
+      </clstack>
+    </Thread>
+    <activeThreads>
+      SetItem ( 0 )
+    </activeThreads>
+    <cntThreads>
+      1
+    </cntThreads>
+    <cthread>
+      0
+    </cthread>
+  </threads>
+  <closures>
+    <closureCnt>
+      1
+    </closureCnt>
+    <funclosure>
+      main |-> 0
+    </funclosure>
+    <closure>
+      <crId>
+        0
+      </crId>
+      <crContext>
+        .
+      </crContext>
+      <crParams>
+        .Idents
+      </crParams>
+      <crBody>
+        (| letcl var ( 0 ) =cl valcl ( V0 ) incl letcl var ( 1 ) =cl refcl ( 0 , var ( 0 ) ) incl letcl var ( 2 ) =cl refcl ( 1 , var ( 0 ) ) incl letcl var ( 3 ) =cl var ( 1 ) incl clskip |)
+      </crBody>
+    </closure>
+  </closures>
+  <memory>
+    <slocAddr>
+      5
+    </slocAddr>
+    <sloc>
+      2 |-> valcl ( V0 )
+      3 |-> #shr ( 1 , 3 , #sl ( 2 ) )
+      4 |-> #mut ( 2 , 2 , #sl ( 2 ) )
+    </sloc>
+    <blkAddr>
+      1
+    </blkAddr>
+    <blocks>
+      .Map
+    </blocks>
+    <locRW>
+      SetItem ( #lread ( #sl ( 3 ) , 3 ) )
+    </locRW>
+    <memStatus>
+      #sl ( 2 ) |-> #ms ( 0 , 0 )
+      #sl ( 3 ) |-> #ms ( 0 , 0 )
+      #sl ( 4 ) |-> #ms ( 0 , 0 )
+    </memStatus>
+    <clk>
+      4
+    </clk>
+  </memory>
+  <output>
+    .List
+  </output>
+</T>
+Command exited with non-zero status 1
+	Command being timed: "./clkprove rust_tests/rv/obsc/t14-spec.k"
+	User time (seconds): 33.22
+	System time (seconds): 0.69
+	Percent of CPU this job got: 183%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:18.52
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 644144
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 324280
+	Voluntary context switches: 10845
+	Involuntary context switches: 3935
+	Swaps: 0
+	File system inputs: 16
+	File system outputs: 118096
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1
+verifying rust_tests/rv/obsc/t15-spec.k:
+          
+<T>
+  <threads>
+    <Thread>
+      <threadId>
+        0
+      </threadId>
+      <tname>
+        "main"
+      </tname>
+      <k>
+        #stuck ( #mut ( 2 , 2 , #sl ( 2 ) ) , #shr ( 1 , 3 , #sl ( 2 ) ) ) ~> #ckRefLT ( 2 |-> valcl ( V0 )
+        3 |-> #shr ( 1 , 3 , #sl ( 2 ) ) , 3 , #shr ( 1 , 3 , #sl ( 2 ) ) ) ~> #ckRefLT ( .Map , 3 , #shr ( 1 , 3 , #sl ( 2 ) ) ) ~> #wellFormAct ( #shr ( 1 , 3 , #sl ( 2 ) ) ) ~> #readna ( #sl ( 3 ) ) ~> #freezer#letcl1_ ( var ( 3 ) , clskip ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( )
+      </k>
+      <env>
+        var ( 0 ) |-> #sl ( 2 )
+        var ( 1 ) |-> #sl ( 3 )
+        var ( 2 ) |-> #sl ( 4 )
+      </env>
+      <clstack>
+        ListItem ( var ( 2 ) )
+        ListItem ( var ( 0 ) |-> #sl ( 2 )
+        var ( 1 ) |-> #sl ( 3 ) )
+        ListItem ( var ( 1 ) )
+        ListItem ( var ( 0 ) |-> #sl ( 2 ) )
+        ListItem ( var ( 0 ) )
+        ListItem ( .Map )
+        ListItem ( #state ( . , .Map ) )
+      </clstack>
+    </Thread>
+    <activeThreads>
+      SetItem ( 0 )
+    </activeThreads>
+    <cntThreads>
+      1
+    </cntThreads>
+    <cthread>
+      0
+    </cthread>
+  </threads>
+  <closures>
+    <closureCnt>
+      1
+    </closureCnt>
+    <funclosure>
+      main |-> 0
+    </funclosure>
+    <closure>
+      <crId>
+        0
+      </crId>
+      <crContext>
+        .
+      </crContext>
+      <crParams>
+        .Idents
+      </crParams>
+      <crBody>
+        (| letcl var ( 0 ) =cl valcl ( V0 ) incl letcl var ( 1 ) =cl refcl ( 0 , var ( 0 ) ) incl letcl var ( 2 ) =cl refcl ( 1 , var ( 0 ) ) incl letcl var ( 3 ) =cl var ( 1 ) incl clskip |)
+      </crBody>
+    </closure>
+  </closures>
+  <memory>
+    <slocAddr>
+      5
+    </slocAddr>
+    <sloc>
+      2 |-> valcl ( V0 )
+      3 |-> #shr ( 1 , 3 , #sl ( 2 ) )
+      4 |-> #mut ( 2 , 2 , #sl ( 2 ) )
+    </sloc>
+    <blkAddr>
+      1
+    </blkAddr>
+    <blocks>
+      .Map
+    </blocks>
+    <locRW>
+      SetItem ( #lread ( #sl ( 3 ) , 3 ) )
+    </locRW>
+    <memStatus>
+      #sl ( 2 ) |-> #ms ( 0 , 0 )
+      #sl ( 3 ) |-> #ms ( 0 , 0 )
+      #sl ( 4 ) |-> #ms ( 0 , 0 )
+    </memStatus>
+    <clk>
+      4
+    </clk>
+  </memory>
+  <output>
+    .List
+  </output>
+</T>
+Command exited with non-zero status 1
+	Command being timed: "./clkprove rust_tests/rv/obsc/t15-spec.k"
+	User time (seconds): 33.58
+	System time (seconds): 0.68
+	Percent of CPU this job got: 190%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:17.95
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 648316
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 322999
+	Voluntary context switches: 10820
+	Involuntary context switches: 3374
+	Swaps: 0
+	File system inputs: 8
+	File system outputs: 123768
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1
+verifying rust_tests/rv/obsc/t16-spec.k:
+          
+<T>
+  <threads>
+    <Thread>
+      <threadId>
+        0
+      </threadId>
+      <tname>
+        "main"
+      </tname>
+      <k>
+        #stuck ( #mut ( 2 , 2 , #sl ( 2 ) ) , #mut ( 1 , 3 , #sl ( 2 ) ) ) ~> #ckRefLT ( 2 |-> valcl ( V0 )
+        3 |-> #mut ( 1 , 3 , #sl ( 2 ) ) , 3 , #mut ( 1 , 3 , #sl ( 2 ) ) ) ~> #ckRefLT ( .Map , 3 , #mut ( 1 , 3 , #sl ( 2 ) ) ) ~> #wellFormAct ( #mut ( 1 , 3 , #sl ( 2 ) ) ) ~> #readna ( #sl ( 3 ) ) ~> #freezer#letcl1_ ( var ( 3 ) , clskip ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( )
+      </k>
+      <env>
+        var ( 0 ) |-> #sl ( 2 )
+        var ( 1 ) |-> #sl ( 3 )
+        var ( 2 ) |-> #sl ( 4 )
+      </env>
+      <clstack>
+        ListItem ( var ( 2 ) )
+        ListItem ( var ( 0 ) |-> #sl ( 2 )
+        var ( 1 ) |-> #sl ( 3 ) )
+        ListItem ( var ( 1 ) )
+        ListItem ( var ( 0 ) |-> #sl ( 2 ) )
+        ListItem ( var ( 0 ) )
+        ListItem ( .Map )
+        ListItem ( #state ( . , .Map ) )
+      </clstack>
+    </Thread>
+    <activeThreads>
+      SetItem ( 0 )
+    </activeThreads>
+    <cntThreads>
+      1
+    </cntThreads>
+    <cthread>
+      0
+    </cthread>
+  </threads>
+  <closures>
+    <closureCnt>
+      1
+    </closureCnt>
+    <funclosure>
+      main |-> 0
+    </funclosure>
+    <closure>
+      <crId>
+        0
+      </crId>
+      <crContext>
+        .
+      </crContext>
+      <crParams>
+        .Idents
+      </crParams>
+      <crBody>
+        (| letcl var ( 0 ) =cl valcl ( V0 ) incl letcl var ( 1 ) =cl refcl ( 1 , var ( 0 ) ) incl letcl var ( 2 ) =cl refcl ( 1 , var ( 0 ) ) incl letcl var ( 3 ) =cl var ( 1 ) incl clskip |)
+      </crBody>
+    </closure>
+  </closures>
+  <memory>
+    <slocAddr>
+      5
+    </slocAddr>
+    <sloc>
+      2 |-> valcl ( V0 )
+      3 |-> #mut ( 1 , 3 , #sl ( 2 ) )
+      4 |-> #mut ( 2 , 2 , #sl ( 2 ) )
+    </sloc>
+    <blkAddr>
+      1
+    </blkAddr>
+    <blocks>
+      .Map
+    </blocks>
+    <locRW>
+      SetItem ( #lread ( #sl ( 3 ) , 3 ) )
+    </locRW>
+    <memStatus>
+      #sl ( 2 ) |-> #ms ( 0 , 0 )
+      #sl ( 3 ) |-> #ms ( 0 , 0 )
+      #sl ( 4 ) |-> #ms ( 0 , 0 )
+    </memStatus>
+    <clk>
+      4
+    </clk>
+  </memory>
+  <output>
+    .List
+  </output>
+</T>
+Command exited with non-zero status 1
+	Command being timed: "./clkprove rust_tests/rv/obsc/t16-spec.k"
+	User time (seconds): 33.70
+	System time (seconds): 0.77
+	Percent of CPU this job got: 188%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:18.31
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 780732
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 354555
+	Voluntary context switches: 11249
+	Involuntary context switches: 4890
+	Swaps: 0
+	File system inputs: 8
+	File system outputs: 129472
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1
+verifying rust_tests/rv/obsc/t17-spec.k:
+          
+<T>
+  <threads>
+    <Thread>
+      <threadId>
+        0
+      </threadId>
+      <tname>
+        "main"
+      </tname>
+      <k>
+        #stuck ( #mut ( 2 , 2 , #sl ( 2 ) ) , #mut ( 1 , 3 , #sl ( 2 ) ) ) ~> #ckRefLT ( 2 |-> valcl ( 0 )
+        3 |-> #mut ( 1 , 3 , #sl ( 2 ) ) , 3 , #mut ( 1 , 3 , #sl ( 2 ) ) ) ~> #ckRefLT ( .Map , 3 , #mut ( 1 , 3 , #sl ( 2 ) ) ) ~> #wellFormAct ( #mut ( 1 , 3 , #sl ( 2 ) ) ) ~> #readna ( #sl ( 3 ) ) ~> #freezer#letcl1_ ( var ( 3 ) , clskip ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( )
+      </k>
+      <env>
+        var ( 0 ) |-> #sl ( 2 )
+        var ( 1 ) |-> #sl ( 3 )
+        var ( 2 ) |-> #sl ( 4 )
+      </env>
+      <clstack>
+        ListItem ( var ( 2 ) )
+        ListItem ( var ( 0 ) |-> #sl ( 2 )
+        var ( 1 ) |-> #sl ( 3 ) )
+        ListItem ( var ( 1 ) )
+        ListItem ( var ( 0 ) |-> #sl ( 2 ) )
+        ListItem ( var ( 0 ) )
+        ListItem ( .Map )
+        ListItem ( #state ( . , .Map ) )
+      </clstack>
+    </Thread>
+    <activeThreads>
+      SetItem ( 0 )
+    </activeThreads>
+    <cntThreads>
+      1
+    </cntThreads>
+    <cthread>
+      0
+    </cthread>
+  </threads>
+  <closures>
+    <closureCnt>
+      1
+    </closureCnt>
+    <funclosure>
+      main |-> 0
+    </funclosure>
+    <closure>
+      <crId>
+        0
+      </crId>
+      <crContext>
+        .
+      </crContext>
+      <crParams>
+        .Idents
+      </crParams>
+      <crBody>
+        (| letcl var ( 0 ) =cl valcl ( 0 ) incl letcl var ( 1 ) =cl refcl ( 1 , var ( 0 ) ) incl letcl var ( 2 ) =cl refcl ( 1 , var ( 0 ) ) incl letcl var ( 3 ) =cl var ( 1 ) incl clskip |)
+      </crBody>
+    </closure>
+  </closures>
+  <memory>
+    <slocAddr>
+      5
+    </slocAddr>
+    <sloc>
+      2 |-> valcl ( 0 )
+      3 |-> #mut ( 1 , 3 , #sl ( 2 ) )
+      4 |-> #mut ( 2 , 2 , #sl ( 2 ) )
+    </sloc>
+    <blkAddr>
+      1
+    </blkAddr>
+    <blocks>
+      .Map
+    </blocks>
+    <locRW>
+      SetItem ( #lread ( #sl ( 3 ) , 3 ) )
+    </locRW>
+    <memStatus>
+      #sl ( 2 ) |-> #ms ( 0 , 0 )
+      #sl ( 3 ) |-> #ms ( 0 , 0 )
+      #sl ( 4 ) |-> #ms ( 0 , 0 )
+    </memStatus>
+    <clk>
+      4
+    </clk>
+  </memory>
+  <output>
+    .List
+  </output>
+</T>
+Command exited with non-zero status 1
+	Command being timed: "./clkprove rust_tests/rv/obsc/t17-spec.k"
+	User time (seconds): 34.78
+	System time (seconds): 0.72
+	Percent of CPU this job got: 198%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:17.90
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 920700
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 396240
+	Voluntary context switches: 10897
+	Involuntary context switches: 2297
+	Swaps: 0
+	File system inputs: 16
+	File system outputs: 135152
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1
+verifying rust_tests/rv/obsc/t18-spec.k:
+          
+#True
+	Command being timed: "./clkprove rust_tests/rv/obsc/t18-spec.k"
+	User time (seconds): 34.62
+	System time (seconds): 0.70
+	Percent of CPU this job got: 185%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:19.07
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 861780
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 378526
+	Voluntary context switches: 11871
+	Involuntary context switches: 2804
+	Swaps: 0
+	File system inputs: 16
+	File system outputs: 140840
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+verifying rust_tests/rv/obsc/t19-spec.k:
+          
+<T>
+  <threads>
+    <Thread>
+      <threadId>
+        0
+      </threadId>
+      <tname>
+        "main"
+      </tname>
+      <k>
+        #stuck ( #mut ( 4 , 4 , #sl ( 2 ) ) , #shr ( 3 , 5 , #sl ( 2 ) ) ) ~> #ckRefLT ( 2 |-> #own ( #blk ( 1 ) )
+        3 |-> #shr ( 3 , 5 , #sl ( 2 ) ) , 3 , #shr ( 3 , 5 , #sl ( 2 ) ) ) ~> #ckRefLT ( #heap ( 1 , 0 ) |-> valcl ( V0 )
+        #heap ( 1 , 1 ) |-> valcl ( V1 )
+        1 |-> #blkInfo ( 2 , #owner ( #array ( i32 , 2 ) ) ) , 3 , #shr ( 3 , 5 , #sl ( 2 ) ) ) ~> #wellFormAct ( #shr ( 3 , 5 , #sl ( 2 ) ) ) ~> #readna ( #sl ( 3 ) ) ~> #freezer#letcl1_ ( var ( 3 ) , letcl var ( 4 ) =cl var ( 2 ) incl clskip ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( )
+      </k>
+      <env>
+        var ( 0 ) |-> #sl ( 2 )
+        var ( 1 ) |-> #sl ( 3 )
+        var ( 2 ) |-> #sl ( 4 )
+      </env>
+      <clstack>
+        ListItem ( var ( 2 ) )
+        ListItem ( var ( 0 ) |-> #sl ( 2 )
+        var ( 1 ) |-> #sl ( 3 ) )
+        ListItem ( var ( 1 ) )
+        ListItem ( var ( 0 ) |-> #sl ( 2 ) )
+        ListItem ( var ( 0 ) )
+        ListItem ( .Map )
+        ListItem ( #state ( . , .Map ) )
+      </clstack>
+    </Thread>
+    <activeThreads>
+      SetItem ( 0 )
+    </activeThreads>
+    <cntThreads>
+      1
+    </cntThreads>
+    <cthread>
+      0
+    </cthread>
+  </threads>
+  <closures>
+    <closureCnt>
+      1
+    </closureCnt>
+    <funclosure>
+      main |-> 0
+    </funclosure>
+    <closure>
+      <crId>
+        0
+      </crId>
+      <crContext>
+        .
+      </crContext>
+      <crParams>
+        .Idents
+      </crParams>
+      <crBody>
+        (| letcl var ( 0 ) =cl #AllocateInit ( valcl ( 2 ) , #owner ( #array ( i32 , 2 ) ) , valcl ( V0 ) , valcl ( V1 ) , .ExpCLs ) incl letcl var ( 1 ) =cl refcl ( 0 , var ( 0 ) ) incl letcl var ( 2 ) =cl refcl ( 1 , var ( 0 ) ) incl letcl var ( 3 ) =cl var ( 1 ) incl letcl var ( 4 ) =cl var ( 2 ) incl clskip |)
+      </crBody>
+    </closure>
+  </closures>
+  <memory>
+    <slocAddr>
+      5
+    </slocAddr>
+    <sloc>
+      2 |-> #own ( #blk ( 1 ) )
+      3 |-> #shr ( 3 , 5 , #sl ( 2 ) )
+      4 |-> #mut ( 4 , 4 , #sl ( 2 ) )
+    </sloc>
+    <blkAddr>
+      2
+    </blkAddr>
+    <blocks>
+      #heap ( 1 , 0 ) |-> valcl ( V0 )
+      #heap ( 1 , 1 ) |-> valcl ( V1 )
+      1 |-> #blkInfo ( 2 , #owner ( #array ( i32 , 2 ) ) )
+    </blocks>
+    <locRW>
+      SetItem ( #lread ( #sl ( 3 ) , 5 ) )
+    </locRW>
+    <memStatus>
+      #heap ( 1 , 0 ) |-> #ms ( 0 , 0 )
+      #heap ( 1 , 1 ) |-> #ms ( 0 , 0 )
+      #sl ( 2 ) |-> #ms ( 0 , 0 )
+      #sl ( 3 ) |-> #ms ( 0 , 0 )
+      #sl ( 4 ) |-> #ms ( 0 , 0 )
+    </memStatus>
+    <clk>
+      6
+    </clk>
+  </memory>
+  <output>
+    .List
+  </output>
+</T>
+Command exited with non-zero status 1
+	Command being timed: "./clkprove rust_tests/rv/obsc/t19-spec.k"
+	User time (seconds): 33.83
+	System time (seconds): 0.61
+	Percent of CPU this job got: 187%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:18.39
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 739344
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 346416
+	Voluntary context switches: 11394
+	Involuntary context switches: 1891
+	Swaps: 0
+	File system inputs: 16
+	File system outputs: 146528
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1
+verifying rust_tests/rv/obsc/t1-spec.k:
+          
+<T>
+  <threads>
+    <Thread>
+      <threadId>
+        0
+      </threadId>
+      <tname>
+        "main"
+      </tname>
+      <k>
+        #Read ( #pair ( #sl ( 2 ) , valcl ( true ) ) ) ~> #freezer#Move1_ ( #write ( #sl ( 2 ) , #uninit ( 0 ) ) ) ~> #freezer#letcl1_ ( var ( 2 ) , clskip ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( )
+      </k>
+      <env>
+        var ( 0 ) |-> #sl ( 2 )
+        var ( 1 ) |-> #sl ( 3 )
+      </env>
+      <clstack>
+        ListItem ( var ( 1 ) )
+        ListItem ( var ( 0 ) |-> #sl ( 2 ) )
+        ListItem ( var ( 0 ) )
+        ListItem ( .Map )
+        ListItem ( #state ( . , .Map ) )
+      </clstack>
+    </Thread>
+    <activeThreads>
+      SetItem ( 0 )
+    </activeThreads>
+    <cntThreads>
+      1
+    </cntThreads>
+    <cthread>
+      0
+    </cthread>
+  </threads>
+  <closures>
+    <closureCnt>
+      1
+    </closureCnt>
+    <funclosure>
+      main |-> 0
+    </funclosure>
+    <closure>
+      <crId>
+        0
+      </crId>
+      <crContext>
+        .
+      </crContext>
+      <crParams>
+        .Idents
+      </crParams>
+      <crBody>
+        (| letcl var ( 0 ) =cl #AllocateInit ( valcl ( 2 ) , #owner ( #array ( i32 , 2 ) ) , valcl ( V0 ) , valcl ( V1 ) , .ExpCLs ) incl letcl var ( 1 ) =cl #move ( var ( 0 ) ) incl letcl var ( 2 ) =cl #move ( var ( 0 ) ) incl clskip |)
+      </crBody>
+    </closure>
+  </closures>
+  <memory>
+    <slocAddr>
+      4
+    </slocAddr>
+    <sloc>
+      2 |-> #uninit ( 0 )
+      3 |-> #own ( #blk ( 1 ) )
+    </sloc>
+    <blkAddr>
+      2
+    </blkAddr>
+    <blocks>
+      #heap ( 1 , 0 ) |-> valcl ( V0 )
+      #heap ( 1 , 1 ) |-> valcl ( V1 )
+      1 |-> #blkInfo ( 2 , #owner ( #array ( i32 , 2 ) ) )
+    </blocks>
+    <locRW>
+      SetItem ( #lread ( #sl ( 2 ) , 3 ) )
+      SetItem ( #lread ( #sl ( 2 ) , 6 ) )
+      SetItem ( #lwrite ( #sl ( 2 ) , 4 ) )
+    </locRW>
+    <memStatus>
+      #heap ( 1 , 0 ) |-> #ms ( 0 , 0 )
+      #heap ( 1 , 1 ) |-> #ms ( 0 , 0 )
+      #sl ( 2 ) |-> #ms ( 0 , 0 )
+      #sl ( 3 ) |-> #ms ( 0 , 0 )
+    </memStatus>
+    <clk>
+      6
+    </clk>
+  </memory>
+  <output>
+    .List
+  </output>
+</T>
+Command exited with non-zero status 1
+	Command being timed: "./clkprove rust_tests/rv/obsc/t1-spec.k"
+	User time (seconds): 35.95
+	System time (seconds): 0.76
+	Percent of CPU this job got: 198%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:18.50
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 842124
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 396644
+	Voluntary context switches: 10871
+	Involuntary context switches: 1929
+	Swaps: 0
+	File system inputs: 8
+	File system outputs: 146608
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1
+verifying rust_tests/rv/obsc/t20-spec.k:
+          
+  <T>
+    <threads>
+      <Thread>
+        <threadId>
+          0
+        </threadId>
+        <tname>
+          "main"
+        </tname>
+        <k>
+          #stuck ( #mut ( 4 , 5 , #sl ( 2 ) ) , #shr ( 3 , 7 , #sl ( 2 ) ) ) ~> #ckRefLT ( 5 |-> #shr ( 6 , 6 , #sl ( 2 ) ) , 3 , #mut ( 3 , 7 , #sl ( 2 ) ) ) ~> #ckRefLT ( #heap ( 1 , 0 ) |-> valcl ( V0 )
+          #heap ( 1 , 1 ) |-> valcl ( V1 )
+          1 |-> #blkInfo ( 2 , #owner ( #array ( i32 , 2 ) ) ) , 3 , #mut ( 3 , 7 , #sl ( 2 ) ) ) ~> #wellFormAct ( #mut ( 3 , 7 , #sl ( 2 ) ) ) ~> #readna ( #sl ( 3 ) ) ~> #freezer#letcl1_ ( var ( 4 ) , clskip ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( )
+        </k>
+        <env>
+          var ( 0 ) |-> #sl ( 2 )
+          var ( 1 ) |-> #sl ( 3 )
+          var ( 2 ) |-> #sl ( 4 )
+          var ( 3 ) |-> #sl ( 5 )
+        </env>
+        <clstack>
+          ListItem ( var ( 3 ) )
+          ListItem ( var ( 0 ) |-> #sl ( 2 )
+          var ( 1 ) |-> #sl ( 3 )
+          var ( 2 ) |-> #sl ( 4 ) )
+          ListItem ( var ( 2 ) )
+          ListItem ( var ( 0 ) |-> #sl ( 2 )
+          var ( 1 ) |-> #sl ( 3 ) )
+          ListItem ( var ( 1 ) )
+          ListItem ( var ( 0 ) |-> #sl ( 2 ) )
+          ListItem ( var ( 0 ) )
+          ListItem ( .Map )
+          ListItem ( #state ( . , .Map ) )
+        </clstack>
+      </Thread>
+      <activeThreads>
+        SetItem ( 0 )
+      </activeThreads>
+      <cntThreads>
+        1
+      </cntThreads>
+      <cthread>
+        0
+      </cthread>
+    </threads>
+    <closures>
+      <closureCnt>
+        1
+      </closureCnt>
+      <funclosure>
+        main |-> 0
+      </funclosure>
+      <closure>
+        <crId>
+          0
+        </crId>
+        <crContext>
+          .
+        </crContext>
+        <crParams>
+          .Idents
+        </crParams>
+        <crBody>
+          (| letcl var ( 0 ) =cl #AllocateInit ( valcl ( 2 ) , #owner ( #array ( i32 , 2 ) ) , valcl ( V0 ) , valcl ( V1 ) , .ExpCLs ) incl letcl var ( 1 ) =cl refcl ( 1 , var ( 0 ) ) incl letcl var ( 2 ) =cl refcl ( 0 , var ( 0 ) ) incl letcl var ( 3 ) =cl var ( 2 ) incl letcl var ( 4 ) =cl var ( 1 ) incl clskip |)
+        </crBody>
+      </closure>
+    </closures>
+    <memory>
+      <slocAddr>
+        6
+      </slocAddr>
+      <sloc>
+        2 |-> #own ( #blk ( 1 ) )
+        3 |-> #mut ( 3 , 7 , #sl ( 2 ) )
+        4 |-> #shr ( 4 , 5 , #sl ( 2 ) )
+        5 |-> #shr ( 6 , 6 , #sl ( 2 ) )
+      </sloc>
+      <blkAddr>
+        2
+      </blkAddr>
+      <blocks>
+        #heap ( 1 , 0 ) |-> valcl ( V0 )
+        #heap ( 1 , 1 ) |-> valcl ( V1 )
+        1 |-> #blkInfo ( 2 , #owner ( #array ( i32 , 2 ) ) )
+      </blocks>
+      <locRW>
+        SetItem ( #lread ( #sl ( 3 ) , 7 ) )
+        SetItem ( #lread ( #sl ( 4 ) , 5 ) )
+      </locRW>
+      <memStatus>
+        #heap ( 1 , 0 ) |-> #ms ( 0 , 0 )
+        #heap ( 1 , 1 ) |-> #ms ( 0 , 0 )
+        #sl ( 2 ) |-> #ms ( 0 , 0 )
+        #sl ( 3 ) |-> #ms ( 0 , 0 )
+        #sl ( 4 ) |-> #ms ( 0 , 0 )
+        #sl ( 5 ) |-> #ms ( 0 , 0 )
+      </memStatus>
+      <clk>
+        8
+      </clk>
+    </memory>
+    <output>
+      .List
+    </output>
+  </T>
+#And
+  <T>
+    <threads>
+      <Thread>
+        <threadId>
+          0
+        </threadId>
+        <tname>
+          "main"
+        </tname>
+        <k>
+          #stuck ( #shr ( 4 , 5 , #sl ( 2 ) ) , #mut ( 3 , 7 , #sl ( 2 ) ) ) ~> #ckRefLT ( 5 |-> #shr ( 6 , 6 , #sl ( 2 ) ) , 3 , #mut ( 3 , 7 , #sl ( 2 ) ) ) ~> #ckRefLT ( #heap ( 1 , 0 ) |-> valcl ( V0 )
+          #heap ( 1 , 1 ) |-> valcl ( V1 )
+          1 |-> #blkInfo ( 2 , #owner ( #array ( i32 , 2 ) ) ) , 3 , #mut ( 3 , 7 , #sl ( 2 ) ) ) ~> #wellFormAct ( #mut ( 3 , 7 , #sl ( 2 ) ) ) ~> #readna ( #sl ( 3 ) ) ~> #freezer#letcl1_ ( var ( 4 ) , clskip ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( )
+        </k>
+        <env>
+          var ( 0 ) |-> #sl ( 2 )
+          var ( 1 ) |-> #sl ( 3 )
+          var ( 2 ) |-> #sl ( 4 )
+          var ( 3 ) |-> #sl ( 5 )
+        </env>
+        <clstack>
+          ListItem ( var ( 3 ) )
+          ListItem ( var ( 0 ) |-> #sl ( 2 )
+          var ( 1 ) |-> #sl ( 3 )
+          var ( 2 ) |-> #sl ( 4 ) )
+          ListItem ( var ( 2 ) )
+          ListItem ( var ( 0 ) |-> #sl ( 2 )
+          var ( 1 ) |-> #sl ( 3 ) )
+          ListItem ( var ( 1 ) )
+          ListItem ( var ( 0 ) |-> #sl ( 2 ) )
+          ListItem ( var ( 0 ) )
+          ListItem ( .Map )
+          ListItem ( #state ( . , .Map ) )
+        </clstack>
+      </Thread>
+      <activeThreads>
+        SetItem ( 0 )
+      </activeThreads>
+      <cntThreads>
+        1
+      </cntThreads>
+      <cthread>
+        0
+      </cthread>
+    </threads>
+    <closures>
+      <closureCnt>
+        1
+      </closureCnt>
+      <funclosure>
+        main |-> 0
+      </funclosure>
+      <closure>
+        <crId>
+          0
+        </crId>
+        <crContext>
+          .
+        </crContext>
+        <crParams>
+          .Idents
+        </crParams>
+        <crBody>
+          (| letcl var ( 0 ) =cl #AllocateInit ( valcl ( 2 ) , #owner ( #array ( i32 , 2 ) ) , valcl ( V0 ) , valcl ( V1 ) , .ExpCLs ) incl letcl var ( 1 ) =cl refcl ( 1 , var ( 0 ) ) incl letcl var ( 2 ) =cl refcl ( 0 , var ( 0 ) ) incl letcl var ( 3 ) =cl var ( 2 ) incl letcl var ( 4 ) =cl var ( 1 ) incl clskip |)
+        </crBody>
+      </closure>
+    </closures>
+    <memory>
+      <slocAddr>
+        6
+      </slocAddr>
+      <sloc>
+        2 |-> #own ( #blk ( 1 ) )
+        3 |-> #mut ( 3 , 7 , #sl ( 2 ) )
+        4 |-> #shr ( 4 , 5 , #sl ( 2 ) )
+        5 |-> #shr ( 6 , 6 , #sl ( 2 ) )
+      </sloc>
+      <blkAddr>
+        2
+      </blkAddr>
+      <blocks>
+        #heap ( 1 , 0 ) |-> valcl ( V0 )
+        #heap ( 1 , 1 ) |-> valcl ( V1 )
+        1 |-> #blkInfo ( 2 , #owner ( #array ( i32 , 2 ) ) )
+      </blocks>
+      <locRW>
+        SetItem ( #lread ( #sl ( 3 ) , 7 ) )
+        SetItem ( #lread ( #sl ( 4 ) , 5 ) )
+      </locRW>
+      <memStatus>
+        #heap ( 1 , 0 ) |-> #ms ( 0 , 0 )
+        #heap ( 1 , 1 ) |-> #ms ( 0 , 0 )
+        #sl ( 2 ) |-> #ms ( 0 , 0 )
+        #sl ( 3 ) |-> #ms ( 0 , 0 )
+        #sl ( 4 ) |-> #ms ( 0 , 0 )
+        #sl ( 5 ) |-> #ms ( 0 , 0 )
+      </memStatus>
+      <clk>
+        8
+      </clk>
+    </memory>
+    <output>
+      .List
+    </output>
+  </T>
+Command exited with non-zero status 1
+	Command being timed: "./clkprove rust_tests/rv/obsc/t20-spec.k"
+	User time (seconds): 37.23
+	System time (seconds): 0.68
+	Percent of CPU this job got: 200%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:18.93
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 841568
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 388100
+	Voluntary context switches: 11251
+	Involuntary context switches: 1904
+	Swaps: 0
+	File system inputs: 8
+	File system outputs: 152280
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1
+verifying rust_tests/rv/obsc/t21-spec.k:
+          
+<T>
+  <threads>
+    <Thread>
+      <threadId>
+        0
+      </threadId>
+      <tname>
+        "main"
+      </tname>
+      <k>
+        #stuck ( #lwrite ( #sl ( 2 ) , 6 ) , #shr ( 4 , 8 , #sl ( 2 ) ) ) ~> #readna ( #sl ( 3 ) ) ~> #freezer#letcl1_ ( var ( 4 ) , clskip ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( )
+      </k>
+      <env>
+        var ( 0 ) |-> #sl ( 2 )
+        var ( 1 ) |-> #sl ( 3 )
+        var ( 3 ) |-> #sl ( 4 )
+      </env>
+      <clstack>
+        ListItem ( var ( 3 ) )
+        ListItem ( var ( 0 ) |-> #sl ( 2 )
+        var ( 1 ) |-> #sl ( 3 ) )
+        ListItem ( var ( 1 ) )
+        ListItem ( var ( 0 ) |-> #sl ( 2 ) )
+        ListItem ( var ( 0 ) )
+        ListItem ( .Map )
+        ListItem ( #state ( . , .Map ) )
+      </clstack>
+    </Thread>
+    <activeThreads>
+      SetItem ( 0 )
+    </activeThreads>
+    <cntThreads>
+      1
+    </cntThreads>
+    <cthread>
+      0
+    </cthread>
+  </threads>
+  <closures>
+    <closureCnt>
+      1
+    </closureCnt>
+    <funclosure>
+      main |-> 0
+    </funclosure>
+    <closure>
+      <crId>
+        0
+      </crId>
+      <crContext>
+        .
+      </crContext>
+      <crParams>
+        .Idents
+      </crParams>
+      <crBody>
+        (| letcl var ( 0 ) =cl #AllocateInit ( valcl ( 2 ) , #owner ( #array ( i32 , 2 ) ) , valcl ( V0 ) , valcl ( V1 ) , .ExpCLs ) incl letcl var ( 1 ) =cl #uninit ( 0 ) incl ( ifcl valcl ( 0 ) thencl (| letcl var ( 2 ) =cl refcl ( 1 , var ( 0 ) ) incl clskip |) elsecl (| var ( 1 ) :=cl refcl ( 0 , var ( 0 ) ) ;cl clskip ;cl clskip |) ;cl clskip ;cl clskip ;cl letcl var ( 3 ) =cl #move ( var ( 0 ) ) incl letcl var ( 4 ) =cl var ( 1 ) incl clskip ) |)
+      </crBody>
+    </closure>
+  </closures>
+  <memory>
+    <slocAddr>
+      5
+    </slocAddr>
+    <sloc>
+      2 |-> #uninit ( 0 )
+      3 |-> #shr ( 4 , 8 , #sl ( 2 ) )
+      4 |-> #own ( #blk ( 1 ) )
+    </sloc>
+    <blkAddr>
+      2
+    </blkAddr>
+    <blocks>
+      #heap ( 1 , 0 ) |-> valcl ( V0 )
+      #heap ( 1 , 1 ) |-> valcl ( V1 )
+      1 |-> #blkInfo ( 2 , #owner ( #array ( i32 , 2 ) ) )
+    </blocks>
+    <locRW>
+      SetItem ( #lread ( #sl ( 2 ) , 5 ) )
+      SetItem ( #lread ( #sl ( 3 ) , 8 ) )
+      SetItem ( #lwrite ( #sl ( 2 ) , 6 ) )
+      SetItem ( #lwrite ( #sl ( 3 ) , 4 ) )
+    </locRW>
+    <memStatus>
+      #heap ( 1 , 0 ) |-> #ms ( 0 , 0 )
+      #heap ( 1 , 1 ) |-> #ms ( 0 , 0 )
+      #sl ( 2 ) |-> #ms ( 0 , 0 )
+      #sl ( 3 ) |-> #ms ( 0 , 0 )
+      #sl ( 4 ) |-> #ms ( 0 , 0 )
+    </memStatus>
+    <clk>
+      9
+    </clk>
+  </memory>
+  <output>
+    .List
+  </output>
+</T>
+Command exited with non-zero status 1
+	Command being timed: "./clkprove rust_tests/rv/obsc/t21-spec.k"
+	User time (seconds): 37.48
+	System time (seconds): 0.76
+	Percent of CPU this job got: 198%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:19.30
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 908584
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 405482
+	Voluntary context switches: 11242
+	Involuntary context switches: 2071
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 157984
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1
+verifying rust_tests/rv/obsc/t22-spec.k:
+          
+#True
+	Command being timed: "./clkprove rust_tests/rv/obsc/t22-spec.k"
+	User time (seconds): 37.21
+	System time (seconds): 0.77
+	Percent of CPU this job got: 196%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:19.31
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 887860
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 405868
+	Voluntary context switches: 11053
+	Involuntary context switches: 1951
+	Swaps: 0
+	File system inputs: 8
+	File system outputs: 163680
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+verifying rust_tests/rv/obsc/t23-spec.k:
+          
+  <T>
+    <threads>
+      <Thread>
+        <threadId>
+          0
+        </threadId>
+        <tname>
+          "main"
+        </tname>
+        <k>
+          #stuck ( #lwrite ( #sl ( 2 ) , 7 ) , #mut ( 5 , 9 , #sl ( 2 ) ) ) ~> #readna ( #sl ( 4 ) ) ~> #freezer#letcl1_ ( var ( 4 ) , clskip ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( )
+        </k>
+        <env>
+          var ( 0 ) |-> #sl ( 2 )
+          var ( 1 ) |-> #sl ( 3 )
+          var ( 2 ) |-> #sl ( 4 )
+          var ( 3 ) |-> #sl ( 5 )
+        </env>
+        <clstack>
+          ListItem ( var ( 3 ) )
+          ListItem ( var ( 0 ) |-> #sl ( 2 )
+          var ( 1 ) |-> #sl ( 3 )
+          var ( 2 ) |-> #sl ( 4 ) )
+          ListItem ( var ( 2 ) )
+          ListItem ( var ( 0 ) |-> #sl ( 2 )
+          var ( 1 ) |-> #sl ( 3 ) )
+          ListItem ( var ( 1 ) )
+          ListItem ( var ( 0 ) |-> #sl ( 2 ) )
+          ListItem ( var ( 0 ) )
+          ListItem ( .Map )
+          ListItem ( #state ( . , .Map ) )
+        </clstack>
+      </Thread>
+      <activeThreads>
+        SetItem ( 0 )
+      </activeThreads>
+      <cntThreads>
+        1
+      </cntThreads>
+      <cthread>
+        0
+      </cthread>
+    </threads>
+    <closures>
+      <closureCnt>
+        1
+      </closureCnt>
+      <funclosure>
+        main |-> 0
+      </funclosure>
+      <closure>
+        <crId>
+          0
+        </crId>
+        <crContext>
+          .
+        </crContext>
+        <crParams>
+          .Idents
+        </crParams>
+        <crBody>
+          (| letcl var ( 0 ) =cl #AllocateInit ( valcl ( 2 ) , #owner ( #array ( i32 , 2 ) ) , valcl ( V0 ) , valcl ( V1 ) , .ExpCLs ) incl letcl var ( 1 ) =cl #uninit ( 0 ) incl letcl var ( 2 ) =cl #uninit ( 0 ) incl ( ifcl valcl ( 1 ) thencl (| var ( 2 ) :=cl refcl ( 1 , var ( 0 ) ) ;cl clskip ;cl clskip |) elsecl (| var ( 1 ) :=cl refcl ( 0 , var ( 0 ) ) ;cl clskip ;cl clskip |) ;cl clskip ;cl clskip ;cl letcl var ( 3 ) =cl #move ( var ( 0 ) ) incl letcl var ( 4 ) =cl var ( 2 ) incl clskip ) |)
+        </crBody>
+      </closure>
+    </closures>
+    <memory>
+      <slocAddr>
+        6
+      </slocAddr>
+      <sloc>
+        2 |-> #uninit ( 0 )
+        3 |-> #uninit ( 0 )
+        4 |-> #mut ( 5 , 9 , #sl ( 2 ) )
+        5 |-> #own ( #blk ( 1 ) )
+      </sloc>
+      <blkAddr>
+        2
+      </blkAddr>
+      <blocks>
+        #heap ( 1 , 0 ) |-> valcl ( V0 )
+        #heap ( 1 , 1 ) |-> valcl ( V1 )
+        1 |-> #blkInfo ( 2 , #owner ( #array ( i32 , 2 ) ) )
+      </blocks>
+      <locRW>
+        SetItem ( #lread ( #sl ( 2 ) , 6 ) )
+        SetItem ( #lread ( #sl ( 4 ) , 9 ) )
+        SetItem ( #lwrite ( #sl ( 2 ) , 7 ) )
+        SetItem ( #lwrite ( #sl ( 4 ) , 5 ) )
+      </locRW>
+      <memStatus>
+        #heap ( 1 , 0 ) |-> #ms ( 0 , 0 )
+        #heap ( 1 , 1 ) |-> #ms ( 0 , 0 )
+        #sl ( 2 ) |-> #ms ( 0 , 0 )
+        #sl ( 3 ) |-> #ms ( 0 , 0 )
+        #sl ( 4 ) |-> #ms ( 0 , 0 )
+        #sl ( 5 ) |-> #ms ( 0 , 0 )
+      </memStatus>
+      <clk>
+        10
+      </clk>
+    </memory>
+    <output>
+      .List
+    </output>
+  </T>
+#And
+  <T>
+    <threads>
+      <Thread>
+        <threadId>
+          0
+        </threadId>
+        <tname>
+          "main"
+        </tname>
+        <k>
+          #stuck ( #lwrite ( #sl ( 2 ) , 7 ) , #shr ( 5 , 9 , #sl ( 2 ) ) ) ~> #readna ( #sl ( 4 ) ) ~> #freezer#letcl1_ ( var ( 4 ) , clskip ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( )
+        </k>
+        <env>
+          var ( 0 ) |-> #sl ( 2 )
+          var ( 1 ) |-> #sl ( 3 )
+          var ( 2 ) |-> #sl ( 4 )
+          var ( 3 ) |-> #sl ( 5 )
+        </env>
+        <clstack>
+          ListItem ( var ( 3 ) )
+          ListItem ( var ( 0 ) |-> #sl ( 2 )
+          var ( 1 ) |-> #sl ( 3 )
+          var ( 2 ) |-> #sl ( 4 ) )
+          ListItem ( var ( 2 ) )
+          ListItem ( var ( 0 ) |-> #sl ( 2 )
+          var ( 1 ) |-> #sl ( 3 ) )
+          ListItem ( var ( 1 ) )
+          ListItem ( var ( 0 ) |-> #sl ( 2 ) )
+          ListItem ( var ( 0 ) )
+          ListItem ( .Map )
+          ListItem ( #state ( . , .Map ) )
+        </clstack>
+      </Thread>
+      <activeThreads>
+        SetItem ( 0 )
+      </activeThreads>
+      <cntThreads>
+        1
+      </cntThreads>
+      <cthread>
+        0
+      </cthread>
+    </threads>
+    <closures>
+      <closureCnt>
+        1
+      </closureCnt>
+      <funclosure>
+        main |-> 0
+      </funclosure>
+      <closure>
+        <crId>
+          0
+        </crId>
+        <crContext>
+          .
+        </crContext>
+        <crParams>
+          .Idents
+        </crParams>
+        <crBody>
+          (| letcl var ( 0 ) =cl #AllocateInit ( valcl ( 2 ) , #owner ( #array ( i32 , 2 ) ) , valcl ( V0 ) , valcl ( V1 ) , .ExpCLs ) incl letcl var ( 1 ) =cl #uninit ( 0 ) incl letcl var ( 2 ) =cl #uninit ( 0 ) incl ( ifcl valcl ( 1 ) thencl (| var ( 2 ) :=cl refcl ( 1 , var ( 0 ) ) ;cl clskip ;cl clskip |) elsecl (| var ( 1 ) :=cl refcl ( 0 , var ( 0 ) ) ;cl clskip ;cl clskip |) ;cl clskip ;cl clskip ;cl letcl var ( 3 ) =cl #move ( var ( 0 ) ) incl letcl var ( 4 ) =cl var ( 2 ) incl clskip ) |)
+        </crBody>
+      </closure>
+    </closures>
+    <memory>
+      <slocAddr>
+        6
+      </slocAddr>
+      <sloc>
+        2 |-> #uninit ( 0 )
+        3 |-> #uninit ( 0 )
+        4 |-> #mut ( 5 , 9 , #sl ( 2 ) )
+        5 |-> #own ( #blk ( 1 ) )
+      </sloc>
+      <blkAddr>
+        2
+      </blkAddr>
+      <blocks>
+        #heap ( 1 , 0 ) |-> valcl ( V0 )
+        #heap ( 1 , 1 ) |-> valcl ( V1 )
+        1 |-> #blkInfo ( 2 , #owner ( #array ( i32 , 2 ) ) )
+      </blocks>
+      <locRW>
+        SetItem ( #lread ( #sl ( 2 ) , 6 ) )
+        SetItem ( #lread ( #sl ( 4 ) , 9 ) )
+        SetItem ( #lwrite ( #sl ( 2 ) , 7 ) )
+        SetItem ( #lwrite ( #sl ( 4 ) , 5 ) )
+      </locRW>
+      <memStatus>
+        #heap ( 1 , 0 ) |-> #ms ( 0 , 0 )
+        #heap ( 1 , 1 ) |-> #ms ( 0 , 0 )
+        #sl ( 2 ) |-> #ms ( 0 , 0 )
+        #sl ( 3 ) |-> #ms ( 0 , 0 )
+        #sl ( 4 ) |-> #ms ( 0 , 0 )
+        #sl ( 5 ) |-> #ms ( 0 , 0 )
+      </memStatus>
+      <clk>
+        10
+      </clk>
+    </memory>
+    <output>
+      .List
+    </output>
+  </T>
+Command exited with non-zero status 1
+	Command being timed: "./clkprove rust_tests/rv/obsc/t23-spec.k"
+	User time (seconds): 44.21
+	System time (seconds): 0.93
+	Percent of CPU this job got: 194%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:23.26
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1011736
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 437160
+	Voluntary context switches: 11711
+	Involuntary context switches: 13308
+	Swaps: 0
+	File system inputs: 8
+	File system outputs: 169392
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1
+verifying rust_tests/rv/obsc/t24-spec.k:
+          
+<T>
+  <threads>
+    <Thread>
+      <threadId>
+        0
+      </threadId>
+      <tname>
+        "main"
+      </tname>
+      <k>
+        #ckAct ( SetItem ( #lread ( #sl ( 2 ) , 6 ) ) , #mut ( 5 , 8 , #sl ( 2 ) ) ) ~> #readna ( #sl ( 4 ) ) ~> #freezer#letcl1_ ( var ( 4 ) , clskip ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( )
+      </k>
+      <env>
+        var ( 0 ) |-> #sl ( 2 )
+        var ( 1 ) |-> #sl ( 3 )
+        var ( 2 ) |-> #sl ( 4 )
+        var ( 3 ) |-> #sl ( 5 )
+      </env>
+      <clstack>
+        ListItem ( var ( 3 ) )
+        ListItem ( var ( 0 ) |-> #sl ( 2 )
+        var ( 1 ) |-> #sl ( 3 )
+        var ( 2 ) |-> #sl ( 4 ) )
+        ListItem ( var ( 2 ) )
+        ListItem ( var ( 0 ) |-> #sl ( 2 )
+        var ( 1 ) |-> #sl ( 3 ) )
+        ListItem ( var ( 1 ) )
+        ListItem ( var ( 0 ) |-> #sl ( 2 ) )
+        ListItem ( var ( 0 ) )
+        ListItem ( .Map )
+        ListItem ( #state ( . , .Map ) )
+      </clstack>
+    </Thread>
+    <activeThreads>
+      SetItem ( 0 )
+    </activeThreads>
+    <cntThreads>
+      1
+    </cntThreads>
+    <cthread>
+      0
+    </cthread>
+  </threads>
+  <closures>
+    <closureCnt>
+      1
+    </closureCnt>
+    <funclosure>
+      main |-> 0
+    </funclosure>
+    <closure>
+      <crId>
+        0
+      </crId>
+      <crContext>
+        .
+      </crContext>
+      <crParams>
+        .Idents
+      </crParams>
+      <crBody>
+        (| letcl var ( 0 ) =cl #AllocateInit ( valcl ( 2 ) , #owner ( #array ( i32 , 2 ) ) , valcl ( V0 ) , valcl ( V1 ) , .ExpCLs ) incl letcl var ( 1 ) =cl #uninit ( 0 ) incl letcl var ( 2 ) =cl #uninit ( 0 ) incl ( ifcl valcl ( 1 ) thencl (| var ( 2 ) :=cl refcl ( 1 , var ( 0 ) ) ;cl clskip ;cl clskip |) elsecl (| var ( 1 ) :=cl refcl ( 0 , var ( 0 ) ) ;cl clskip ;cl clskip |) ;cl clskip ;cl clskip ;cl letcl var ( 3 ) =cl #Index ( var ( 0 ) , valcl ( 1 ) ) incl letcl var ( 4 ) =cl var ( 2 ) incl clskip ) |)
+      </crBody>
+    </closure>
+  </closures>
+  <memory>
+    <slocAddr>
+      6
+    </slocAddr>
+    <sloc>
+      2 |-> #own ( #blk ( 1 ) )
+      3 |-> #uninit ( 0 )
+      4 |-> #mut ( 5 , 8 , #sl ( 2 ) )
+      5 |-> valcl ( V1 )
+    </sloc>
+    <blkAddr>
+      2
+    </blkAddr>
+    <blocks>
+      #heap ( 1 , 0 ) |-> valcl ( V0 )
+      #heap ( 1 , 1 ) |-> valcl ( V1 )
+      1 |-> #blkInfo ( 2 , #owner ( #array ( i32 , 2 ) ) )
+    </blocks>
+    <locRW>
+      SetItem ( #lread ( #sl ( 2 ) , 6 ) )
+      SetItem ( #lread ( #sl ( 4 ) , 8 ) )
+      SetItem ( #lwrite ( #sl ( 4 ) , 5 ) )
+    </locRW>
+    <memStatus>
+      #heap ( 1 , 0 ) |-> #ms ( 0 , 0 )
+      #heap ( 1 , 1 ) |-> #ms ( 0 , 0 )
+      #sl ( 2 ) |-> #ms ( 0 , 0 )
+      #sl ( 3 ) |-> #ms ( 0 , 0 )
+      #sl ( 4 ) |-> #ms ( 0 , 0 )
+      #sl ( 5 ) |-> #ms ( 0 , 0 )
+    </memStatus>
+    <clk>
+      9
+    </clk>
+  </memory>
+  <output>
+    .List
+  </output>
+</T>
+Command exited with non-zero status 1
+	Command being timed: "./clkprove rust_tests/rv/obsc/t24-spec.k"
+	User time (seconds): 39.23
+	System time (seconds): 0.74
+	Percent of CPU this job got: 183%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:21.79
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 919396
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 391991
+	Voluntary context switches: 11419
+	Involuntary context switches: 6910
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 175104
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1
+verifying rust_tests/rv/obsc/t25-spec.k:
+          
+<T>
+  <threads>
+    <Thread>
+      <threadId>
+        0
+      </threadId>
+      <tname>
+        "main"
+      </tname>
+      <k>
+        #stuck ( #lwrite ( #sl ( 2 ) , 5 ) , #shr ( 3 , 7 , #sl ( 2 ) . valcl ( 0 ) ) ) ~> #readna ( #sl ( 3 ) ) ~> clskip ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( )
+      </k>
+      <env>
+        var ( 0 ) |-> #sl ( 2 )
+        var ( 1 ) |-> #sl ( 3 )
+        var ( 2 ) |-> #sl ( 4 )
+      </env>
+      <clstack>
+        ListItem ( var ( 2 ) )
+        ListItem ( var ( 0 ) |-> #sl ( 2 )
+        var ( 1 ) |-> #sl ( 3 ) )
+        ListItem ( var ( 1 ) )
+        ListItem ( var ( 0 ) |-> #sl ( 2 ) )
+        ListItem ( var ( 0 ) )
+        ListItem ( .Map )
+        ListItem ( #state ( . , .Map ) )
+      </clstack>
+    </Thread>
+    <activeThreads>
+      SetItem ( 0 )
+    </activeThreads>
+    <cntThreads>
+      1
+    </cntThreads>
+    <cthread>
+      0
+    </cthread>
+  </threads>
+  <closures>
+    <closureCnt>
+      1
+    </closureCnt>
+    <funclosure>
+      main |-> 0
+    </funclosure>
+    <closure>
+      <crId>
+        0
+      </crId>
+      <crContext>
+        .
+      </crContext>
+      <crParams>
+        .Idents
+      </crParams>
+      <crBody>
+        (| letcl var ( 0 ) =cl #AllocateInit ( valcl ( 2 ) , #IdTy ( V0 , #prod ( #fd ( a , i32 ) , #fd ( b , bool ) , .Fields ) ) , valcl ( V1 ) , valcl ( 0 ) , .ExpCLs ) incl letcl var ( 1 ) =cl refcl ( 0 , var ( 0 ) .cl valcl ( 0 ) ) incl letcl var ( 2 ) =cl #move ( var ( 0 ) ) incl ( var ( 1 ) ;cl clskip ) |)
+      </crBody>
+    </closure>
+  </closures>
+  <memory>
+    <slocAddr>
+      5
+    </slocAddr>
+    <sloc>
+      2 |-> #uninit ( 0 )
+      3 |-> #shr ( 3 , 7 , #sl ( 2 ) . valcl ( 0 ) )
+      4 |-> #own ( #blk ( 1 ) )
+    </sloc>
+    <blkAddr>
+      2
+    </blkAddr>
+    <blocks>
+      #heap ( 1 , 0 ) |-> valcl ( V1 )
+      #heap ( 1 , 1 ) |-> valcl ( 0 )
+      1 |-> #blkInfo ( 2 , #IdTy ( V0 , #prod ( #fd ( a , i32 ) , #fd ( b , bool ) , .Fields ) ) )
+    </blocks>
+    <locRW>
+      SetItem ( #lread ( #sl ( 2 ) , 4 ) )
+      SetItem ( #lread ( #sl ( 3 ) , 7 ) )
+      SetItem ( #lwrite ( #sl ( 2 ) , 5 ) )
+    </locRW>
+    <memStatus>
+      #heap ( 1 , 0 ) |-> #ms ( 0 , 0 )
+      #heap ( 1 , 1 ) |-> #ms ( 0 , 0 )
+      #sl ( 2 ) |-> #ms ( 0 , 0 )
+      #sl ( 3 ) |-> #ms ( 0 , 0 )
+      #sl ( 4 ) |-> #ms ( 0 , 0 )
+    </memStatus>
+    <clk>
+      8
+    </clk>
+  </memory>
+  <output>
+    .List
+  </output>
+</T>
+Command exited with non-zero status 1
+	Command being timed: "./clkprove rust_tests/rv/obsc/t25-spec.k"
+	User time (seconds): 41.22
+	System time (seconds): 0.76
+	Percent of CPU this job got: 196%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:21.38
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 943404
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 416924
+	Voluntary context switches: 10887
+	Involuntary context switches: 3967
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 180792
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1
+verifying rust_tests/rv/obsc/t26-spec.k:
+          
+<T>
+  <threads>
+    <Thread>
+      <threadId>
+        0
+      </threadId>
+      <tname>
+        "main"
+      </tname>
+      <k>
+        #stuck ( #lwrite ( #sl ( 2 ) , 5 ) , #shr ( 3 , 7 , #PArray ( #sl ( 2 ) , valcl ( 0 ) ) ) ) ~> #readna ( #sl ( 3 ) ) ~> clskip ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( )
+      </k>
+      <env>
+        var ( 0 ) |-> #sl ( 2 )
+        var ( 1 ) |-> #sl ( 3 )
+        var ( 2 ) |-> #sl ( 4 )
+      </env>
+      <clstack>
+        ListItem ( var ( 2 ) )
+        ListItem ( var ( 0 ) |-> #sl ( 2 )
+        var ( 1 ) |-> #sl ( 3 ) )
+        ListItem ( var ( 1 ) )
+        ListItem ( var ( 0 ) |-> #sl ( 2 ) )
+        ListItem ( var ( 0 ) )
+        ListItem ( .Map )
+        ListItem ( #state ( . , .Map ) )
+      </clstack>
+    </Thread>
+    <activeThreads>
+      SetItem ( 0 )
+    </activeThreads>
+    <cntThreads>
+      1
+    </cntThreads>
+    <cthread>
+      0
+    </cthread>
+  </threads>
+  <closures>
+    <closureCnt>
+      1
+    </closureCnt>
+    <funclosure>
+      main |-> 0
+    </funclosure>
+    <closure>
+      <crId>
+        0
+      </crId>
+      <crContext>
+        .
+      </crContext>
+      <crParams>
+        .Idents
+      </crParams>
+      <crBody>
+        (| letcl var ( 0 ) =cl #AllocateInit ( valcl ( 2 ) , #owner ( #array ( i32 , 2 ) ) , valcl ( V0 ) , valcl ( V1 ) , .ExpCLs ) incl letcl var ( 1 ) =cl refcl ( 0 , #Index ( var ( 0 ) , valcl ( 0 ) ) ) incl letcl var ( 2 ) =cl #move ( var ( 0 ) ) incl ( var ( 1 ) ;cl clskip ) |)
+      </crBody>
+    </closure>
+  </closures>
+  <memory>
+    <slocAddr>
+      5
+    </slocAddr>
+    <sloc>
+      2 |-> #uninit ( 0 )
+      3 |-> #shr ( 3 , 7 , #PArray ( #sl ( 2 ) , valcl ( 0 ) ) )
+      4 |-> #own ( #blk ( 1 ) )
+    </sloc>
+    <blkAddr>
+      2
+    </blkAddr>
+    <blocks>
+      #heap ( 1 , 0 ) |-> valcl ( V0 )
+      #heap ( 1 , 1 ) |-> valcl ( V1 )
+      1 |-> #blkInfo ( 2 , #owner ( #array ( i32 , 2 ) ) )
+    </blocks>
+    <locRW>
+      SetItem ( #lread ( #sl ( 2 ) , 4 ) )
+      SetItem ( #lread ( #sl ( 3 ) , 7 ) )
+      SetItem ( #lwrite ( #sl ( 2 ) , 5 ) )
+    </locRW>
+    <memStatus>
+      #heap ( 1 , 0 ) |-> #ms ( 0 , 0 )
+      #heap ( 1 , 1 ) |-> #ms ( 0 , 0 )
+      #sl ( 2 ) |-> #ms ( 0 , 0 )
+      #sl ( 3 ) |-> #ms ( 0 , 0 )
+      #sl ( 4 ) |-> #ms ( 0 , 0 )
+    </memStatus>
+    <clk>
+      8
+    </clk>
+  </memory>
+  <output>
+    .List
+  </output>
+</T>
+[Warning] Critical: missing SMTLib translation for #match (missing SMTLib
+translation for #match)
+Command exited with non-zero status 1
+	Command being timed: "./clkprove rust_tests/rv/obsc/t26-spec.k"
+	User time (seconds): 42.06
+	System time (seconds): 0.84
+	Percent of CPU this job got: 188%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:22.72
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 990468
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 107
+	Minor (reclaiming a frame) page faults: 431314
+	Voluntary context switches: 11245
+	Involuntary context switches: 7395
+	Swaps: 0
+	File system inputs: 24288
+	File system outputs: 186480
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1
+verifying rust_tests/rv/obsc/t27-spec.k:
+          
+<T>
+  <threads>
+    <Thread>
+      <threadId>
+        0
+      </threadId>
+      <tname>
+        "main"
+      </tname>
+      <k>
+        #ckAct ( SetItem ( #lread ( #sl ( 2 ) . valcl ( 0 ) , 4 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 6 ) ) , #mut ( 3 , 6 , #sl ( 2 ) . valcl ( 0 ) ) ) ~> #readna ( #sl ( 3 ) ) ~> clskip ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( )
+      </k>
+      <env>
+        var ( 0 ) |-> #sl ( 2 )
+        var ( 1 ) |-> #sl ( 3 )
+        var ( 2 ) |-> #sl ( 4 )
+      </env>
+      <clstack>
+        ListItem ( var ( 2 ) )
+        ListItem ( var ( 0 ) |-> #sl ( 2 )
+        var ( 1 ) |-> #sl ( 3 ) )
+        ListItem ( var ( 1 ) )
+        ListItem ( var ( 0 ) |-> #sl ( 2 ) )
+        ListItem ( var ( 0 ) )
+        ListItem ( .Map )
+        ListItem ( #state ( . , .Map ) )
+      </clstack>
+    </Thread>
+    <activeThreads>
+      SetItem ( 0 )
+    </activeThreads>
+    <cntThreads>
+      1
+    </cntThreads>
+    <cthread>
+      0
+    </cthread>
+  </threads>
+  <closures>
+    <closureCnt>
+      1
+    </closureCnt>
+    <funclosure>
+      main |-> 0
+    </funclosure>
+    <closure>
+      <crId>
+        0
+      </crId>
+      <crContext>
+        .
+      </crContext>
+      <crParams>
+        .Idents
+      </crParams>
+      <crBody>
+        (| letcl var ( 0 ) =cl #AllocateInit ( valcl ( 2 ) , #IdTy ( V0 , #prod ( #fd ( a , i32 ) , #fd ( b , bool ) , .Fields ) ) , valcl ( V1 ) , valcl ( 0 ) , .ExpCLs ) incl letcl var ( 1 ) =cl refcl ( 1 , var ( 0 ) .cl valcl ( 0 ) ) incl letcl var ( 2 ) =cl var ( 0 ) .cl valcl ( 0 ) incl ( var ( 1 ) ;cl clskip ) |)
+      </crBody>
+    </closure>
+  </closures>
+  <memory>
+    <slocAddr>
+      5
+    </slocAddr>
+    <sloc>
+      2 |-> #own ( #blk ( 1 ) )
+      3 |-> #mut ( 3 , 6 , #sl ( 2 ) . valcl ( 0 ) )
+      4 |-> valcl ( V1 )
+    </sloc>
+    <blkAddr>
+      2
+    </blkAddr>
+    <blocks>
+      #heap ( 1 , 0 ) |-> valcl ( V1 )
+      #heap ( 1 , 1 ) |-> valcl ( 0 )
+      1 |-> #blkInfo ( 2 , #IdTy ( V0 , #prod ( #fd ( a , i32 ) , #fd ( b , bool ) , .Fields ) ) )
+    </blocks>
+    <locRW>
+      SetItem ( #lread ( #sl ( 2 ) . valcl ( 0 ) , 4 ) )
+      SetItem ( #lread ( #sl ( 3 ) , 6 ) )
+    </locRW>
+    <memStatus>
+      #heap ( 1 , 0 ) |-> #ms ( 0 , 0 )
+      #heap ( 1 , 1 ) |-> #ms ( 0 , 0 )
+      #sl ( 2 ) |-> #ms ( 0 , 0 )
+      #sl ( 3 ) |-> #ms ( 0 , 0 )
+      #sl ( 4 ) |-> #ms ( 0 , 0 )
+    </memStatus>
+    <clk>
+      7
+    </clk>
+  </memory>
+  <output>
+    .List
+  </output>
+</T>
+Command exited with non-zero status 1
+	Command being timed: "./clkprove rust_tests/rv/obsc/t27-spec.k"
+	User time (seconds): 37.90
+	System time (seconds): 0.78
+	Percent of CPU this job got: 186%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:20.72
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 909648
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 394596
+	Voluntary context switches: 11506
+	Involuntary context switches: 1208
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 192192
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1
+verifying rust_tests/rv/obsc/t28-spec.k:
+          
+#True
+	Command being timed: "./clkprove rust_tests/rv/obsc/t28-spec.k"
+	User time (seconds): 38.16
+	System time (seconds): 0.72
+	Percent of CPU this job got: 188%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:20.60
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 805376
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 364937
+	Voluntary context switches: 11060
+	Involuntary context switches: 874
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 197864
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+verifying rust_tests/rv/obsc/t29-spec.k:
+          
+#True
+	Command being timed: "./clkprove rust_tests/rv/obsc/t29-spec.k"
+	User time (seconds): 38.36
+	System time (seconds): 0.72
+	Percent of CPU this job got: 185%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:21.04
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 962088
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 405394
+	Voluntary context switches: 12482
+	Involuntary context switches: 968
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 203592
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+verifying rust_tests/rv/obsc/t2-spec.k:
+          
+#True
+	Command being timed: "./clkprove rust_tests/rv/obsc/t2-spec.k"
+	User time (seconds): 38.21
+	System time (seconds): 0.72
+	Percent of CPU this job got: 188%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:20.68
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 869432
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 381208
+	Voluntary context switches: 11575
+	Involuntary context switches: 862
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 203632
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+verifying rust_tests/rv/obsc/t30-spec.k:
+          
+  <T>
+    <threads>
+      <Thread>
+        <threadId>
+          0
+        </threadId>
+        <tname>
+          "main"
+        </tname>
+        <k>
+          #unit
+        </k>
+        <env>
+          .Map
+        </env>
+        <clstack>
+          .List
+        </clstack>
+      </Thread>
+      <activeThreads>
+        SetItem ( 0 )
+      </activeThreads>
+      <cntThreads>
+        1
+      </cntThreads>
+      <cthread>
+        -1
+      </cthread>
+    </threads>
+    <closures>
+      <closureCnt>
+        1
+      </closureCnt>
+      <funclosure>
+        main |-> 0
+      </funclosure>
+      <closure>
+        <crId>
+          0
+        </crId>
+        <crContext>
+          .
+        </crContext>
+        <crParams>
+          .Idents
+        </crParams>
+        <crBody>
+          (| letcl var ( 0 ) =cl #AllocateInit ( valcl ( 2 ) , #IdTy ( V0 , #prod ( #fd ( a , i32 ) , #fd ( b , bool ) , .Fields ) ) , valcl ( V1 ) , valcl ( 0 ) , .ExpCLs ) incl letcl var ( 1 ) =cl refcl ( 1 , var ( 0 ) .cl valcl ( 0 ) ) incl letcl var ( 2 ) =cl refcl ( 1 , var ( 0 ) .cl valcl ( 1 ) ) incl ( *cl na var ( 1 ) :=cl sc valcl ( 2 ) ;cl clskip ;cl clskip ;cl *cl na var ( 2 ) :=cl sc valcl ( 1 ) ;cl clskip ;cl clskip ;cl #print ( "{} {}" , var ( 0 ) .cl valcl ( 0 ) , var ( 0 ) .cl valcl ( 1 ) , .ExpCLs ) ) |)
+        </crBody>
+      </closure>
+    </closures>
+    <memory>
+      <slocAddr>
+        5
+      </slocAddr>
+      <sloc>
+        .Map
+      </sloc>
+      <blkAddr>
+        2
+      </blkAddr>
+      <blocks>
+        .Map
+      </blocks>
+      <locRW>
+        SetItem ( #lread ( #sl ( 2 ) . valcl ( 0 ) , 7 ) )
+        SetItem ( #lread ( #sl ( 2 ) . valcl ( 1 ) , 8 ) )
+        SetItem ( #lwrite ( #sl ( 3 ) , 5 ) )
+        SetItem ( #lwrite ( #sl ( 4 ) , 6 ) )
+      </locRW>
+      <memStatus>
+        #heap ( 1 , 0 ) |-> #ms ( 0 , 0 )
+        #heap ( 1 , 1 ) |-> #ms ( 0 , 0 )
+        #sl ( 2 ) |-> #ms ( 0 , 0 )
+        #sl ( 3 ) |-> #ms ( 0 , 0 )
+        #sl ( 4 ) |-> #ms ( 0 , 0 )
+      </memStatus>
+      <clk>
+        9
+      </clk>
+    </memory>
+    <output>
+      ListItem ( "2 1" )
+    </output>
+  </T>
+#And
+  <T>
+    <threads>
+      <Thread>
+        <threadId>
+          0
+        </threadId>
+        <tname>
+          "main"
+        </tname>
+        <k>
+          #unit
+        </k>
+        <env>
+          .Map
+        </env>
+        <clstack>
+          .List
+        </clstack>
+      </Thread>
+      <activeThreads>
+        SetItem ( 0 )
+      </activeThreads>
+      <cntThreads>
+        1
+      </cntThreads>
+      <cthread>
+        -1
+      </cthread>
+    </threads>
+    <closures>
+      <closureCnt>
+        1
+      </closureCnt>
+      <funclosure>
+        main |-> 0
+      </funclosure>
+      <closure>
+        <crId>
+          0
+        </crId>
+        <crContext>
+          .
+        </crContext>
+        <crParams>
+          .Idents
+        </crParams>
+        <crBody>
+          (| letcl var ( 0 ) =cl #AllocateInit ( valcl ( 2 ) , #IdTy ( V0 , #prod ( #fd ( a , i32 ) , #fd ( b , bool ) , .Fields ) ) , valcl ( V1 ) , valcl ( 0 ) , .ExpCLs ) incl letcl var ( 1 ) =cl refcl ( 1 , var ( 0 ) .cl valcl ( 0 ) ) incl letcl var ( 2 ) =cl refcl ( 1 , var ( 0 ) .cl valcl ( 1 ) ) incl ( *cl na var ( 1 ) :=cl sc valcl ( 2 ) ;cl clskip ;cl clskip ;cl *cl na var ( 2 ) :=cl sc valcl ( 1 ) ;cl clskip ;cl clskip ;cl #print ( "{} {}" , var ( 0 ) .cl valcl ( 0 ) , var ( 0 ) .cl valcl ( 1 ) , .ExpCLs ) ) |)
+        </crBody>
+      </closure>
+    </closures>
+    <memory>
+      <slocAddr>
+        5
+      </slocAddr>
+      <sloc>
+        .Map
+      </sloc>
+      <blkAddr>
+        2
+      </blkAddr>
+      <blocks>
+        .Map
+      </blocks>
+      <locRW>
+        SetItem ( #lread ( #sl ( 2 ) . valcl ( 0 ) , 8 ) )
+        SetItem ( #lread ( #sl ( 2 ) . valcl ( 1 ) , 7 ) )
+        SetItem ( #lwrite ( #sl ( 3 ) , 5 ) )
+        SetItem ( #lwrite ( #sl ( 4 ) , 6 ) )
+      </locRW>
+      <memStatus>
+        #heap ( 1 , 0 ) |-> #ms ( 0 , 0 )
+        #heap ( 1 , 1 ) |-> #ms ( 0 , 0 )
+        #sl ( 2 ) |-> #ms ( 0 , 0 )
+        #sl ( 3 ) |-> #ms ( 0 , 0 )
+        #sl ( 4 ) |-> #ms ( 0 , 0 )
+      </memStatus>
+      <clk>
+        9
+      </clk>
+    </memory>
+    <output>
+      ListItem ( "2 1" )
+    </output>
+  </T>
+Command exited with non-zero status 1
+	Command being timed: "./clkprove rust_tests/rv/obsc/t30-spec.k"
+	User time (seconds): 43.57
+	System time (seconds): 0.74
+	Percent of CPU this job got: 200%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:22.07
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 910768
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 416113
+	Voluntary context switches: 11413
+	Involuntary context switches: 1056
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 209360
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1
+verifying rust_tests/rv/obsc/t31-spec.k:
+          
+<T>
+  <threads>
+    <Thread>
+      <threadId>
+        0
+      </threadId>
+      <tname>
+        "main"
+      </tname>
+      <k>
+        #ckTwoRef ( #shr ( 7 , 7 , #sl ( 3 ) . valcl ( 0 ) ) , #mut ( 8 , 9 , #sl ( 3 ) . valcl ( 0 ) . valcl ( 0 ) ) ) ~> #ckRefLT ( 5 |-> #mut ( 8 , 9 , #sl ( 3 ) . valcl ( 0 ) . valcl ( 0 ) ) , 5 , #mut ( 8 , 9 , #sl ( 3 ) . valcl ( 0 ) . valcl ( 0 ) ) ) ~> #ckRefLT ( #heap ( 1 , 0 ) |-> valcl ( V0 )
+        #heap ( 2 , 0 ) |-> #own ( #blk ( 1 ) )
+        #heap ( 2 , 1 ) |-> valcl ( 32 )
+        1 |-> #blkInfo ( 1 , #IdTy ( V1 , #prod ( #fd ( a , i32 ) , .Fields ) ) )
+        2 |-> #blkInfo ( 2 , #IdTy ( V2 , #prod ( #fd ( a , #owner ( #IdTy ( V1 , #prod ( #fd ( a , i32 ) , .Fields ) ) ) ) , #fd ( b , i32 ) , .Fields ) ) ) , 5 , #mut ( 8 , 9 , #sl ( 3 ) . valcl ( 0 ) . valcl ( 0 ) ) ) ~> #wellFormAct ( #mut ( 8 , 9 , #sl ( 3 ) . valcl ( 0 ) . valcl ( 0 ) ) ) ~> #readna ( #sl ( 5 ) ) ~> #freezer#letcl1_ ( var ( 4 ) , clskip ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( )
+      </k>
+      <env>
+        var ( 0 ) |-> #sl ( 2 )
+        var ( 1 ) |-> #sl ( 3 )
+        var ( 2 ) |-> #sl ( 4 )
+        var ( 3 ) |-> #sl ( 5 )
+      </env>
+      <clstack>
+        ListItem ( var ( 3 ) )
+        ListItem ( var ( 0 ) |-> #sl ( 2 )
+        var ( 1 ) |-> #sl ( 3 )
+        var ( 2 ) |-> #sl ( 4 ) )
+        ListItem ( var ( 2 ) )
+        ListItem ( var ( 0 ) |-> #sl ( 2 )
+        var ( 1 ) |-> #sl ( 3 ) )
+        ListItem ( var ( 1 ) )
+        ListItem ( var ( 0 ) |-> #sl ( 2 ) )
+        ListItem ( var ( 0 ) )
+        ListItem ( .Map )
+        ListItem ( #state ( . , .Map ) )
+      </clstack>
+    </Thread>
+    <activeThreads>
+      SetItem ( 0 )
+    </activeThreads>
+    <cntThreads>
+      1
+    </cntThreads>
+    <cthread>
+      0
+    </cthread>
+  </threads>
+  <closures>
+    <closureCnt>
+      1
+    </closureCnt>
+    <funclosure>
+      main |-> 0
+    </funclosure>
+    <closure>
+      <crId>
+        0
+      </crId>
+      <crContext>
+        .
+      </crContext>
+      <crParams>
+        .Idents
+      </crParams>
+      <crBody>
+        (| letcl var ( 0 ) =cl #AllocateInit ( valcl ( 1 ) , #IdTy ( V1 , #prod ( #fd ( a , i32 ) , .Fields ) ) , valcl ( V0 ) , .ExpCLs ) incl letcl var ( 1 ) =cl #AllocateInit ( valcl ( 2 ) , #IdTy ( V2 , #prod ( #fd ( a , #owner ( #IdTy ( V1 , #prod ( #fd ( a , i32 ) , .Fields ) ) ) ) , #fd ( b , i32 ) , .Fields ) ) , #move ( var ( 0 ) ) , valcl ( 32 ) , .ExpCLs ) incl letcl var ( 2 ) =cl refcl ( 0 , var ( 1 ) .cl valcl ( 0 ) ) incl letcl var ( 3 ) =cl refcl ( 1 , ( var ( 1 ) .cl valcl ( 0 ) ) .cl valcl ( 0 ) ) incl letcl var ( 4 ) =cl var ( 3 ) incl clskip |)
+      </crBody>
+    </closure>
+  </closures>
+  <memory>
+    <slocAddr>
+      6
+    </slocAddr>
+    <sloc>
+      2 |-> #uninit ( 0 )
+      3 |-> #own ( #blk ( 2 ) )
+      4 |-> #shr ( 7 , 7 , #sl ( 3 ) . valcl ( 0 ) )
+      5 |-> #mut ( 8 , 9 , #sl ( 3 ) . valcl ( 0 ) . valcl ( 0 ) )
+    </sloc>
+    <blkAddr>
+      3
+    </blkAddr>
+    <blocks>
+      #heap ( 1 , 0 ) |-> valcl ( V0 )
+      #heap ( 2 , 0 ) |-> #own ( #blk ( 1 ) )
+      #heap ( 2 , 1 ) |-> valcl ( 32 )
+      1 |-> #blkInfo ( 1 , #IdTy ( V1 , #prod ( #fd ( a , i32 ) , .Fields ) ) )
+      2 |-> #blkInfo ( 2 , #IdTy ( V2 , #prod ( #fd ( a , #owner ( #IdTy ( V1 , #prod ( #fd ( a , i32 ) , .Fields ) ) ) ) , #fd ( b , i32 ) , .Fields ) ) )
+    </blocks>
+    <locRW>
+      SetItem ( #lread ( #sl ( 2 ) , 2 ) )
+      SetItem ( #lread ( #sl ( 5 ) , 9 ) )
+      SetItem ( #lwrite ( #sl ( 2 ) , 3 ) )
+    </locRW>
+    <memStatus>
+      #heap ( 1 , 0 ) |-> #ms ( 0 , 0 )
+      #heap ( 2 , 0 ) |-> #ms ( 0 , 0 )
+      #heap ( 2 , 1 ) |-> #ms ( 0 , 0 )
+      #sl ( 2 ) |-> #ms ( 0 , 0 )
+      #sl ( 3 ) |-> #ms ( 0 , 0 )
+      #sl ( 4 ) |-> #ms ( 0 , 0 )
+      #sl ( 5 ) |-> #ms ( 0 , 0 )
+    </memStatus>
+    <clk>
+      10
+    </clk>
+  </memory>
+  <output>
+    .List
+  </output>
+</T>
+Command exited with non-zero status 1
+	Command being timed: "./clkprove rust_tests/rv/obsc/t31-spec.k"
+	User time (seconds): 40.59
+	System time (seconds): 0.78
+	Percent of CPU this job got: 190%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:21.73
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 944480
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 420732
+	Voluntary context switches: 11260
+	Involuntary context switches: 970
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 215080
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1
+verifying rust_tests/rv/obsc/t32-spec.k:
+          
+<T>
+  <threads>
+    <Thread>
+      <threadId>
+        0
+      </threadId>
+      <tname>
+        "main"
+      </tname>
+      <k>
+        #stuck ( #mut ( 8 , 8 , #sl ( 3 ) . valcl ( 0 ) . valcl ( 0 ) ) , #shr ( 7 , 9 , #sl ( 3 ) . valcl ( 0 ) ) ) ~> #ckRefLT ( .Map , 4 , #shr ( 7 , 9 , #sl ( 3 ) . valcl ( 0 ) ) ) ~> #ckRefLT ( #heap ( 1 , 0 ) |-> valcl ( V0 )
+        #heap ( 2 , 0 ) |-> #own ( #blk ( 1 ) )
+        #heap ( 2 , 1 ) |-> valcl ( 32 )
+        1 |-> #blkInfo ( 1 , #IdTy ( V1 , #prod ( #fd ( a , i32 ) , .Fields ) ) )
+        2 |-> #blkInfo ( 2 , #IdTy ( V2 , #prod ( #fd ( a , #owner ( #IdTy ( V1 , #prod ( #fd ( a , i32 ) , .Fields ) ) ) ) , #fd ( b , i32 ) , .Fields ) ) ) , 4 , #shr ( 7 , 9 , #sl ( 3 ) . valcl ( 0 ) ) ) ~> #wellFormAct ( #shr ( 7 , 9 , #sl ( 3 ) . valcl ( 0 ) ) ) ~> #readna ( #sl ( 4 ) ) ~> #freezer#letcl1_ ( var ( 4 ) , clskip ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( )
+      </k>
+      <env>
+        var ( 0 ) |-> #sl ( 2 )
+        var ( 1 ) |-> #sl ( 3 )
+        var ( 2 ) |-> #sl ( 4 )
+        var ( 3 ) |-> #sl ( 5 )
+      </env>
+      <clstack>
+        ListItem ( var ( 3 ) )
+        ListItem ( var ( 0 ) |-> #sl ( 2 )
+        var ( 1 ) |-> #sl ( 3 )
+        var ( 2 ) |-> #sl ( 4 ) )
+        ListItem ( var ( 2 ) )
+        ListItem ( var ( 0 ) |-> #sl ( 2 )
+        var ( 1 ) |-> #sl ( 3 ) )
+        ListItem ( var ( 1 ) )
+        ListItem ( var ( 0 ) |-> #sl ( 2 ) )
+        ListItem ( var ( 0 ) )
+        ListItem ( .Map )
+        ListItem ( #state ( . , .Map ) )
+      </clstack>
+    </Thread>
+    <activeThreads>
+      SetItem ( 0 )
+    </activeThreads>
+    <cntThreads>
+      1
+    </cntThreads>
+    <cthread>
+      0
+    </cthread>
+  </threads>
+  <closures>
+    <closureCnt>
+      1
+    </closureCnt>
+    <funclosure>
+      main |-> 0
+    </funclosure>
+    <closure>
+      <crId>
+        0
+      </crId>
+      <crContext>
+        .
+      </crContext>
+      <crParams>
+        .Idents
+      </crParams>
+      <crBody>
+        (| letcl var ( 0 ) =cl #AllocateInit ( valcl ( 1 ) , #IdTy ( V1 , #prod ( #fd ( a , i32 ) , .Fields ) ) , valcl ( V0 ) , .ExpCLs ) incl letcl var ( 1 ) =cl #AllocateInit ( valcl ( 2 ) , #IdTy ( V2 , #prod ( #fd ( a , #owner ( #IdTy ( V1 , #prod ( #fd ( a , i32 ) , .Fields ) ) ) ) , #fd ( b , i32 ) , .Fields ) ) , #move ( var ( 0 ) ) , valcl ( 32 ) , .ExpCLs ) incl letcl var ( 2 ) =cl refcl ( 0 , var ( 1 ) .cl valcl ( 0 ) ) incl letcl var ( 3 ) =cl refcl ( 1 , ( var ( 1 ) .cl valcl ( 0 ) ) .cl valcl ( 0 ) ) incl letcl var ( 4 ) =cl var ( 2 ) incl clskip |)
+      </crBody>
+    </closure>
+  </closures>
+  <memory>
+    <slocAddr>
+      6
+    </slocAddr>
+    <sloc>
+      2 |-> #uninit ( 0 )
+      3 |-> #own ( #blk ( 2 ) )
+      4 |-> #shr ( 7 , 9 , #sl ( 3 ) . valcl ( 0 ) )
+      5 |-> #mut ( 8 , 8 , #sl ( 3 ) . valcl ( 0 ) . valcl ( 0 ) )
+    </sloc>
+    <blkAddr>
+      3
+    </blkAddr>
+    <blocks>
+      #heap ( 1 , 0 ) |-> valcl ( V0 )
+      #heap ( 2 , 0 ) |-> #own ( #blk ( 1 ) )
+      #heap ( 2 , 1 ) |-> valcl ( 32 )
+      1 |-> #blkInfo ( 1 , #IdTy ( V1 , #prod ( #fd ( a , i32 ) , .Fields ) ) )
+      2 |-> #blkInfo ( 2 , #IdTy ( V2 , #prod ( #fd ( a , #owner ( #IdTy ( V1 , #prod ( #fd ( a , i32 ) , .Fields ) ) ) ) , #fd ( b , i32 ) , .Fields ) ) )
+    </blocks>
+    <locRW>
+      SetItem ( #lread ( #sl ( 2 ) , 2 ) )
+      SetItem ( #lread ( #sl ( 4 ) , 9 ) )
+      SetItem ( #lwrite ( #sl ( 2 ) , 3 ) )
+    </locRW>
+    <memStatus>
+      #heap ( 1 , 0 ) |-> #ms ( 0 , 0 )
+      #heap ( 2 , 0 ) |-> #ms ( 0 , 0 )
+      #heap ( 2 , 1 ) |-> #ms ( 0 , 0 )
+      #sl ( 2 ) |-> #ms ( 0 , 0 )
+      #sl ( 3 ) |-> #ms ( 0 , 0 )
+      #sl ( 4 ) |-> #ms ( 0 , 0 )
+      #sl ( 5 ) |-> #ms ( 0 , 0 )
+    </memStatus>
+    <clk>
+      10
+    </clk>
+  </memory>
+  <output>
+    .List
+  </output>
+</T>
+Command exited with non-zero status 1
+	Command being timed: "./clkprove rust_tests/rv/obsc/t32-spec.k"
+	User time (seconds): 40.45
+	System time (seconds): 0.85
+	Percent of CPU this job got: 186%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:22.16
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 965048
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 419381
+	Voluntary context switches: 11647
+	Involuntary context switches: 918
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 220792
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1
+verifying rust_tests/rv/obsc/t33-spec.k:
+          
+<T>
+  <threads>
+    <Thread>
+      <threadId>
+        0
+      </threadId>
+      <tname>
+        "main"
+      </tname>
+      <k>
+        #stuck ( #mut ( 6 , 6 , #sl ( 2 ) ) , #shr ( 5 , 7 , #sl ( 2 ) ) ) ~> #ckRefLT ( .Map , 4 , #shr ( 5 , 7 , #sl ( 2 ) ) ) ~> #ckRefLT ( #heap ( 1 , 0 ) |-> valcl ( V0 )
+        #heap ( 1 , 1 ) |-> valcl ( V1 )
+        1 |-> #blkInfo ( 2 , #owner ( #array ( i32 , 2 ) ) ) , 4 , #shr ( 5 , 7 , #sl ( 2 ) ) ) ~> #wellFormAct ( #shr ( 5 , 7 , #sl ( 2 ) ) ) ~> #readna ( #sl ( 4 ) ) ~> #freezer#letcl1_ ( var ( 4 ) , clskip ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( )
+      </k>
+      <env>
+        var ( 1 ) |-> #sl ( 2 )
+        var ( 2 ) |-> #sl ( 4 )
+        var ( 3 ) |-> #sl ( 5 )
+      </env>
+      <clstack>
+        ListItem ( var ( 3 ) )
+        ListItem ( var ( 1 ) |-> #sl ( 2 )
+        var ( 2 ) |-> #sl ( 4 ) )
+        ListItem ( var ( 2 ) )
+        ListItem ( var ( 1 ) |-> #sl ( 2 ) )
+        ListItem ( var ( 1 ) )
+        ListItem ( .Map )
+        ListItem ( #state ( . , .Map ) )
+      </clstack>
+    </Thread>
+    <activeThreads>
+      SetItem ( 0 )
+    </activeThreads>
+    <cntThreads>
+      1
+    </cntThreads>
+    <cthread>
+      0
+    </cthread>
+  </threads>
+  <closures>
+    <closureCnt>
+      2
+    </closureCnt>
+    <funclosure>
+      f |-> 1
+      main |-> 0
+    </funclosure>
+    <closure>
+      <crId>
+        0
+      </crId>
+      <crContext>
+        .
+      </crContext>
+      <crParams>
+        .Idents
+      </crParams>
+      <crBody>
+        (| letcl var ( 1 ) =cl #AllocateInit ( valcl ( 2 ) , #owner ( #array ( i32 , 2 ) ) , valcl ( V0 ) , valcl ( V1 ) , .ExpCLs ) incl letcl var ( 2 ) =cl callcl ( f , refcl ( 0 , var ( 1 ) ) , .ExpCLs ) incl letcl var ( 3 ) =cl refcl ( 1 , var ( 1 ) ) incl letcl var ( 4 ) =cl var ( 2 ) incl clskip |)
+      </crBody>
+    </closure> <closure>
+      <crId>
+        1
+      </crId>
+      <crContext>
+        .
+      </crContext>
+      <crParams>
+        var ( 0 ) , .Idents
+      </crParams>
+      <crBody>
+        (| var ( 0 ) |)
+      </crBody>
+    </closure>
+  </closures>
+  <memory>
+    <slocAddr>
+      6
+    </slocAddr>
+    <sloc>
+      2 |-> #own ( #blk ( 1 ) )
+      4 |-> #shr ( 5 , 7 , #sl ( 2 ) )
+      5 |-> #mut ( 6 , 6 , #sl ( 2 ) )
+    </sloc>
+    <blkAddr>
+      2
+    </blkAddr>
+    <blocks>
+      #heap ( 1 , 0 ) |-> valcl ( V0 )
+      #heap ( 1 , 1 ) |-> valcl ( V1 )
+      1 |-> #blkInfo ( 2 , #owner ( #array ( i32 , 2 ) ) )
+    </blocks>
+    <locRW>
+      SetItem ( #lread ( #sl ( 3 ) , 4 ) )
+      SetItem ( #lread ( #sl ( 4 ) , 7 ) )
+    </locRW>
+    <memStatus>
+      #heap ( 1 , 0 ) |-> #ms ( 0 , 0 )
+      #heap ( 1 , 1 ) |-> #ms ( 0 , 0 )
+      #sl ( 2 ) |-> #ms ( 0 , 0 )
+      #sl ( 3 ) |-> #ms ( 0 , 0 )
+      #sl ( 4 ) |-> #ms ( 0 , 0 )
+      #sl ( 5 ) |-> #ms ( 0 , 0 )
+    </memStatus>
+    <clk>
+      8
+    </clk>
+  </memory>
+  <output>
+    .List
+  </output>
+</T>
+Command exited with non-zero status 1
+	Command being timed: "./clkprove rust_tests/rv/obsc/t33-spec.k"
+	User time (seconds): 41.96
+	System time (seconds): 0.84
+	Percent of CPU this job got: 189%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:22.60
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 992316
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 424663
+	Voluntary context switches: 11502
+	Involuntary context switches: 952
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 226472
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1
+verifying rust_tests/rv/obsc/t34-spec.k:
+          
+#True
+	Command being timed: "./clkprove rust_tests/rv/obsc/t34-spec.k"
+	User time (seconds): 41.75
+	System time (seconds): 0.78
+	Percent of CPU this job got: 187%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:22.65
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 939012
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 399951
+	Voluntary context switches: 11716
+	Involuntary context switches: 1104
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 232192
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+verifying rust_tests/rv/obsc/t35-spec.k:
+          
+<T>
+  <threads>
+    <Thread>
+      <threadId>
+        0
+      </threadId>
+      <tname>
+        "main"
+      </tname>
+      <k>
+        #stuck ( #mut ( 10 , 10 , #sl ( 3 ) ) , #shr ( 9 , 11 , #sl ( 3 ) ) ) ~> #ckRefLT ( .Map , 6 , #shr ( 9 , 11 , #sl ( 3 ) ) ) ~> #ckRefLT ( #heap ( 1 , 0 ) |-> valcl ( V0 )
+        #heap ( 1 , 1 ) |-> valcl ( V1 )
+        #heap ( 2 , 0 ) |-> valcl ( V0 )
+        #heap ( 2 , 1 ) |-> valcl ( V1 )
+        1 |-> #blkInfo ( 2 , #owner ( #array ( i32 , 2 ) ) )
+        2 |-> #blkInfo ( 2 , #owner ( #array ( i32 , 2 ) ) ) , 6 , #shr ( 9 , 11 , #sl ( 3 ) ) ) ~> #wellFormAct ( #shr ( 9 , 11 , #sl ( 3 ) ) ) ~> #readna ( #sl ( 6 ) ) ~> #freezer#letcl1_ ( var ( 6 ) , clskip ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( )
+      </k>
+      <env>
+        var ( 2 ) |-> #sl ( 2 )
+        var ( 3 ) |-> #sl ( 3 )
+        var ( 4 ) |-> #sl ( 6 )
+        var ( 5 ) |-> #sl ( 7 )
+      </env>
+      <clstack>
+        ListItem ( var ( 5 ) )
+        ListItem ( var ( 2 ) |-> #sl ( 2 )
+        var ( 3 ) |-> #sl ( 3 )
+        var ( 4 ) |-> #sl ( 6 ) )
+        ListItem ( var ( 4 ) )
+        ListItem ( var ( 2 ) |-> #sl ( 2 )
+        var ( 3 ) |-> #sl ( 3 ) )
+        ListItem ( var ( 3 ) )
+        ListItem ( var ( 2 ) |-> #sl ( 2 ) )
+        ListItem ( var ( 2 ) )
+        ListItem ( .Map )
+        ListItem ( #state ( . , .Map ) )
+      </clstack>
+    </Thread>
+    <activeThreads>
+      SetItem ( 0 )
+    </activeThreads>
+    <cntThreads>
+      1
+    </cntThreads>
+    <cthread>
+      0
+    </cthread>
+  </threads>
+  <closures>
+    <closureCnt>
+      2
+    </closureCnt>
+    <funclosure>
+      f |-> 1
+      main |-> 0
+    </funclosure>
+    <closure>
+      <crId>
+        0
+      </crId>
+      <crContext>
+        .
+      </crContext>
+      <crParams>
+        .Idents
+      </crParams>
+      <crBody>
+        (| letcl var ( 2 ) =cl #AllocateInit ( valcl ( 2 ) , #owner ( #array ( i32 , 2 ) ) , valcl ( V0 ) , valcl ( V1 ) , .ExpCLs ) incl letcl var ( 3 ) =cl #AllocateInit ( valcl ( 2 ) , #owner ( #array ( i32 , 2 ) ) , valcl ( V0 ) , valcl ( V1 ) , .ExpCLs ) incl letcl var ( 4 ) =cl callcl ( f , refcl ( 0 , var ( 2 ) ) , refcl ( 0 , var ( 3 ) ) , .ExpCLs ) incl letcl var ( 5 ) =cl refcl ( 1 , var ( 3 ) ) incl letcl var ( 6 ) =cl var ( 4 ) incl clskip |)
+      </crBody>
+    </closure> <closure>
+      <crId>
+        1
+      </crId>
+      <crContext>
+        .
+      </crContext>
+      <crParams>
+        var ( 0 ) , var ( 1 ) , .Idents
+      </crParams>
+      <crBody>
+        (| var ( 1 ) |)
+      </crBody>
+    </closure>
+  </closures>
+  <memory>
+    <slocAddr>
+      8
+    </slocAddr>
+    <sloc>
+      2 |-> #own ( #blk ( 1 ) )
+      3 |-> #own ( #blk ( 2 ) )
+      6 |-> #shr ( 9 , 11 , #sl ( 3 ) )
+      7 |-> #mut ( 10 , 10 , #sl ( 3 ) )
+    </sloc>
+    <blkAddr>
+      3
+    </blkAddr>
+    <blocks>
+      #heap ( 1 , 0 ) |-> valcl ( V0 )
+      #heap ( 1 , 1 ) |-> valcl ( V1 )
+      #heap ( 2 , 0 ) |-> valcl ( V0 )
+      #heap ( 2 , 1 ) |-> valcl ( V1 )
+      1 |-> #blkInfo ( 2 , #owner ( #array ( i32 , 2 ) ) )
+      2 |-> #blkInfo ( 2 , #owner ( #array ( i32 , 2 ) ) )
+    </blocks>
+    <locRW>
+      SetItem ( #lread ( #sl ( 5 ) , 8 ) )
+      SetItem ( #lread ( #sl ( 6 ) , 11 ) )
+    </locRW>
+    <memStatus>
+      #heap ( 1 , 0 ) |-> #ms ( 0 , 0 )
+      #heap ( 1 , 1 ) |-> #ms ( 0 , 0 )
+      #heap ( 2 , 0 ) |-> #ms ( 0 , 0 )
+      #heap ( 2 , 1 ) |-> #ms ( 0 , 0 )
+      #sl ( 2 ) |-> #ms ( 0 , 0 )
+      #sl ( 3 ) |-> #ms ( 0 , 0 )
+      #sl ( 4 ) |-> #ms ( 0 , 0 )
+      #sl ( 5 ) |-> #ms ( 0 , 0 )
+      #sl ( 6 ) |-> #ms ( 0 , 0 )
+      #sl ( 7 ) |-> #ms ( 0 , 0 )
+    </memStatus>
+    <clk>
+      12
+    </clk>
+  </memory>
+  <output>
+    .List
+  </output>
+</T>
+Command exited with non-zero status 1
+	Command being timed: "./clkprove rust_tests/rv/obsc/t35-spec.k"
+	User time (seconds): 45.24
+	System time (seconds): 0.98
+	Percent of CPU this job got: 193%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:23.89
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1225324
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 483129
+	Voluntary context switches: 12130
+	Involuntary context switches: 1123
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 237880
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1
+verifying rust_tests/rv/obsc/t36-spec.k:
+          
+<T>
+  <threads>
+    <Thread>
+      <threadId>
+        0
+      </threadId>
+      <tname>
+        "main"
+      </tname>
+      <k>
+        #Read ( #pair ( #sl ( 2 ) , valcl ( true ) ) ) ~> #freezer#Move1_ ( #write ( #sl ( 2 ) , #uninit ( 0 ) ) ) ~> #freezer#letcl1_ ( var ( 2 ) , clskip ) ~> #loopstart ( #loop var ( 1 ) <-cl valcl ( 2 ) { (| letcl var ( 2 ) =cl #move ( var ( 0 ) ) incl clskip |) } ) ~> clskip ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( )
+      </k>
+      <env>
+        var ( 0 ) |-> #sl ( 2 )
+        var ( 1 ) |-> #sl ( 3 )
+      </env>
+      <clstack>
+        ListItem ( var ( 1 ) )
+        ListItem ( var ( 0 ) |-> #sl ( 2 ) )
+        ListItem ( var ( 0 ) )
+        ListItem ( .Map )
+        ListItem ( #state ( . , .Map ) )
+      </clstack>
+    </Thread>
+    <activeThreads>
+      SetItem ( 0 )
+    </activeThreads>
+    <cntThreads>
+      1
+    </cntThreads>
+    <cthread>
+      0
+    </cthread>
+  </threads>
+  <closures>
+    <closureCnt>
+      1
+    </closureCnt>
+    <funclosure>
+      main |-> 0
+    </funclosure>
+    <closure>
+      <crId>
+        0
+      </crId>
+      <crContext>
+        .
+      </crContext>
+      <crParams>
+        .Idents
+      </crParams>
+      <crBody>
+        (| letcl var ( 0 ) =cl #AllocateInit ( valcl ( 2 ) , #owner ( #array ( i32 , 2 ) ) , valcl ( V0 ) , valcl ( V1 ) , .ExpCLs ) incl letcl var ( 1 ) =cl valcl ( 0 ) incl ( #loop var ( 1 ) <-cl valcl ( 2 ) { (| letcl var ( 2 ) =cl #move ( var ( 0 ) ) incl clskip |) } ;cl clskip ) |)
+      </crBody>
+    </closure>
+  </closures>
+  <memory>
+    <slocAddr>
+      5
+    </slocAddr>
+    <sloc>
+      2 |-> #uninit ( 0 )
+      3 |-> valcl ( 0 )
+    </sloc>
+    <blkAddr>
+      2
+    </blkAddr>
+    <blocks>
+      .Map
+    </blocks>
+    <locRW>
+      SetItem ( #lread ( #sl ( 2 ) , 5 ) )
+      SetItem ( #lread ( #sl ( 2 ) , 9 ) )
+      SetItem ( #lread ( #sl ( 3 ) , 4 ) )
+      SetItem ( #lread ( #sl ( 3 ) , 8 ) )
+      SetItem ( #lwrite ( #sl ( 2 ) , 6 ) )
+    </locRW>
+    <memStatus>
+      #heap ( 1 , 0 ) |-> #ms ( 0 , 0 )
+      #heap ( 1 , 1 ) |-> #ms ( 0 , 0 )
+      #sl ( 2 ) |-> #ms ( 0 , 0 )
+      #sl ( 3 ) |-> #ms ( 0 , 0 )
+      #sl ( 4 ) |-> #ms ( 0 , 0 )
+    </memStatus>
+    <clk>
+      9
+    </clk>
+  </memory>
+  <output>
+    .List
+  </output>
+</T>
+Command exited with non-zero status 1
+	Command being timed: "./clkprove rust_tests/rv/obsc/t36-spec.k"
+	User time (seconds): 46.25
+	System time (seconds): 0.87
+	Percent of CPU this job got: 192%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:24.47
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1238800
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 482813
+	Voluntary context switches: 11822
+	Involuntary context switches: 1117
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 243576
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1
+verifying rust_tests/rv/obsc/t37-spec.k:
+          
+  <T>
+    <threads>
+      <Thread>
+        <threadId>
+          0
+        </threadId>
+        <tname>
+          "main"
+        </tname>
+        <k>
+          #stuck ( #lwrite ( #sl ( 3 ) , 38 ) , #shr ( 36 , 41 , #PArray ( #sl ( 2 ) , valcl ( 5 ) ) ) ) ~> #readna ( #sl ( 4 ) ) ~> #freezer#letcl1_ ( var ( 4 ) , clskip ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( )
+        </k>
+        <env>
+          var ( 0 ) |-> #sl ( 2 )
+          var ( 1 ) |-> #sl ( 3 )
+          var ( 2 ) |-> #sl ( 4 )
+          var ( 3 ) |-> #sl ( 5 )
+        </env>
+        <clstack>
+          ListItem ( var ( 3 ) )
+          ListItem ( var ( 0 ) |-> #sl ( 2 )
+          var ( 1 ) |-> #sl ( 3 )
+          var ( 2 ) |-> #sl ( 4 ) )
+          ListItem ( var ( 2 ) )
+          ListItem ( var ( 0 ) |-> #sl ( 2 )
+          var ( 1 ) |-> #sl ( 3 ) )
+          ListItem ( var ( 1 ) )
+          ListItem ( var ( 0 ) |-> #sl ( 2 ) )
+          ListItem ( var ( 0 ) )
+          ListItem ( .Map )
+          ListItem ( #state ( . , .Map ) )
+        </clstack>
+      </Thread>
+      <activeThreads>
+        SetItem ( 0 )
+      </activeThreads>
+      <cntThreads>
+        1
+      </cntThreads>
+      <cthread>
+        0
+      </cthread>
+    </threads>
+    <closures>
+      <closureCnt>
+        1
+      </closureCnt>
+      <funclosure>
+        main |-> 0
+      </funclosure>
+      <closure>
+        <crId>
+          0
+        </crId>
+        <crContext>
+          .
+        </crContext>
+        <crParams>
+          .Idents
+        </crParams>
+        <crBody>
+          (| letcl var ( 0 ) =cl #AllocateInit ( valcl ( 6 ) , #owner ( #array ( i32 , 6 ) ) , valcl ( 1 ) , valcl ( 2 ) , valcl ( 3 ) , valcl ( 4 ) , valcl ( 5 ) , valcl ( 6 ) , .ExpCLs ) incl letcl var ( 1 ) =cl valcl ( 0 ) incl letcl var ( 2 ) =cl #uninit ( 0 ) incl ( #loop var ( 1 ) <-cl valcl ( 6 ) { (| var ( 2 ) :=cl refcl ( 0 , #Index ( var ( 0 ) , var ( 1 ) ) ) ;cl clskip ;cl clskip ;cl var ( 1 ) :=cl var ( 1 ) +cl valcl ( 1 ) ;cl clskip ;cl clskip |) } ;cl letcl var ( 3 ) =cl refcl ( 1 , var ( 0 ) ) incl letcl var ( 4 ) =cl var ( 2 ) incl clskip ) |)
+        </crBody>
+      </closure>
+    </closures>
+    <memory>
+      <slocAddr>
+        6
+      </slocAddr>
+      <sloc>
+        2 |-> #own ( #blk ( 1 ) )
+        3 |-> valcl ( 6 )
+        4 |-> #shr ( 36 , 41 , #PArray ( #sl ( 2 ) , valcl ( 5 ) ) )
+        5 |-> #mut ( 40 , 40 , #sl ( 2 ) )
+      </sloc>
+      <blkAddr>
+        2
+      </blkAddr>
+      <blocks>
+        #heap ( 1 , 0 ) |-> valcl ( 1 )
+        #heap ( 1 , 1 ) |-> valcl ( 2 )
+        #heap ( 1 , 2 ) |-> valcl ( 3 )
+        #heap ( 1 , 3 ) |-> valcl ( 4 )
+        #heap ( 1 , 4 ) |-> valcl ( 5 )
+        #heap ( 1 , 5 ) |-> valcl ( 6 )
+        1 |-> #blkInfo ( 6 , #owner ( #array ( i32 , 6 ) ) )
+      </blocks>
+      <locRW>
+        SetItem ( #lread ( #sl ( 3 ) , 9 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 10 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 12 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 14 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 15 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 17 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 19 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 20 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 22 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 24 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 25 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 27 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 29 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 30 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 32 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 34 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 35 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 37 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 39 ) )
+        SetItem ( #lread ( #sl ( 4 ) , 41 ) )
+        SetItem ( #lwrite ( #sl ( 3 ) , 13 ) )
+        SetItem ( #lwrite ( #sl ( 3 ) , 18 ) )
+        SetItem ( #lwrite ( #sl ( 3 ) , 23 ) )
+        SetItem ( #lwrite ( #sl ( 3 ) , 28 ) )
+        SetItem ( #lwrite ( #sl ( 3 ) , 33 ) )
+        SetItem ( #lwrite ( #sl ( 3 ) , 38 ) )
+        SetItem ( #lwrite ( #sl ( 4 ) , 11 ) )
+        SetItem ( #lwrite ( #sl ( 4 ) , 16 ) )
+        SetItem ( #lwrite ( #sl ( 4 ) , 21 ) )
+        SetItem ( #lwrite ( #sl ( 4 ) , 26 ) )
+        SetItem ( #lwrite ( #sl ( 4 ) , 31 ) )
+        SetItem ( #lwrite ( #sl ( 4 ) , 36 ) )
+      </locRW>
+      <memStatus>
+        #heap ( 1 , 0 ) |-> #ms ( 0 , 0 )
+        #heap ( 1 , 1 ) |-> #ms ( 0 , 0 )
+        #heap ( 1 , 2 ) |-> #ms ( 0 , 0 )
+        #heap ( 1 , 3 ) |-> #ms ( 0 , 0 )
+        #heap ( 1 , 4 ) |-> #ms ( 0 , 0 )
+        #heap ( 1 , 5 ) |-> #ms ( 0 , 0 )
+        #sl ( 2 ) |-> #ms ( 0 , 0 )
+        #sl ( 3 ) |-> #ms ( 0 , 0 )
+        #sl ( 4 ) |-> #ms ( 0 , 0 )
+        #sl ( 5 ) |-> #ms ( 0 , 0 )
+      </memStatus>
+      <clk>
+        42
+      </clk>
+    </memory>
+    <output>
+      .List
+    </output>
+  </T>
+#And
+  <T>
+    <threads>
+      <Thread>
+        <threadId>
+          0
+        </threadId>
+        <tname>
+          "main"
+        </tname>
+        <k>
+          #stuck ( #lwrite ( #sl ( 4 ) , 36 ) , #shr ( 36 , 41 , #PArray ( #sl ( 2 ) , valcl ( 5 ) ) ) ) ~> #readna ( #sl ( 4 ) ) ~> #freezer#letcl1_ ( var ( 4 ) , clskip ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( )
+        </k>
+        <env>
+          var ( 0 ) |-> #sl ( 2 )
+          var ( 1 ) |-> #sl ( 3 )
+          var ( 2 ) |-> #sl ( 4 )
+          var ( 3 ) |-> #sl ( 5 )
+        </env>
+        <clstack>
+          ListItem ( var ( 3 ) )
+          ListItem ( var ( 0 ) |-> #sl ( 2 )
+          var ( 1 ) |-> #sl ( 3 )
+          var ( 2 ) |-> #sl ( 4 ) )
+          ListItem ( var ( 2 ) )
+          ListItem ( var ( 0 ) |-> #sl ( 2 )
+          var ( 1 ) |-> #sl ( 3 ) )
+          ListItem ( var ( 1 ) )
+          ListItem ( var ( 0 ) |-> #sl ( 2 ) )
+          ListItem ( var ( 0 ) )
+          ListItem ( .Map )
+          ListItem ( #state ( . , .Map ) )
+        </clstack>
+      </Thread>
+      <activeThreads>
+        SetItem ( 0 )
+      </activeThreads>
+      <cntThreads>
+        1
+      </cntThreads>
+      <cthread>
+        0
+      </cthread>
+    </threads>
+    <closures>
+      <closureCnt>
+        1
+      </closureCnt>
+      <funclosure>
+        main |-> 0
+      </funclosure>
+      <closure>
+        <crId>
+          0
+        </crId>
+        <crContext>
+          .
+        </crContext>
+        <crParams>
+          .Idents
+        </crParams>
+        <crBody>
+          (| letcl var ( 0 ) =cl #AllocateInit ( valcl ( 6 ) , #owner ( #array ( i32 , 6 ) ) , valcl ( 1 ) , valcl ( 2 ) , valcl ( 3 ) , valcl ( 4 ) , valcl ( 5 ) , valcl ( 6 ) , .ExpCLs ) incl letcl var ( 1 ) =cl valcl ( 0 ) incl letcl var ( 2 ) =cl #uninit ( 0 ) incl ( #loop var ( 1 ) <-cl valcl ( 6 ) { (| var ( 2 ) :=cl refcl ( 0 , #Index ( var ( 0 ) , var ( 1 ) ) ) ;cl clskip ;cl clskip ;cl var ( 1 ) :=cl var ( 1 ) +cl valcl ( 1 ) ;cl clskip ;cl clskip |) } ;cl letcl var ( 3 ) =cl refcl ( 1 , var ( 0 ) ) incl letcl var ( 4 ) =cl var ( 2 ) incl clskip ) |)
+        </crBody>
+      </closure>
+    </closures>
+    <memory>
+      <slocAddr>
+        6
+      </slocAddr>
+      <sloc>
+        2 |-> #own ( #blk ( 1 ) )
+        3 |-> valcl ( 6 )
+        4 |-> #shr ( 36 , 41 , #PArray ( #sl ( 2 ) , valcl ( 5 ) ) )
+        5 |-> #mut ( 40 , 40 , #sl ( 2 ) )
+      </sloc>
+      <blkAddr>
+        2
+      </blkAddr>
+      <blocks>
+        #heap ( 1 , 0 ) |-> valcl ( 1 )
+        #heap ( 1 , 1 ) |-> valcl ( 2 )
+        #heap ( 1 , 2 ) |-> valcl ( 3 )
+        #heap ( 1 , 3 ) |-> valcl ( 4 )
+        #heap ( 1 , 4 ) |-> valcl ( 5 )
+        #heap ( 1 , 5 ) |-> valcl ( 6 )
+        1 |-> #blkInfo ( 6 , #owner ( #array ( i32 , 6 ) ) )
+      </blocks>
+      <locRW>
+        SetItem ( #lread ( #sl ( 3 ) , 9 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 10 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 12 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 14 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 15 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 17 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 19 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 20 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 22 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 24 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 25 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 27 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 29 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 30 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 32 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 34 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 35 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 37 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 39 ) )
+        SetItem ( #lread ( #sl ( 4 ) , 41 ) )
+        SetItem ( #lwrite ( #sl ( 3 ) , 13 ) )
+        SetItem ( #lwrite ( #sl ( 3 ) , 18 ) )
+        SetItem ( #lwrite ( #sl ( 3 ) , 23 ) )
+        SetItem ( #lwrite ( #sl ( 3 ) , 28 ) )
+        SetItem ( #lwrite ( #sl ( 3 ) , 33 ) )
+        SetItem ( #lwrite ( #sl ( 3 ) , 38 ) )
+        SetItem ( #lwrite ( #sl ( 4 ) , 11 ) )
+        SetItem ( #lwrite ( #sl ( 4 ) , 16 ) )
+        SetItem ( #lwrite ( #sl ( 4 ) , 21 ) )
+        SetItem ( #lwrite ( #sl ( 4 ) , 26 ) )
+        SetItem ( #lwrite ( #sl ( 4 ) , 31 ) )
+        SetItem ( #lwrite ( #sl ( 4 ) , 36 ) )
+      </locRW>
+      <memStatus>
+        #heap ( 1 , 0 ) |-> #ms ( 0 , 0 )
+        #heap ( 1 , 1 ) |-> #ms ( 0 , 0 )
+        #heap ( 1 , 2 ) |-> #ms ( 0 , 0 )
+        #heap ( 1 , 3 ) |-> #ms ( 0 , 0 )
+        #heap ( 1 , 4 ) |-> #ms ( 0 , 0 )
+        #heap ( 1 , 5 ) |-> #ms ( 0 , 0 )
+        #sl ( 2 ) |-> #ms ( 0 , 0 )
+        #sl ( 3 ) |-> #ms ( 0 , 0 )
+        #sl ( 4 ) |-> #ms ( 0 , 0 )
+        #sl ( 5 ) |-> #ms ( 0 , 0 )
+      </memStatus>
+      <clk>
+        42
+      </clk>
+    </memory>
+    <output>
+      .List
+    </output>
+  </T>
+#And
+  <T>
+    <threads>
+      <Thread>
+        <threadId>
+          0
+        </threadId>
+        <tname>
+          "main"
+        </tname>
+        <k>
+          #stuck ( #mut ( 40 , 40 , #sl ( 2 ) ) , #shr ( 36 , 41 , #PArray ( #sl ( 2 ) , valcl ( 5 ) ) ) ) ~> #ckRefLT ( .Map , 4 , #shr ( 36 , 41 , #PArray ( #sl ( 2 ) , valcl ( 5 ) ) ) ) ~> #ckRefLT ( #heap ( 1 , 0 ) |-> valcl ( 1 )
+          #heap ( 1 , 1 ) |-> valcl ( 2 )
+          #heap ( 1 , 2 ) |-> valcl ( 3 )
+          #heap ( 1 , 3 ) |-> valcl ( 4 )
+          #heap ( 1 , 4 ) |-> valcl ( 5 )
+          #heap ( 1 , 5 ) |-> valcl ( 6 )
+          1 |-> #blkInfo ( 6 , #owner ( #array ( i32 , 6 ) ) ) , 4 , #shr ( 36 , 41 , #PArray ( #sl ( 2 ) , valcl ( 5 ) ) ) ) ~> #wellFormAct ( #shr ( 36 , 41 , #PArray ( #sl ( 2 ) , valcl ( 5 ) ) ) ) ~> #readna ( #sl ( 4 ) ) ~> #freezer#letcl1_ ( var ( 4 ) , clskip ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( )
+        </k>
+        <env>
+          var ( 0 ) |-> #sl ( 2 )
+          var ( 1 ) |-> #sl ( 3 )
+          var ( 2 ) |-> #sl ( 4 )
+          var ( 3 ) |-> #sl ( 5 )
+        </env>
+        <clstack>
+          ListItem ( var ( 3 ) )
+          ListItem ( var ( 0 ) |-> #sl ( 2 )
+          var ( 1 ) |-> #sl ( 3 )
+          var ( 2 ) |-> #sl ( 4 ) )
+          ListItem ( var ( 2 ) )
+          ListItem ( var ( 0 ) |-> #sl ( 2 )
+          var ( 1 ) |-> #sl ( 3 ) )
+          ListItem ( var ( 1 ) )
+          ListItem ( var ( 0 ) |-> #sl ( 2 ) )
+          ListItem ( var ( 0 ) )
+          ListItem ( .Map )
+          ListItem ( #state ( . , .Map ) )
+        </clstack>
+      </Thread>
+      <activeThreads>
+        SetItem ( 0 )
+      </activeThreads>
+      <cntThreads>
+        1
+      </cntThreads>
+      <cthread>
+        0
+      </cthread>
+    </threads>
+    <closures>
+      <closureCnt>
+        1
+      </closureCnt>
+      <funclosure>
+        main |-> 0
+      </funclosure>
+      <closure>
+        <crId>
+          0
+        </crId>
+        <crContext>
+          .
+        </crContext>
+        <crParams>
+          .Idents
+        </crParams>
+        <crBody>
+          (| letcl var ( 0 ) =cl #AllocateInit ( valcl ( 6 ) , #owner ( #array ( i32 , 6 ) ) , valcl ( 1 ) , valcl ( 2 ) , valcl ( 3 ) , valcl ( 4 ) , valcl ( 5 ) , valcl ( 6 ) , .ExpCLs ) incl letcl var ( 1 ) =cl valcl ( 0 ) incl letcl var ( 2 ) =cl #uninit ( 0 ) incl ( #loop var ( 1 ) <-cl valcl ( 6 ) { (| var ( 2 ) :=cl refcl ( 0 , #Index ( var ( 0 ) , var ( 1 ) ) ) ;cl clskip ;cl clskip ;cl var ( 1 ) :=cl var ( 1 ) +cl valcl ( 1 ) ;cl clskip ;cl clskip |) } ;cl letcl var ( 3 ) =cl refcl ( 1 , var ( 0 ) ) incl letcl var ( 4 ) =cl var ( 2 ) incl clskip ) |)
+        </crBody>
+      </closure>
+    </closures>
+    <memory>
+      <slocAddr>
+        6
+      </slocAddr>
+      <sloc>
+        2 |-> #own ( #blk ( 1 ) )
+        3 |-> valcl ( 6 )
+        4 |-> #shr ( 36 , 41 , #PArray ( #sl ( 2 ) , valcl ( 5 ) ) )
+        5 |-> #mut ( 40 , 40 , #sl ( 2 ) )
+      </sloc>
+      <blkAddr>
+        2
+      </blkAddr>
+      <blocks>
+        #heap ( 1 , 0 ) |-> valcl ( 1 )
+        #heap ( 1 , 1 ) |-> valcl ( 2 )
+        #heap ( 1 , 2 ) |-> valcl ( 3 )
+        #heap ( 1 , 3 ) |-> valcl ( 4 )
+        #heap ( 1 , 4 ) |-> valcl ( 5 )
+        #heap ( 1 , 5 ) |-> valcl ( 6 )
+        1 |-> #blkInfo ( 6 , #owner ( #array ( i32 , 6 ) ) )
+      </blocks>
+      <locRW>
+        SetItem ( #lread ( #sl ( 3 ) , 9 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 10 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 12 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 14 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 15 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 17 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 19 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 20 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 22 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 24 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 25 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 27 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 29 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 30 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 32 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 34 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 35 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 37 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 39 ) )
+        SetItem ( #lread ( #sl ( 4 ) , 41 ) )
+        SetItem ( #lwrite ( #sl ( 3 ) , 13 ) )
+        SetItem ( #lwrite ( #sl ( 3 ) , 18 ) )
+        SetItem ( #lwrite ( #sl ( 3 ) , 23 ) )
+        SetItem ( #lwrite ( #sl ( 3 ) , 28 ) )
+        SetItem ( #lwrite ( #sl ( 3 ) , 33 ) )
+        SetItem ( #lwrite ( #sl ( 3 ) , 38 ) )
+        SetItem ( #lwrite ( #sl ( 4 ) , 11 ) )
+        SetItem ( #lwrite ( #sl ( 4 ) , 16 ) )
+        SetItem ( #lwrite ( #sl ( 4 ) , 21 ) )
+        SetItem ( #lwrite ( #sl ( 4 ) , 26 ) )
+        SetItem ( #lwrite ( #sl ( 4 ) , 31 ) )
+        SetItem ( #lwrite ( #sl ( 4 ) , 36 ) )
+      </locRW>
+      <memStatus>
+        #heap ( 1 , 0 ) |-> #ms ( 0 , 0 )
+        #heap ( 1 , 1 ) |-> #ms ( 0 , 0 )
+        #heap ( 1 , 2 ) |-> #ms ( 0 , 0 )
+        #heap ( 1 , 3 ) |-> #ms ( 0 , 0 )
+        #heap ( 1 , 4 ) |-> #ms ( 0 , 0 )
+        #heap ( 1 , 5 ) |-> #ms ( 0 , 0 )
+        #sl ( 2 ) |-> #ms ( 0 , 0 )
+        #sl ( 3 ) |-> #ms ( 0 , 0 )
+        #sl ( 4 ) |-> #ms ( 0 , 0 )
+        #sl ( 5 ) |-> #ms ( 0 , 0 )
+      </memStatus>
+      <clk>
+        42
+      </clk>
+    </memory>
+    <output>
+      .List
+    </output>
+  </T>
+[Warning] Critical: missing SMTLib translation for #match (missing SMTLib
+translation for #match)
+Command exited with non-zero status 1
+	Command being timed: "./clkprove rust_tests/rv/obsc/t37-spec.k"
+	User time (seconds): 48.22
+	System time (seconds): 0.88
+	Percent of CPU this job got: 200%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:24.53
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1045992
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 450733
+	Voluntary context switches: 12724
+	Involuntary context switches: 1406
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 249296
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1
+verifying rust_tests/rv/obsc/t38-spec.k:
+          
+  <T>
+    <threads>
+      <Thread>
+        <threadId>
+          0
+        </threadId>
+        <tname>
+          "main"
+        </tname>
+        <k>
+          #stuck ( #lwrite ( #sl ( 2 ) , 40 ) , #shr ( 36 , 41 , #PArray ( #sl ( 2 ) , valcl ( 5 ) ) ) ) ~> #readna ( #sl ( 4 ) ) ~> #freezer#letcl1_ ( var ( 3 ) , clskip ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( )
+        </k>
+        <env>
+          var ( 0 ) |-> #sl ( 2 )
+          var ( 1 ) |-> #sl ( 3 )
+          var ( 2 ) |-> #sl ( 4 )
+        </env>
+        <clstack>
+          ListItem ( var ( 2 ) )
+          ListItem ( var ( 0 ) |-> #sl ( 2 )
+          var ( 1 ) |-> #sl ( 3 ) )
+          ListItem ( var ( 1 ) )
+          ListItem ( var ( 0 ) |-> #sl ( 2 ) )
+          ListItem ( var ( 0 ) )
+          ListItem ( .Map )
+          ListItem ( #state ( . , .Map ) )
+        </clstack>
+      </Thread>
+      <activeThreads>
+        SetItem ( 0 )
+      </activeThreads>
+      <cntThreads>
+        1
+      </cntThreads>
+      <cthread>
+        0
+      </cthread>
+    </threads>
+    <closures>
+      <closureCnt>
+        1
+      </closureCnt>
+      <funclosure>
+        main |-> 0
+      </funclosure>
+      <closure>
+        <crId>
+          0
+        </crId>
+        <crContext>
+          .
+        </crContext>
+        <crParams>
+          .Idents
+        </crParams>
+        <crBody>
+          (| letcl var ( 0 ) =cl #AllocateInit ( valcl ( 6 ) , #owner ( #array ( i32 , 6 ) ) , valcl ( 1 ) , valcl ( 2 ) , valcl ( 3 ) , valcl ( 4 ) , valcl ( 5 ) , valcl ( 6 ) , .ExpCLs ) incl letcl var ( 1 ) =cl valcl ( 0 ) incl letcl var ( 2 ) =cl #uninit ( 0 ) incl ( #loop var ( 1 ) <-cl valcl ( 6 ) { (| var ( 2 ) :=cl refcl ( 0 , #Index ( var ( 0 ) , var ( 1 ) ) ) ;cl clskip ;cl clskip ;cl var ( 1 ) :=cl var ( 1 ) +cl valcl ( 1 ) ;cl clskip ;cl clskip |) } ;cl #Index ( var ( 0 ) , valcl ( 3 ) ) :=cl sc valcl ( 3 ) ;cl clskip ;cl clskip ;cl letcl var ( 3 ) =cl var ( 2 ) incl clskip ) |)
+        </crBody>
+      </closure>
+    </closures>
+    <memory>
+      <slocAddr>
+        5
+      </slocAddr>
+      <sloc>
+        2 |-> #own ( #blk ( 1 ) )
+        3 |-> valcl ( 6 )
+        4 |-> #shr ( 36 , 41 , #PArray ( #sl ( 2 ) , valcl ( 5 ) ) )
+      </sloc>
+      <blkAddr>
+        2
+      </blkAddr>
+      <blocks>
+        #heap ( 1 , 0 ) |-> valcl ( 1 )
+        #heap ( 1 , 1 ) |-> valcl ( 2 )
+        #heap ( 1 , 2 ) |-> valcl ( 3 )
+        #heap ( 1 , 3 ) |-> valcl ( 3 )
+        #heap ( 1 , 4 ) |-> valcl ( 5 )
+        #heap ( 1 , 5 ) |-> valcl ( 6 )
+        1 |-> #blkInfo ( 6 , #owner ( #array ( i32 , 6 ) ) )
+      </blocks>
+      <locRW>
+        SetItem ( #lread ( #sl ( 3 ) , 9 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 10 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 12 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 14 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 15 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 17 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 19 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 20 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 22 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 24 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 25 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 27 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 29 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 30 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 32 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 34 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 35 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 37 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 39 ) )
+        SetItem ( #lread ( #sl ( 4 ) , 41 ) )
+        SetItem ( #lwrite ( #sl ( 2 ) , 40 ) )
+        SetItem ( #lwrite ( #sl ( 3 ) , 13 ) )
+        SetItem ( #lwrite ( #sl ( 3 ) , 18 ) )
+        SetItem ( #lwrite ( #sl ( 3 ) , 23 ) )
+        SetItem ( #lwrite ( #sl ( 3 ) , 28 ) )
+        SetItem ( #lwrite ( #sl ( 3 ) , 33 ) )
+        SetItem ( #lwrite ( #sl ( 3 ) , 38 ) )
+        SetItem ( #lwrite ( #sl ( 4 ) , 11 ) )
+        SetItem ( #lwrite ( #sl ( 4 ) , 16 ) )
+        SetItem ( #lwrite ( #sl ( 4 ) , 21 ) )
+        SetItem ( #lwrite ( #sl ( 4 ) , 26 ) )
+        SetItem ( #lwrite ( #sl ( 4 ) , 31 ) )
+        SetItem ( #lwrite ( #sl ( 4 ) , 36 ) )
+      </locRW>
+      <memStatus>
+        #heap ( 1 , 0 ) |-> #ms ( 0 , 0 )
+        #heap ( 1 , 1 ) |-> #ms ( 0 , 0 )
+        #heap ( 1 , 2 ) |-> #ms ( 0 , 0 )
+        #heap ( 1 , 3 ) |-> #ms ( 0 , 0 )
+        #heap ( 1 , 4 ) |-> #ms ( 0 , 0 )
+        #heap ( 1 , 5 ) |-> #ms ( 0 , 0 )
+        #sl ( 2 ) |-> #ms ( 0 , 0 )
+        #sl ( 3 ) |-> #ms ( 0 , 0 )
+        #sl ( 4 ) |-> #ms ( 0 , 0 )
+      </memStatus>
+      <clk>
+        42
+      </clk>
+    </memory>
+    <output>
+      .List
+    </output>
+  </T>
+#And
+  <T>
+    <threads>
+      <Thread>
+        <threadId>
+          0
+        </threadId>
+        <tname>
+          "main"
+        </tname>
+        <k>
+          #stuck ( #lwrite ( #sl ( 3 ) , 38 ) , #shr ( 36 , 41 , #PArray ( #sl ( 2 ) , valcl ( 5 ) ) ) ) ~> #readna ( #sl ( 4 ) ) ~> #freezer#letcl1_ ( var ( 3 ) , clskip ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( )
+        </k>
+        <env>
+          var ( 0 ) |-> #sl ( 2 )
+          var ( 1 ) |-> #sl ( 3 )
+          var ( 2 ) |-> #sl ( 4 )
+        </env>
+        <clstack>
+          ListItem ( var ( 2 ) )
+          ListItem ( var ( 0 ) |-> #sl ( 2 )
+          var ( 1 ) |-> #sl ( 3 ) )
+          ListItem ( var ( 1 ) )
+          ListItem ( var ( 0 ) |-> #sl ( 2 ) )
+          ListItem ( var ( 0 ) )
+          ListItem ( .Map )
+          ListItem ( #state ( . , .Map ) )
+        </clstack>
+      </Thread>
+      <activeThreads>
+        SetItem ( 0 )
+      </activeThreads>
+      <cntThreads>
+        1
+      </cntThreads>
+      <cthread>
+        0
+      </cthread>
+    </threads>
+    <closures>
+      <closureCnt>
+        1
+      </closureCnt>
+      <funclosure>
+        main |-> 0
+      </funclosure>
+      <closure>
+        <crId>
+          0
+        </crId>
+        <crContext>
+          .
+        </crContext>
+        <crParams>
+          .Idents
+        </crParams>
+        <crBody>
+          (| letcl var ( 0 ) =cl #AllocateInit ( valcl ( 6 ) , #owner ( #array ( i32 , 6 ) ) , valcl ( 1 ) , valcl ( 2 ) , valcl ( 3 ) , valcl ( 4 ) , valcl ( 5 ) , valcl ( 6 ) , .ExpCLs ) incl letcl var ( 1 ) =cl valcl ( 0 ) incl letcl var ( 2 ) =cl #uninit ( 0 ) incl ( #loop var ( 1 ) <-cl valcl ( 6 ) { (| var ( 2 ) :=cl refcl ( 0 , #Index ( var ( 0 ) , var ( 1 ) ) ) ;cl clskip ;cl clskip ;cl var ( 1 ) :=cl var ( 1 ) +cl valcl ( 1 ) ;cl clskip ;cl clskip |) } ;cl #Index ( var ( 0 ) , valcl ( 3 ) ) :=cl sc valcl ( 3 ) ;cl clskip ;cl clskip ;cl letcl var ( 3 ) =cl var ( 2 ) incl clskip ) |)
+        </crBody>
+      </closure>
+    </closures>
+    <memory>
+      <slocAddr>
+        5
+      </slocAddr>
+      <sloc>
+        2 |-> #own ( #blk ( 1 ) )
+        3 |-> valcl ( 6 )
+        4 |-> #shr ( 36 , 41 , #PArray ( #sl ( 2 ) , valcl ( 5 ) ) )
+      </sloc>
+      <blkAddr>
+        2
+      </blkAddr>
+      <blocks>
+        #heap ( 1 , 0 ) |-> valcl ( 1 )
+        #heap ( 1 , 1 ) |-> valcl ( 2 )
+        #heap ( 1 , 2 ) |-> valcl ( 3 )
+        #heap ( 1 , 3 ) |-> valcl ( 3 )
+        #heap ( 1 , 4 ) |-> valcl ( 5 )
+        #heap ( 1 , 5 ) |-> valcl ( 6 )
+        1 |-> #blkInfo ( 6 , #owner ( #array ( i32 , 6 ) ) )
+      </blocks>
+      <locRW>
+        SetItem ( #lread ( #sl ( 3 ) , 9 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 10 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 12 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 14 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 15 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 17 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 19 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 20 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 22 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 24 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 25 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 27 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 29 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 30 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 32 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 34 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 35 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 37 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 39 ) )
+        SetItem ( #lread ( #sl ( 4 ) , 41 ) )
+        SetItem ( #lwrite ( #sl ( 2 ) , 40 ) )
+        SetItem ( #lwrite ( #sl ( 3 ) , 13 ) )
+        SetItem ( #lwrite ( #sl ( 3 ) , 18 ) )
+        SetItem ( #lwrite ( #sl ( 3 ) , 23 ) )
+        SetItem ( #lwrite ( #sl ( 3 ) , 28 ) )
+        SetItem ( #lwrite ( #sl ( 3 ) , 33 ) )
+        SetItem ( #lwrite ( #sl ( 3 ) , 38 ) )
+        SetItem ( #lwrite ( #sl ( 4 ) , 11 ) )
+        SetItem ( #lwrite ( #sl ( 4 ) , 16 ) )
+        SetItem ( #lwrite ( #sl ( 4 ) , 21 ) )
+        SetItem ( #lwrite ( #sl ( 4 ) , 26 ) )
+        SetItem ( #lwrite ( #sl ( 4 ) , 31 ) )
+        SetItem ( #lwrite ( #sl ( 4 ) , 36 ) )
+      </locRW>
+      <memStatus>
+        #heap ( 1 , 0 ) |-> #ms ( 0 , 0 )
+        #heap ( 1 , 1 ) |-> #ms ( 0 , 0 )
+        #heap ( 1 , 2 ) |-> #ms ( 0 , 0 )
+        #heap ( 1 , 3 ) |-> #ms ( 0 , 0 )
+        #heap ( 1 , 4 ) |-> #ms ( 0 , 0 )
+        #heap ( 1 , 5 ) |-> #ms ( 0 , 0 )
+        #sl ( 2 ) |-> #ms ( 0 , 0 )
+        #sl ( 3 ) |-> #ms ( 0 , 0 )
+        #sl ( 4 ) |-> #ms ( 0 , 0 )
+      </memStatus>
+      <clk>
+        42
+      </clk>
+    </memory>
+    <output>
+      .List
+    </output>
+  </T>
+#And
+  <T>
+    <threads>
+      <Thread>
+        <threadId>
+          0
+        </threadId>
+        <tname>
+          "main"
+        </tname>
+        <k>
+          #stuck ( #lwrite ( #sl ( 4 ) , 36 ) , #shr ( 36 , 41 , #PArray ( #sl ( 2 ) , valcl ( 5 ) ) ) ) ~> #readna ( #sl ( 4 ) ) ~> #freezer#letcl1_ ( var ( 3 ) , clskip ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( )
+        </k>
+        <env>
+          var ( 0 ) |-> #sl ( 2 )
+          var ( 1 ) |-> #sl ( 3 )
+          var ( 2 ) |-> #sl ( 4 )
+        </env>
+        <clstack>
+          ListItem ( var ( 2 ) )
+          ListItem ( var ( 0 ) |-> #sl ( 2 )
+          var ( 1 ) |-> #sl ( 3 ) )
+          ListItem ( var ( 1 ) )
+          ListItem ( var ( 0 ) |-> #sl ( 2 ) )
+          ListItem ( var ( 0 ) )
+          ListItem ( .Map )
+          ListItem ( #state ( . , .Map ) )
+        </clstack>
+      </Thread>
+      <activeThreads>
+        SetItem ( 0 )
+      </activeThreads>
+      <cntThreads>
+        1
+      </cntThreads>
+      <cthread>
+        0
+      </cthread>
+    </threads>
+    <closures>
+      <closureCnt>
+        1
+      </closureCnt>
+      <funclosure>
+        main |-> 0
+      </funclosure>
+      <closure>
+        <crId>
+          0
+        </crId>
+        <crContext>
+          .
+        </crContext>
+        <crParams>
+          .Idents
+        </crParams>
+        <crBody>
+          (| letcl var ( 0 ) =cl #AllocateInit ( valcl ( 6 ) , #owner ( #array ( i32 , 6 ) ) , valcl ( 1 ) , valcl ( 2 ) , valcl ( 3 ) , valcl ( 4 ) , valcl ( 5 ) , valcl ( 6 ) , .ExpCLs ) incl letcl var ( 1 ) =cl valcl ( 0 ) incl letcl var ( 2 ) =cl #uninit ( 0 ) incl ( #loop var ( 1 ) <-cl valcl ( 6 ) { (| var ( 2 ) :=cl refcl ( 0 , #Index ( var ( 0 ) , var ( 1 ) ) ) ;cl clskip ;cl clskip ;cl var ( 1 ) :=cl var ( 1 ) +cl valcl ( 1 ) ;cl clskip ;cl clskip |) } ;cl #Index ( var ( 0 ) , valcl ( 3 ) ) :=cl sc valcl ( 3 ) ;cl clskip ;cl clskip ;cl letcl var ( 3 ) =cl var ( 2 ) incl clskip ) |)
+        </crBody>
+      </closure>
+    </closures>
+    <memory>
+      <slocAddr>
+        5
+      </slocAddr>
+      <sloc>
+        2 |-> #own ( #blk ( 1 ) )
+        3 |-> valcl ( 6 )
+        4 |-> #shr ( 36 , 41 , #PArray ( #sl ( 2 ) , valcl ( 5 ) ) )
+      </sloc>
+      <blkAddr>
+        2
+      </blkAddr>
+      <blocks>
+        #heap ( 1 , 0 ) |-> valcl ( 1 )
+        #heap ( 1 , 1 ) |-> valcl ( 2 )
+        #heap ( 1 , 2 ) |-> valcl ( 3 )
+        #heap ( 1 , 3 ) |-> valcl ( 3 )
+        #heap ( 1 , 4 ) |-> valcl ( 5 )
+        #heap ( 1 , 5 ) |-> valcl ( 6 )
+        1 |-> #blkInfo ( 6 , #owner ( #array ( i32 , 6 ) ) )
+      </blocks>
+      <locRW>
+        SetItem ( #lread ( #sl ( 3 ) , 9 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 10 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 12 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 14 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 15 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 17 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 19 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 20 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 22 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 24 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 25 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 27 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 29 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 30 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 32 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 34 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 35 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 37 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 39 ) )
+        SetItem ( #lread ( #sl ( 4 ) , 41 ) )
+        SetItem ( #lwrite ( #sl ( 2 ) , 40 ) )
+        SetItem ( #lwrite ( #sl ( 3 ) , 13 ) )
+        SetItem ( #lwrite ( #sl ( 3 ) , 18 ) )
+        SetItem ( #lwrite ( #sl ( 3 ) , 23 ) )
+        SetItem ( #lwrite ( #sl ( 3 ) , 28 ) )
+        SetItem ( #lwrite ( #sl ( 3 ) , 33 ) )
+        SetItem ( #lwrite ( #sl ( 3 ) , 38 ) )
+        SetItem ( #lwrite ( #sl ( 4 ) , 11 ) )
+        SetItem ( #lwrite ( #sl ( 4 ) , 16 ) )
+        SetItem ( #lwrite ( #sl ( 4 ) , 21 ) )
+        SetItem ( #lwrite ( #sl ( 4 ) , 26 ) )
+        SetItem ( #lwrite ( #sl ( 4 ) , 31 ) )
+        SetItem ( #lwrite ( #sl ( 4 ) , 36 ) )
+      </locRW>
+      <memStatus>
+        #heap ( 1 , 0 ) |-> #ms ( 0 , 0 )
+        #heap ( 1 , 1 ) |-> #ms ( 0 , 0 )
+        #heap ( 1 , 2 ) |-> #ms ( 0 , 0 )
+        #heap ( 1 , 3 ) |-> #ms ( 0 , 0 )
+        #heap ( 1 , 4 ) |-> #ms ( 0 , 0 )
+        #heap ( 1 , 5 ) |-> #ms ( 0 , 0 )
+        #sl ( 2 ) |-> #ms ( 0 , 0 )
+        #sl ( 3 ) |-> #ms ( 0 , 0 )
+        #sl ( 4 ) |-> #ms ( 0 , 0 )
+      </memStatus>
+      <clk>
+        42
+      </clk>
+    </memory>
+    <output>
+      .List
+    </output>
+  </T>
+[Warning] Critical: missing SMTLib translation for #match (missing SMTLib
+translation for #match)
+Command exited with non-zero status 1
+	Command being timed: "./clkprove rust_tests/rv/obsc/t38-spec.k"
+	User time (seconds): 51.20
+	System time (seconds): 0.95
+	Percent of CPU this job got: 201%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:25.91
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1357064
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 520462
+	Voluntary context switches: 13053
+	Involuntary context switches: 1421
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 255008
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1
+verifying rust_tests/rv/obsc/t39-spec.k:
+          
+#True
+	Command being timed: "./clkprove rust_tests/rv/obsc/t39-spec.k"
+	User time (seconds): 47.59
+	System time (seconds): 0.90
+	Percent of CPU this job got: 189%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:25.62
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1189456
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 463809
+	Voluntary context switches: 11984
+	Involuntary context switches: 2597
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 260696
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+verifying rust_tests/rv/obsc/t3-spec.k:
+          
+#True
+	Command being timed: "./clkprove rust_tests/rv/obsc/t3-spec.k"
+	User time (seconds): 46.13
+	System time (seconds): 1.00
+	Percent of CPU this job got: 189%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:24.85
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1347280
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 510359
+	Voluntary context switches: 11351
+	Involuntary context switches: 1106
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 260760
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+verifying rust_tests/rv/obsc/t40-spec.k:
+          
+<T>
+  <threads>
+    <Thread>
+      <threadId>
+        0
+      </threadId>
+      <tname>
+        "main"
+      </tname>
+      <k>
+        #stuck ( #mut ( 15 , 15 , #sl ( 2 ) ) , #mut ( 8 , 19 , #sl ( 2 ) . valcl ( 0 ) ) ) ~> #ckRefLT ( .Map , 4 , #mut ( 8 , 19 , #sl ( 2 ) . valcl ( 0 ) ) ) ~> #ckRefLT ( #heap ( 1 , 0 ) |-> valcl ( V0 )
+        #heap ( 1 , 1 ) |-> valcl ( V1 )
+        1 |-> #blkInfo ( 2 , #IdTy ( V2 , #prod ( #fd ( a , i32 ) , #fd ( b , i32 ) , .Fields ) ) ) , 4 , #mut ( 8 , 19 , #sl ( 2 ) . valcl ( 0 ) ) ) ~> #wellFormAct ( #mut ( 8 , 19 , #sl ( 2 ) . valcl ( 0 ) ) ) ~> #readna ( #sl ( 4 ) ) ~> #freezer#letcl1_ ( var ( 4 ) , clskip ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( )
+      </k>
+      <env>
+        var ( 0 ) |-> #sl ( 2 )
+        var ( 1 ) |-> #sl ( 3 )
+        var ( 2 ) |-> #sl ( 4 )
+        var ( 3 ) |-> #sl ( 5 )
+      </env>
+      <clstack>
+        ListItem ( var ( 3 ) )
+        ListItem ( var ( 0 ) |-> #sl ( 2 )
+        var ( 1 ) |-> #sl ( 3 )
+        var ( 2 ) |-> #sl ( 4 ) )
+        ListItem ( var ( 2 ) )
+        ListItem ( var ( 0 ) |-> #sl ( 2 )
+        var ( 1 ) |-> #sl ( 3 ) )
+        ListItem ( var ( 1 ) )
+        ListItem ( var ( 0 ) |-> #sl ( 2 ) )
+        ListItem ( var ( 0 ) )
+        ListItem ( .Map )
+        ListItem ( #state ( . , .Map ) )
+      </clstack>
+    </Thread>
+    <activeThreads>
+      SetItem ( 0 )
+    </activeThreads>
+    <cntThreads>
+      1
+    </cntThreads>
+    <cthread>
+      0
+    </cthread>
+  </threads>
+  <closures>
+    <closureCnt>
+      1
+    </closureCnt>
+    <funclosure>
+      main |-> 0
+    </funclosure>
+    <closure>
+      <crId>
+        0
+      </crId>
+      <crContext>
+        .
+      </crContext>
+      <crParams>
+        .Idents
+      </crParams>
+      <crBody>
+        (| letcl var ( 0 ) =cl #AllocateInit ( valcl ( 2 ) , #IdTy ( V2 , #prod ( #fd ( a , i32 ) , #fd ( b , i32 ) , .Fields ) ) , valcl ( V0 ) , valcl ( V1 ) , .ExpCLs ) incl letcl var ( 1 ) =cl valcl ( 0 ) incl letcl var ( 2 ) =cl #uninit ( 0 ) incl letcl var ( 3 ) =cl #uninit ( 0 ) incl ( #loop var ( 1 ) <-cl valcl ( 2 ) { (| ifcl var ( 1 ) ==cl valcl ( 0 ) thencl (| clskip |) elsecl (| var ( 2 ) :=cl refcl ( 1 , var ( 0 ) .cl valcl ( 0 ) ) ;cl clskip ;cl clskip |) ;cl clskip ;cl clskip ;cl ifcl var ( 1 ) ==cl valcl ( 1 ) thencl (| clskip |) elsecl (| var ( 3 ) :=cl refcl ( 1 , var ( 0 ) ) ;cl clskip ;cl clskip |) ;cl clskip ;cl clskip ;cl var ( 1 ) :=cl var ( 1 ) +cl valcl ( 1 ) ;cl clskip ;cl clskip |) } ;cl letcl var ( 4 ) =cl var ( 2 ) incl clskip ) |)
+      </crBody>
+    </closure>
+  </closures>
+  <memory>
+    <slocAddr>
+      6
+    </slocAddr>
+    <sloc>
+      2 |-> #own ( #blk ( 1 ) )
+      3 |-> valcl ( 2 )
+      4 |-> #mut ( 8 , 19 , #sl ( 2 ) . valcl ( 0 ) )
+      5 |-> #mut ( 15 , 15 , #sl ( 2 ) )
+    </sloc>
+    <blkAddr>
+      2
+    </blkAddr>
+    <blocks>
+      #heap ( 1 , 0 ) |-> valcl ( V0 )
+      #heap ( 1 , 1 ) |-> valcl ( V1 )
+      1 |-> #blkInfo ( 2 , #IdTy ( V2 , #prod ( #fd ( a , i32 ) , #fd ( b , i32 ) , .Fields ) ) )
+    </blocks>
+    <locRW>
+      SetItem ( #lread ( #sl ( 3 ) , 6 ) )
+      SetItem ( #lread ( #sl ( 3 ) , 7 ) )
+      SetItem ( #lread ( #sl ( 3 ) , 9 ) )
+      SetItem ( #lread ( #sl ( 3 ) , 10 ) )
+      SetItem ( #lread ( #sl ( 3 ) , 12 ) )
+      SetItem ( #lread ( #sl ( 3 ) , 13 ) )
+      SetItem ( #lread ( #sl ( 3 ) , 14 ) )
+      SetItem ( #lread ( #sl ( 3 ) , 16 ) )
+      SetItem ( #lread ( #sl ( 3 ) , 18 ) )
+      SetItem ( #lread ( #sl ( 4 ) , 19 ) )
+      SetItem ( #lwrite ( #sl ( 3 ) , 11 ) )
+      SetItem ( #lwrite ( #sl ( 3 ) , 17 ) )
+      SetItem ( #lwrite ( #sl ( 4 ) , 8 ) )
+      SetItem ( #lwrite ( #sl ( 5 ) , 15 ) )
+    </locRW>
+    <memStatus>
+      #heap ( 1 , 0 ) |-> #ms ( 0 , 0 )
+      #heap ( 1 , 1 ) |-> #ms ( 0 , 0 )
+      #sl ( 2 ) |-> #ms ( 0 , 0 )
+      #sl ( 3 ) |-> #ms ( 0 , 0 )
+      #sl ( 4 ) |-> #ms ( 0 , 0 )
+      #sl ( 5 ) |-> #ms ( 0 , 0 )
+    </memStatus>
+    <clk>
+      20
+    </clk>
+  </memory>
+  <output>
+    .List
+  </output>
+</T>
+Command exited with non-zero status 1
+	Command being timed: "./clkprove rust_tests/rv/obsc/t40-spec.k"
+	User time (seconds): 46.90
+	System time (seconds): 0.83
+	Percent of CPU this job got: 189%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:25.14
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1236592
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 480025
+	Voluntary context switches: 11820
+	Involuntary context switches: 1067
+	Swaps: 0
+	File system inputs: 8
+	File system outputs: 266480
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1
+verifying rust_tests/rv/obsc/t4-spec.k:
+          
+<T>
+  <threads>
+    <Thread>
+      <threadId>
+        0
+      </threadId>
+      <tname>
+        "main"
+      </tname>
+      <k>
+        #readna ( #sl ( 2 ) ) ~> #freezer#rdLVfield1_ ( valcl ( false ) , valcl ( 0 ) ) ~> #freezer#Read0_ ( ) ~> #freezer#letcl1_ ( var ( 1 ) , letcl var ( 2 ) =cl *cl na var ( 0 ) .cl valcl ( 0 ) incl clskip ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( )
+      </k>
+      <env>
+        var ( 0 ) |-> #sl ( 3 )
+      </env>
+      <clstack>
+        ListItem ( var ( 0 ) )
+        ListItem ( .Map )
+        ListItem ( #state ( . , .Map ) )
+      </clstack>
+    </Thread>
+    <activeThreads>
+      SetItem ( 0 )
+    </activeThreads>
+    <cntThreads>
+      1
+    </cntThreads>
+    <cthread>
+      0
+    </cthread>
+  </threads>
+  <closures>
+    <closureCnt>
+      1
+    </closureCnt>
+    <funclosure>
+      main |-> 0
+    </funclosure>
+    <closure>
+      <crId>
+        0
+      </crId>
+      <crContext>
+        .
+      </crContext>
+      <crParams>
+        .Idents
+      </crParams>
+      <crBody>
+        (| letcl var ( 0 ) =cl #refallocate ( #allocateInit ( valcl ( 1 ) , #owner ( str ) , valcl ( "ss" ) , .ValueCLs ) ) incl letcl var ( 1 ) =cl *cl na var ( 0 ) .cl valcl ( 0 ) incl letcl var ( 2 ) =cl *cl na var ( 0 ) .cl valcl ( 0 ) incl clskip |)
+      </crBody>
+    </closure>
+  </closures>
+  <memory>
+    <slocAddr>
+      4
+    </slocAddr>
+    <sloc>
+      2 |-> #own ( #blk ( 1 ) )
+      3 |-> #shr ( 1 , 2 , #sl ( 2 ) )
+    </sloc>
+    <blkAddr>
+      2
+    </blkAddr>
+    <blocks>
+      #heap ( 1 , 0 ) |-> valcl ( "ss" )
+      1 |-> #blkInfo ( 1 , #owner ( str ) )
+    </blocks>
+    <locRW>
+      SetItem ( #lread ( #sl ( 3 ) , 2 ) )
+    </locRW>
+    <memStatus>
+      #heap ( 1 , 0 ) |-> #ms ( 0 , 0 )
+      #sl ( 3 ) |-> #ms ( 0 , 0 )
+    </memStatus>
+    <clk>
+      2
+    </clk>
+  </memory>
+  <output>
+    .List
+  </output>
+</T>
+Command exited with non-zero status 1
+	Command being timed: "./clkprove rust_tests/rv/obsc/t4-spec.k"
+	User time (seconds): 46.70
+	System time (seconds): 0.94
+	Percent of CPU this job got: 192%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:24.74
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1262656
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 499840
+	Voluntary context switches: 11126
+	Involuntary context switches: 1016
+	Swaps: 0
+	File system inputs: 8
+	File system outputs: 266552
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1
+verifying rust_tests/rv/obsc/t5-spec.k:
+          
+#True
+	Command being timed: "./clkprove rust_tests/rv/obsc/t5-spec.k"
+	User time (seconds): 45.27
+	System time (seconds): 0.98
+	Percent of CPU this job got: 183%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:25.17
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1245388
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 478884
+	Voluntary context switches: 11834
+	Involuntary context switches: 1634
+	Swaps: 0
+	File system inputs: 8
+	File system outputs: 266600
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+verifying rust_tests/rv/obsc/t6-spec.k:
+          
+<T>
+  <threads>
+    <Thread>
+      <threadId>
+        0
+      </threadId>
+      <tname>
+        "main"
+      </tname>
+      <k>
+        #stuck ( #lwrite ( #sl ( 2 ) , 5 ) , #shr ( 3 , 7 , #sl ( 2 ) ) ) ~> #readna ( #sl ( 3 ) ) ~> clskip ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( )
+      </k>
+      <env>
+        var ( 0 ) |-> #sl ( 2 )
+        var ( 1 ) |-> #sl ( 3 )
+        var ( 2 ) |-> #sl ( 4 )
+      </env>
+      <clstack>
+        ListItem ( var ( 2 ) )
+        ListItem ( var ( 0 ) |-> #sl ( 2 )
+        var ( 1 ) |-> #sl ( 3 ) )
+        ListItem ( var ( 1 ) )
+        ListItem ( var ( 0 ) |-> #sl ( 2 ) )
+        ListItem ( var ( 0 ) )
+        ListItem ( .Map )
+        ListItem ( #state ( . , .Map ) )
+      </clstack>
+    </Thread>
+    <activeThreads>
+      SetItem ( 0 )
+    </activeThreads>
+    <cntThreads>
+      1
+    </cntThreads>
+    <cthread>
+      0
+    </cthread>
+  </threads>
+  <closures>
+    <closureCnt>
+      1
+    </closureCnt>
+    <funclosure>
+      main |-> 0
+    </funclosure>
+    <closure>
+      <crId>
+        0
+      </crId>
+      <crContext>
+        .
+      </crContext>
+      <crParams>
+        .Idents
+      </crParams>
+      <crBody>
+        (| letcl var ( 0 ) =cl #AllocateInit ( valcl ( 2 ) , #owner ( #array ( i32 , 2 ) ) , valcl ( V0 ) , valcl ( V1 ) , .ExpCLs ) incl letcl var ( 1 ) =cl refcl ( 0 , var ( 0 ) ) incl letcl var ( 2 ) =cl #move ( var ( 0 ) ) incl ( var ( 1 ) ;cl clskip ) |)
+      </crBody>
+    </closure>
+  </closures>
+  <memory>
+    <slocAddr>
+      5
+    </slocAddr>
+    <sloc>
+      2 |-> #uninit ( 0 )
+      3 |-> #shr ( 3 , 7 , #sl ( 2 ) )
+      4 |-> #own ( #blk ( 1 ) )
+    </sloc>
+    <blkAddr>
+      2
+    </blkAddr>
+    <blocks>
+      #heap ( 1 , 0 ) |-> valcl ( V0 )
+      #heap ( 1 , 1 ) |-> valcl ( V1 )
+      1 |-> #blkInfo ( 2 , #owner ( #array ( i32 , 2 ) ) )
+    </blocks>
+    <locRW>
+      SetItem ( #lread ( #sl ( 2 ) , 4 ) )
+      SetItem ( #lread ( #sl ( 3 ) , 7 ) )
+      SetItem ( #lwrite ( #sl ( 2 ) , 5 ) )
+    </locRW>
+    <memStatus>
+      #heap ( 1 , 0 ) |-> #ms ( 0 , 0 )
+      #heap ( 1 , 1 ) |-> #ms ( 0 , 0 )
+      #sl ( 2 ) |-> #ms ( 0 , 0 )
+      #sl ( 3 ) |-> #ms ( 0 , 0 )
+      #sl ( 4 ) |-> #ms ( 0 , 0 )
+    </memStatus>
+    <clk>
+      8
+    </clk>
+  </memory>
+  <output>
+    .List
+  </output>
+</T>
+Command exited with non-zero status 1
+	Command being timed: "./clkprove rust_tests/rv/obsc/t6-spec.k"
+	User time (seconds): 49.84
+	System time (seconds): 1.00
+	Percent of CPU this job got: 187%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:27.16
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1307540
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 509848
+	Voluntary context switches: 12382
+	Involuntary context switches: 11344
+	Swaps: 0
+	File system inputs: 8
+	File system outputs: 266680
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1
+verifying rust_tests/rv/obsc/t7-spec.k:
+          
+#True
+	Command being timed: "./clkprove rust_tests/rv/obsc/t7-spec.k"
+	User time (seconds): 50.77
+	System time (seconds): 0.90
+	Percent of CPU this job got: 187%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:27.50
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1317820
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 515064
+	Voluntary context switches: 11828
+	Involuntary context switches: 6440
+	Swaps: 0
+	File system inputs: 8
+	File system outputs: 266728
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+verifying rust_tests/rv/obsc/t8-spec.k:
+          
+#True
+	Command being timed: "./clkprove rust_tests/rv/obsc/t8-spec.k"
+	User time (seconds): 48.38
+	System time (seconds): 0.98
+	Percent of CPU this job got: 184%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:26.73
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1273412
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 486721
+	Voluntary context switches: 11633
+	Involuntary context switches: 6585
+	Swaps: 0
+	File system inputs: 8
+	File system outputs: 266784
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+verifying rust_tests/rv/obsc/t9-spec.k:
+          
+  <T>
+    <threads>
+      <Thread>
+        <threadId>
+          0
+        </threadId>
+        <tname>
+          "main"
+        </tname>
+        <k>
+          #stuck ( #lwrite ( #sl ( 2 ) , 5 ) , #mut ( 3 , 7 , #sl ( 2 ) ) ) ~> #readna ( #sl ( 3 ) ) ~> clskip ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( )
+        </k>
+        <env>
+          var ( 0 ) |-> #sl ( 2 )
+          var ( 1 ) |-> #sl ( 3 )
+          var ( 2 ) |-> #sl ( 4 )
+        </env>
+        <clstack>
+          ListItem ( var ( 2 ) )
+          ListItem ( var ( 0 ) |-> #sl ( 2 )
+          var ( 1 ) |-> #sl ( 3 ) )
+          ListItem ( var ( 1 ) )
+          ListItem ( var ( 0 ) |-> #sl ( 2 ) )
+          ListItem ( var ( 0 ) )
+          ListItem ( .Map )
+          ListItem ( #state ( . , .Map ) )
+        </clstack>
+      </Thread>
+      <activeThreads>
+        SetItem ( 0 )
+      </activeThreads>
+      <cntThreads>
+        1
+      </cntThreads>
+      <cthread>
+        0
+      </cthread>
+    </threads>
+    <closures>
+      <closureCnt>
+        1
+      </closureCnt>
+      <funclosure>
+        main |-> 0
+      </funclosure>
+      <closure>
+        <crId>
+          0
+        </crId>
+        <crContext>
+          .
+        </crContext>
+        <crParams>
+          .Idents
+        </crParams>
+        <crBody>
+          (| letcl var ( 0 ) =cl #AllocateInit ( valcl ( 2 ) , #owner ( #array ( i32 , 2 ) ) , valcl ( V0 ) , valcl ( V1 ) , .ExpCLs ) incl letcl var ( 1 ) =cl refcl ( 1 , var ( 0 ) ) incl letcl var ( 2 ) =cl #move ( var ( 0 ) ) incl ( var ( 1 ) ;cl clskip ) |)
+        </crBody>
+      </closure>
+    </closures>
+    <memory>
+      <slocAddr>
+        5
+      </slocAddr>
+      <sloc>
+        2 |-> #uninit ( 0 )
+        3 |-> #mut ( 3 , 7 , #sl ( 2 ) )
+        4 |-> #own ( #blk ( 1 ) )
+      </sloc>
+      <blkAddr>
+        2
+      </blkAddr>
+      <blocks>
+        #heap ( 1 , 0 ) |-> valcl ( V0 )
+        #heap ( 1 , 1 ) |-> valcl ( V1 )
+        1 |-> #blkInfo ( 2 , #owner ( #array ( i32 , 2 ) ) )
+      </blocks>
+      <locRW>
+        SetItem ( #lread ( #sl ( 2 ) , 4 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 7 ) )
+        SetItem ( #lwrite ( #sl ( 2 ) , 5 ) )
+      </locRW>
+      <memStatus>
+        #heap ( 1 , 0 ) |-> #ms ( 0 , 0 )
+        #heap ( 1 , 1 ) |-> #ms ( 0 , 0 )
+        #sl ( 2 ) |-> #ms ( 0 , 0 )
+        #sl ( 3 ) |-> #ms ( 0 , 0 )
+        #sl ( 4 ) |-> #ms ( 0 , 0 )
+      </memStatus>
+      <clk>
+        8
+      </clk>
+    </memory>
+    <output>
+      .List
+    </output>
+  </T>
+#And
+  <T>
+    <threads>
+      <Thread>
+        <threadId>
+          0
+        </threadId>
+        <tname>
+          "main"
+        </tname>
+        <k>
+          #stuck ( #lwrite ( #sl ( 2 ) , 5 ) , #shr ( 3 , 7 , #sl ( 2 ) ) ) ~> #readna ( #sl ( 3 ) ) ~> clskip ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( )
+        </k>
+        <env>
+          var ( 0 ) |-> #sl ( 2 )
+          var ( 1 ) |-> #sl ( 3 )
+          var ( 2 ) |-> #sl ( 4 )
+        </env>
+        <clstack>
+          ListItem ( var ( 2 ) )
+          ListItem ( var ( 0 ) |-> #sl ( 2 )
+          var ( 1 ) |-> #sl ( 3 ) )
+          ListItem ( var ( 1 ) )
+          ListItem ( var ( 0 ) |-> #sl ( 2 ) )
+          ListItem ( var ( 0 ) )
+          ListItem ( .Map )
+          ListItem ( #state ( . , .Map ) )
+        </clstack>
+      </Thread>
+      <activeThreads>
+        SetItem ( 0 )
+      </activeThreads>
+      <cntThreads>
+        1
+      </cntThreads>
+      <cthread>
+        0
+      </cthread>
+    </threads>
+    <closures>
+      <closureCnt>
+        1
+      </closureCnt>
+      <funclosure>
+        main |-> 0
+      </funclosure>
+      <closure>
+        <crId>
+          0
+        </crId>
+        <crContext>
+          .
+        </crContext>
+        <crParams>
+          .Idents
+        </crParams>
+        <crBody>
+          (| letcl var ( 0 ) =cl #AllocateInit ( valcl ( 2 ) , #owner ( #array ( i32 , 2 ) ) , valcl ( V0 ) , valcl ( V1 ) , .ExpCLs ) incl letcl var ( 1 ) =cl refcl ( 1 , var ( 0 ) ) incl letcl var ( 2 ) =cl #move ( var ( 0 ) ) incl ( var ( 1 ) ;cl clskip ) |)
+        </crBody>
+      </closure>
+    </closures>
+    <memory>
+      <slocAddr>
+        5
+      </slocAddr>
+      <sloc>
+        2 |-> #uninit ( 0 )
+        3 |-> #mut ( 3 , 7 , #sl ( 2 ) )
+        4 |-> #own ( #blk ( 1 ) )
+      </sloc>
+      <blkAddr>
+        2
+      </blkAddr>
+      <blocks>
+        #heap ( 1 , 0 ) |-> valcl ( V0 )
+        #heap ( 1 , 1 ) |-> valcl ( V1 )
+        1 |-> #blkInfo ( 2 , #owner ( #array ( i32 , 2 ) ) )
+      </blocks>
+      <locRW>
+        SetItem ( #lread ( #sl ( 2 ) , 4 ) )
+        SetItem ( #lread ( #sl ( 3 ) , 7 ) )
+        SetItem ( #lwrite ( #sl ( 2 ) , 5 ) )
+      </locRW>
+      <memStatus>
+        #heap ( 1 , 0 ) |-> #ms ( 0 , 0 )
+        #heap ( 1 , 1 ) |-> #ms ( 0 , 0 )
+        #sl ( 2 ) |-> #ms ( 0 , 0 )
+        #sl ( 3 ) |-> #ms ( 0 , 0 )
+        #sl ( 4 ) |-> #ms ( 0 , 0 )
+      </memStatus>
+      <clk>
+        8
+      </clk>
+    </memory>
+    <output>
+      .List
+    </output>
+  </T>
+Command exited with non-zero status 1
+	Command being timed: "./clkprove rust_tests/rv/obsc/t9-spec.k"
+	User time (seconds): 46.25
+	System time (seconds): 0.94
+	Percent of CPU this job got: 185%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:25.47
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1294616
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 499347
+	Voluntary context switches: 11982
+	Involuntary context switches: 5925
+	Swaps: 0
+	File system inputs: 24
+	File system outputs: 266888
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1

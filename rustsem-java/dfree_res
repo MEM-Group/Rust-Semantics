@@ -1,0 +1,934 @@
+verifying rust_tests/rv/dfree/t10-spec.k:
+Command exited with non-zero status 1
+	Command being timed: "./clkprove rust_tests/rv/dfree/t10-spec.k"
+	User time (seconds): 27.11
+	System time (seconds): 0.57
+	Percent of CPU this job got: 193%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:14.30
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 613520
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 315216
+	Voluntary context switches: 10938
+	Involuntary context switches: 2068
+	Swaps: 0
+	File system inputs: 160
+	File system outputs: 42888
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1
+verifying rust_tests/rv/dfree/t1-spec.k:
+Command exited with non-zero status 1
+	Command being timed: "./clkprove rust_tests/rv/dfree/t1-spec.k"
+	User time (seconds): 28.37
+	System time (seconds): 0.58
+	Percent of CPU this job got: 202%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:14.26
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 698804
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 343412
+	Voluntary context switches: 10235
+	Involuntary context switches: 1759
+	Swaps: 0
+	File system inputs: 16
+	File system outputs: 48608
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1
+verifying rust_tests/rv/dfree/t2-spec.k:
+          
+<T>
+  <threads>
+    <Thread>
+      <threadId>
+        0
+      </threadId>
+      <tname>
+        "main"
+      </tname>
+      <k>
+        #free ( #blk ( 1 ) ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( )
+      </k>
+      <env>
+        var ( 0 ) |-> #sl ( 2 )
+      </env>
+      <clstack>
+        ListItem ( var ( 0 ) )
+        ListItem ( .Map )
+        ListItem ( #state ( . , .Map ) )
+      </clstack>
+    </Thread>
+    <activeThreads>
+      SetItem ( 0 )
+    </activeThreads>
+    <cntThreads>
+      1
+    </cntThreads>
+    <cthread>
+      0
+    </cthread>
+  </threads>
+  <closures>
+    <closureCnt>
+      1
+    </closureCnt>
+    <funclosure>
+      main |-> 0
+    </funclosure>
+    <closure>
+      <crId>
+        0
+      </crId>
+      <crContext>
+        .
+      </crContext>
+      <crParams>
+        .Idents
+      </crParams>
+      <crBody>
+        (| letcl var ( 0 ) =cl #Allocate ( valcl ( 3 ) , i32 ) incl ( #deallocate ( var ( 0 ) ) ;cl clskip ;cl #deallocate ( var ( 0 ) ) ) |)
+      </crBody>
+    </closure>
+  </closures>
+  <memory>
+    <slocAddr>
+      3
+    </slocAddr>
+    <sloc>
+      2 |-> #Raw ( #heap ( 1 , 0 ) )
+    </sloc>
+    <blkAddr>
+      2
+    </blkAddr>
+    <blocks>
+      .Map
+    </blocks>
+    <locRW>
+      .Set
+    </locRW>
+    <memStatus>
+      #heap ( 1 , 0 ) |-> #ms ( 0 , 0 )
+      #heap ( 1 , 1 ) |-> #ms ( 0 , 0 )
+      #heap ( 1 , 2 ) |-> #ms ( 0 , 0 )
+      #sl ( 2 ) |-> #ms ( 0 , 0 )
+    </memStatus>
+    <clk>
+      1
+    </clk>
+  </memory>
+  <output>
+    .List
+  </output>
+</T>
+Command exited with non-zero status 1
+	Command being timed: "./clkprove rust_tests/rv/dfree/t2-spec.k"
+	User time (seconds): 28.04
+	System time (seconds): 0.65
+	Percent of CPU this job got: 201%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:14.27
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 743452
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 367129
+	Voluntary context switches: 10508
+	Involuntary context switches: 1750
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 54288
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1
+verifying rust_tests/rv/dfree/t3-spec.k:
+          
+<T>
+  <threads>
+    <Thread>
+      <threadId>
+        0
+      </threadId>
+      <tname>
+        "main"
+      </tname>
+      <k>
+        #deAllocate ( #pair ( #sl ( 2 ) , valcl ( true ) ) ) ~> clskip ;cl #deallocate ( var ( 0 ) ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( )
+      </k>
+      <env>
+        var ( 0 ) |-> #sl ( 2 )
+      </env>
+      <clstack>
+        ListItem ( var ( 0 ) )
+        ListItem ( .Map )
+        ListItem ( #state ( . , .Map ) )
+      </clstack>
+    </Thread>
+    <activeThreads>
+      SetItem ( 0 )
+    </activeThreads>
+    <cntThreads>
+      1
+    </cntThreads>
+    <cthread>
+      0
+    </cthread>
+  </threads>
+  <closures>
+    <closureCnt>
+      1
+    </closureCnt>
+    <funclosure>
+      main |-> 0
+    </funclosure>
+    <closure>
+      <crId>
+        0
+      </crId>
+      <crContext>
+        .
+      </crContext>
+      <crParams>
+        .Idents
+      </crParams>
+      <crBody>
+        (| letcl var ( 0 ) =cl #AllocateInit ( valcl ( 2 ) , #owner ( #array ( i32 , 2 ) ) , valcl ( V0 ) , valcl ( V1 ) , .ExpCLs ) incl ( #deallocate ( var ( 0 ) ) ;cl clskip ;cl #deallocate ( var ( 0 ) ) ) |)
+      </crBody>
+    </closure>
+  </closures>
+  <memory>
+    <slocAddr>
+      3
+    </slocAddr>
+    <sloc>
+      2 |-> #own ( #blk ( 1 ) )
+    </sloc>
+    <blkAddr>
+      2
+    </blkAddr>
+    <blocks>
+      #heap ( 1 , 0 ) |-> valcl ( V0 )
+      #heap ( 1 , 1 ) |-> valcl ( V1 )
+      1 |-> #blkInfo ( 2 , #owner ( #array ( i32 , 2 ) ) )
+    </blocks>
+    <locRW>
+      .Set
+    </locRW>
+    <memStatus>
+      #heap ( 1 , 0 ) |-> #ms ( 0 , 0 )
+      #heap ( 1 , 1 ) |-> #ms ( 0 , 0 )
+      #sl ( 2 ) |-> #ms ( 0 , 0 )
+    </memStatus>
+    <clk>
+      3
+    </clk>
+  </memory>
+  <output>
+    .List
+  </output>
+</T>
+Command exited with non-zero status 1
+	Command being timed: "./clkprove rust_tests/rv/dfree/t3-spec.k"
+	User time (seconds): 27.84
+	System time (seconds): 0.55
+	Percent of CPU this job got: 197%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:14.38
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 646920
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 326482
+	Voluntary context switches: 10797
+	Involuntary context switches: 2109
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 59984
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1
+verifying rust_tests/rv/dfree/t4-spec.k:
+          
+<T>
+  <threads>
+    <Thread>
+      <threadId>
+        0
+      </threadId>
+      <tname>
+        "main"
+      </tname>
+      <k>
+        #deAllocate ( #pair ( #sl ( 2 ) , valcl ( true ) ) ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( )
+      </k>
+      <env>
+        var ( 0 ) |-> #sl ( 2 )
+      </env>
+      <clstack>
+        ListItem ( var ( 0 ) )
+        ListItem ( .Map )
+        ListItem ( #state ( . , .Map ) )
+      </clstack>
+    </Thread>
+    <activeThreads>
+      SetItem ( 0 )
+    </activeThreads>
+    <cntThreads>
+      1
+    </cntThreads>
+    <cthread>
+      0
+    </cthread>
+  </threads>
+  <closures>
+    <closureCnt>
+      1
+    </closureCnt>
+    <funclosure>
+      main |-> 0
+    </funclosure>
+    <closure>
+      <crId>
+        0
+      </crId>
+      <crContext>
+        .
+      </crContext>
+      <crParams>
+        .Idents
+      </crParams>
+      <crBody>
+        (| letcl var ( 0 ) =cl #uninit ( 0 ) incl ( (| var ( 0 ) :=cl #AllocateInit ( valcl ( 2 ) , #owner ( #array ( i32 , 2 ) ) , valcl ( V0 ) , valcl ( V1 ) , .ExpCLs ) ;cl clskip ;cl clskip |) ;cl #deallocate ( var ( 0 ) ) ) |)
+      </crBody>
+    </closure>
+  </closures>
+  <memory>
+    <slocAddr>
+      3
+    </slocAddr>
+    <sloc>
+      2 |-> #own ( #blk ( 1 ) )
+    </sloc>
+    <blkAddr>
+      2
+    </blkAddr>
+    <blocks>
+      #heap ( 1 , 0 ) |-> valcl ( V0 )
+      #heap ( 1 , 1 ) |-> valcl ( V1 )
+      1 |-> #blkInfo ( 2 , #owner ( #array ( i32 , 2 ) ) )
+    </blocks>
+    <locRW>
+      SetItem ( #lwrite ( #sl ( 2 ) , 3 ) )
+    </locRW>
+    <memStatus>
+      #heap ( 1 , 0 ) |-> #ms ( 0 , 0 )
+      #heap ( 1 , 1 ) |-> #ms ( 0 , 0 )
+      #sl ( 2 ) |-> #ms ( 0 , 0 )
+    </memStatus>
+    <clk>
+      4
+    </clk>
+  </memory>
+  <output>
+    .List
+  </output>
+</T>
+Command exited with non-zero status 1
+	Command being timed: "./clkprove rust_tests/rv/dfree/t4-spec.k"
+	User time (seconds): 27.51
+	System time (seconds): 0.60
+	Percent of CPU this job got: 192%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:14.57
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 700700
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 334843
+	Voluntary context switches: 11074
+	Involuntary context switches: 1536
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 65672
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1
+verifying rust_tests/rv/dfree/t5-spec.k:
+          
+<T>
+  <threads>
+    <Thread>
+      <threadId>
+        0
+      </threadId>
+      <tname>
+        "main"
+      </tname>
+      <k>
+        #deAllocate ( #pair ( #sl ( 2 ) , valcl ( true ) ) ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( )
+      </k>
+      <env>
+        var ( 0 ) |-> #sl ( 2 )
+      </env>
+      <clstack>
+        ListItem ( var ( 0 ) )
+        ListItem ( .Map )
+        ListItem ( #state ( . , .Map ) )
+      </clstack>
+    </Thread>
+    <activeThreads>
+      SetItem ( 0 )
+    </activeThreads>
+    <cntThreads>
+      1
+    </cntThreads>
+    <cthread>
+      0
+    </cthread>
+  </threads>
+  <closures>
+    <closureCnt>
+      1
+    </closureCnt>
+    <funclosure>
+      main |-> 0
+    </funclosure>
+    <closure>
+      <crId>
+        0
+      </crId>
+      <crContext>
+        .
+      </crContext>
+      <crParams>
+        .Idents
+      </crParams>
+      <crBody>
+        (| letcl var ( 0 ) =cl #uninit ( 0 ) incl ( (| var ( 0 ) :=cl valcl ( V0 ) ;cl clskip ;cl clskip |) ;cl #deallocate ( var ( 0 ) ) ) |)
+      </crBody>
+    </closure>
+  </closures>
+  <memory>
+    <slocAddr>
+      3
+    </slocAddr>
+    <sloc>
+      2 |-> valcl ( V0 )
+    </sloc>
+    <blkAddr>
+      1
+    </blkAddr>
+    <blocks>
+      .Map
+    </blocks>
+    <locRW>
+      SetItem ( #lwrite ( #sl ( 2 ) , 1 ) )
+    </locRW>
+    <memStatus>
+      #sl ( 2 ) |-> #ms ( 0 , 0 )
+    </memStatus>
+    <clk>
+      2
+    </clk>
+  </memory>
+  <output>
+    .List
+  </output>
+</T>
+Command exited with non-zero status 1
+	Command being timed: "./clkprove rust_tests/rv/dfree/t5-spec.k"
+	User time (seconds): 28.47
+	System time (seconds): 0.56
+	Percent of CPU this job got: 196%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:14.77
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 553308
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 301824
+	Voluntary context switches: 10681
+	Involuntary context switches: 1384
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 71344
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1
+verifying rust_tests/rv/dfree/t6-spec.k:
+          
+<T>
+  <threads>
+    <Thread>
+      <threadId>
+        0
+      </threadId>
+      <tname>
+        "main"
+      </tname>
+      <k>
+        #deAllocate ( #pair ( #sl ( 2 ) , valcl ( true ) ) ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( )
+      </k>
+      <env>
+        var ( 0 ) |-> #sl ( 2 )
+      </env>
+      <clstack>
+        ListItem ( var ( 0 ) )
+        ListItem ( .Map )
+        ListItem ( #state ( . , .Map ) )
+      </clstack>
+    </Thread>
+    <activeThreads>
+      SetItem ( 0 )
+    </activeThreads>
+    <cntThreads>
+      1
+    </cntThreads>
+    <cthread>
+      0
+    </cthread>
+  </threads>
+  <closures>
+    <closureCnt>
+      1
+    </closureCnt>
+    <funclosure>
+      main |-> 0
+    </funclosure>
+    <closure>
+      <crId>
+        0
+      </crId>
+      <crContext>
+        .
+      </crContext>
+      <crParams>
+        .Idents
+      </crParams>
+      <crBody>
+        (| letcl var ( 0 ) =cl #AllocateInit ( valcl ( 1 ) , #IdTy ( V0 , #prod ( #fd ( a , i32 ) , .Fields ) ) , valcl ( V1 ) , .ExpCLs ) incl #deallocate ( var ( 0 ) ) |)
+      </crBody>
+    </closure>
+  </closures>
+  <memory>
+    <slocAddr>
+      3
+    </slocAddr>
+    <sloc>
+      2 |-> #own ( #blk ( 1 ) )
+    </sloc>
+    <blkAddr>
+      2
+    </blkAddr>
+    <blocks>
+      #heap ( 1 , 0 ) |-> valcl ( V1 )
+      1 |-> #blkInfo ( 1 , #IdTy ( V0 , #prod ( #fd ( a , i32 ) , .Fields ) ) )
+    </blocks>
+    <locRW>
+      .Set
+    </locRW>
+    <memStatus>
+      #heap ( 1 , 0 ) |-> #ms ( 0 , 0 )
+      #sl ( 2 ) |-> #ms ( 0 , 0 )
+    </memStatus>
+    <clk>
+      2
+    </clk>
+  </memory>
+  <output>
+    .List
+  </output>
+</T>
+Command exited with non-zero status 1
+	Command being timed: "./clkprove rust_tests/rv/dfree/t6-spec.k"
+	User time (seconds): 31.02
+	System time (seconds): 0.56
+	Percent of CPU this job got: 209%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:15.05
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 601680
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 341074
+	Voluntary context switches: 10588
+	Involuntary context switches: 1357
+	Swaps: 0
+	File system inputs: 32
+	File system outputs: 77048
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1
+verifying rust_tests/rv/dfree/t7-spec.k:
+          
+<T>
+  <threads>
+    <Thread>
+      <threadId>
+        0
+      </threadId>
+      <tname>
+        "main"
+      </tname>
+      <k>
+        #deAllocate ( #pair ( #heap ( 2 , 0 ) , valcl ( true ) ) ) ~> clskip ;cl #deallocate ( var ( 1 ) .cl valcl ( 0 ) ) ;cl clskip ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( )
+      </k>
+      <env>
+        var ( 0 ) |-> #sl ( 2 )
+        var ( 1 ) |-> #sl ( 3 )
+      </env>
+      <clstack>
+        ListItem ( var ( 1 ) )
+        ListItem ( var ( 0 ) |-> #sl ( 2 ) )
+        ListItem ( var ( 0 ) )
+        ListItem ( .Map )
+        ListItem ( #state ( . , .Map ) )
+      </clstack>
+    </Thread>
+    <activeThreads>
+      SetItem ( 0 )
+    </activeThreads>
+    <cntThreads>
+      1
+    </cntThreads>
+    <cthread>
+      0
+    </cthread>
+  </threads>
+  <closures>
+    <closureCnt>
+      1
+    </closureCnt>
+    <funclosure>
+      main |-> 0
+    </funclosure>
+    <closure>
+      <crId>
+        0
+      </crId>
+      <crContext>
+        .
+      </crContext>
+      <crParams>
+        .Idents
+      </crParams>
+      <crBody>
+        (| letcl var ( 0 ) =cl #AllocateInit ( valcl ( 1 ) , #IdTy ( ProdA , #prod ( #fd ( a , i32 ) , .Fields ) ) , valcl ( V0 ) , .ExpCLs ) incl letcl var ( 1 ) =cl #AllocateInit ( valcl ( 1 ) , #IdTy ( ProdB , #prod ( #fd ( b , #owner ( #IdTy ( ProdA , #prod ( #fd ( a , i32 ) , .Fields ) ) ) ) , .Fields ) ) , #move ( var ( 0 ) ) , .ExpCLs ) incl ( #deallocate ( var ( 1 ) .cl valcl ( 0 ) ) ;cl clskip ;cl #deallocate ( var ( 1 ) .cl valcl ( 0 ) ) ;cl clskip ) |)
+      </crBody>
+    </closure>
+  </closures>
+  <memory>
+    <slocAddr>
+      4
+    </slocAddr>
+    <sloc>
+      2 |-> #uninit ( 0 )
+      3 |-> #own ( #blk ( 2 ) )
+    </sloc>
+    <blkAddr>
+      3
+    </blkAddr>
+    <blocks>
+      #heap ( 1 , 0 ) |-> valcl ( V0 )
+      #heap ( 2 , 0 ) |-> #own ( #blk ( 1 ) )
+      1 |-> #blkInfo ( 1 , #IdTy ( ProdA , #prod ( #fd ( a , i32 ) , .Fields ) ) )
+      2 |-> #blkInfo ( 1 , #IdTy ( ProdB , #prod ( #fd ( b , #owner ( #IdTy ( ProdA , #prod ( #fd ( a , i32 ) , .Fields ) ) ) ) , .Fields ) ) )
+    </blocks>
+    <locRW>
+      SetItem ( #lread ( #sl ( 2 ) , 2 ) )
+      SetItem ( #lwrite ( #sl ( 2 ) , 3 ) )
+    </locRW>
+    <memStatus>
+      #heap ( 1 , 0 ) |-> #ms ( 0 , 0 )
+      #heap ( 2 , 0 ) |-> #ms ( 0 , 0 )
+      #sl ( 2 ) |-> #ms ( 0 , 0 )
+      #sl ( 3 ) |-> #ms ( 0 , 0 )
+    </memStatus>
+    <clk>
+      6
+    </clk>
+  </memory>
+  <output>
+    .List
+  </output>
+</T>
+Command exited with non-zero status 1
+	Command being timed: "./clkprove rust_tests/rv/dfree/t7-spec.k"
+	User time (seconds): 30.84
+	System time (seconds): 0.55
+	Percent of CPU this job got: 199%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:15.77
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 614900
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 315621
+	Voluntary context switches: 10849
+	Involuntary context switches: 1585
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 82744
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1
+verifying rust_tests/rv/dfree/t8-spec.k:
+          
+<T>
+  <threads>
+    <Thread>
+      <threadId>
+        0
+      </threadId>
+      <tname>
+        "main"
+      </tname>
+      <k>
+        #unit
+      </k>
+      <env>
+        .Map
+      </env>
+      <clstack>
+        .List
+      </clstack>
+    </Thread>
+    <activeThreads>
+      SetItem ( 0 )
+    </activeThreads>
+    <cntThreads>
+      1
+    </cntThreads>
+    <cthread>
+      -1
+    </cthread>
+  </threads>
+  <closures>
+    <closureCnt>
+      1
+    </closureCnt>
+    <funclosure>
+      main |-> 0
+    </funclosure>
+    <closure>
+      <crId>
+        0
+      </crId>
+      <crContext>
+        .
+      </crContext>
+      <crParams>
+        .Idents
+      </crParams>
+      <crBody>
+        (| letcl var ( 0 ) =cl #Allocate ( valcl ( 3 ) , i32 ) incl ( #deallocate ( var ( 0 ) ) ;cl clskip ) |)
+      </crBody>
+    </closure>
+  </closures>
+  <memory>
+    <slocAddr>
+      3
+    </slocAddr>
+    <sloc>
+      .Map
+    </sloc>
+    <blkAddr>
+      2
+    </blkAddr>
+    <blocks>
+      .Map
+    </blocks>
+    <locRW>
+      .Set
+    </locRW>
+    <memStatus>
+      #heap ( 1 , 0 ) |-> #ms ( 0 , 0 )
+      #heap ( 1 , 1 ) |-> #ms ( 0 , 0 )
+      #heap ( 1 , 2 ) |-> #ms ( 0 , 0 )
+      #sl ( 2 ) |-> #ms ( 0 , 0 )
+    </memStatus>
+    <clk>
+      1
+    </clk>
+  </memory>
+  <output>
+    .List
+  </output>
+</T>
+Command exited with non-zero status 1
+	Command being timed: "./clkprove rust_tests/rv/dfree/t8-spec.k"
+	User time (seconds): 32.13
+	System time (seconds): 0.55
+	Percent of CPU this job got: 205%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:15.91
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 618736
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 326551
+	Voluntary context switches: 10490
+	Involuntary context switches: 1555
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 88424
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1
+verifying rust_tests/rv/dfree/t9-spec.k:
+          
+<T>
+  <threads>
+    <Thread>
+      <threadId>
+        0
+      </threadId>
+      <tname>
+        "main"
+      </tname>
+      <k>
+        #deAllocate ( #pair ( #sl ( 3 ) , valcl ( true ) ) ) ~> clskip ;cl #deallocate ( var ( 1 ) ) ;cl clskip ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( ) ~> #freezer#computeFB0_ ( )
+      </k>
+      <env>
+        var ( 0 ) |-> #sl ( 2 )
+        var ( 1 ) |-> #sl ( 3 )
+      </env>
+      <clstack>
+        ListItem ( var ( 1 ) )
+        ListItem ( var ( 0 ) |-> #sl ( 2 ) )
+        ListItem ( var ( 0 ) )
+        ListItem ( .Map )
+        ListItem ( #state ( . , .Map ) )
+      </clstack>
+    </Thread>
+    <activeThreads>
+      SetItem ( 0 )
+    </activeThreads>
+    <cntThreads>
+      1
+    </cntThreads>
+    <cthread>
+      0
+    </cthread>
+  </threads>
+  <closures>
+    <closureCnt>
+      1
+    </closureCnt>
+    <funclosure>
+      main |-> 0
+    </funclosure>
+    <closure>
+      <crId>
+        0
+      </crId>
+      <crContext>
+        .
+      </crContext>
+      <crParams>
+        .Idents
+      </crParams>
+      <crBody>
+        (| letcl var ( 0 ) =cl #AllocateInit ( valcl ( 1 ) , #IdTy ( V0 , #prod ( #fd ( a , i32 ) , .Fields ) ) , valcl ( 1 ) , .ExpCLs ) incl letcl var ( 1 ) =cl #AllocateInit ( valcl ( 1 ) , #IdTy ( V1 , #prod ( #fd ( b , #owner ( #IdTy ( V0 , #prod ( #fd ( a , i32 ) , .Fields ) ) ) ) , .Fields ) ) , #move ( var ( 0 ) ) , .ExpCLs ) incl ( #deallocate ( var ( 1 ) ) ;cl clskip ;cl #deallocate ( var ( 1 ) ) ;cl clskip ) |)
+      </crBody>
+    </closure>
+  </closures>
+  <memory>
+    <slocAddr>
+      4
+    </slocAddr>
+    <sloc>
+      2 |-> #uninit ( 0 )
+      3 |-> #own ( #blk ( 2 ) )
+    </sloc>
+    <blkAddr>
+      3
+    </blkAddr>
+    <blocks>
+      #heap ( 1 , 0 ) |-> valcl ( 1 )
+      #heap ( 2 , 0 ) |-> #own ( #blk ( 1 ) )
+      1 |-> #blkInfo ( 1 , #IdTy ( V0 , #prod ( #fd ( a , i32 ) , .Fields ) ) )
+      2 |-> #blkInfo ( 1 , #IdTy ( V1 , #prod ( #fd ( b , #owner ( #IdTy ( V0 , #prod ( #fd ( a , i32 ) , .Fields ) ) ) ) , .Fields ) ) )
+    </blocks>
+    <locRW>
+      SetItem ( #lread ( #sl ( 2 ) , 2 ) )
+      SetItem ( #lwrite ( #sl ( 2 ) , 3 ) )
+    </locRW>
+    <memStatus>
+      #heap ( 1 , 0 ) |-> #ms ( 0 , 0 )
+      #heap ( 2 , 0 ) |-> #ms ( 0 , 0 )
+      #sl ( 2 ) |-> #ms ( 0 , 0 )
+      #sl ( 3 ) |-> #ms ( 0 , 0 )
+    </memStatus>
+    <clk>
+      6
+    </clk>
+  </memory>
+  <output>
+    .List
+  </output>
+</T>
+Command exited with non-zero status 1
+	Command being timed: "./clkprove rust_tests/rv/dfree/t9-spec.k"
+	User time (seconds): 30.37
+	System time (seconds): 0.60
+	Percent of CPU this job got: 195%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:15.85
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 654404
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 332702
+	Voluntary context switches: 11143
+	Involuntary context switches: 1673
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 94136
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1

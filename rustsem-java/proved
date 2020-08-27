@@ -1,0 +1,8 @@
+#!/bin/bash
+
+
+    for f in $1/*-spec.k; do
+          echo "verifying $f:
+          "
+          /usr/bin/time -v ./clkprove "$f"
+    done
