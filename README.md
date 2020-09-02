@@ -1,5 +1,7 @@
-Temporal Repository for Paper Submissions
-This repo is created just for reviewers, if they interested in the implementation of RustSEM. We have two folders:
+A Semantics for Rust
+
+
+We have two folders:
 
 rustsem-ocaml
 rustsem-java.
