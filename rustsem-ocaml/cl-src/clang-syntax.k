@@ -93,12 +93,6 @@ syntax ExpCL
 	 | "#stop"
 
 
-/*
-syntax MapOperation
-       ::= #mapAddcl(ExpCL,ExpCL,ExpCL)		[strict]
-         | #mapKeyincl(ExpCL, ExpCL)		[strict]
-	 | #mapValuecl(ExpCL, ExpCL)		[strict]
-	 */
 
 syntax StrExp
        ::= #lenStrcl(ExpCL)			[strict]
